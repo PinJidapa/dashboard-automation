@@ -22,7 +22,7 @@ ${emailRadioBtn}    //input[@type='radio' and @name='proprietor.insureds.fields.
 ${phoneNoField}    //input[@name="proprietor.insureds.fields.0.phoneNumber"]
 ${emailField}     //input[@name="proprietor.insureds.fields.0.email"]
 ${confirmCreateCaseBtn}    //button[contains(text(),'send')]
-${cancelCaseBtn}    //button[contains(text(),'cancel')]
+${cancelCaseBtn}    //button[contains(text(),'cancel')]   
 
 *** Keywords ***
 Click Create Case Button
@@ -31,11 +31,11 @@ Click Create Case Button
     Run Until Keyword Succeed    Click Element    ${dipChipCase} 
 
 Input DipChip
-    [Arguments]    ${citizenId}    ${citizenId2}    ${titleEN}    ${firstName}    ${middleName}    ${lastName}    ${dayOfBirth}    ${monthOfBirth}    ${yearOfBirth} 
+    [Arguments]    ${citizenId}    ${citizenId2}    ${title}    ${firstName}    ${middleName}    ${lastName}    ${dayOfBirth}    ${monthOfBirth}    ${yearOfBirth} 
     Input Text    ${citizenIdField}    ${citizenId} 
     Input Text    ${citizenIdField}    ${citizenId2} 
     Run Until Keyword Succeed    Click Element    ${titleDropDownField}
-    Run Until Keyword Succeed    Click Element    ${titleEN}
+    Run Until Keyword Succeed    Click Element    //div[contains(text(),'${title}')]
     Input Text    ${firstNameField}    ${firstName}
     Input Text    ${middleNameField}    ${middleName}
     Input Text    ${lastNameField}    ${lastName}  

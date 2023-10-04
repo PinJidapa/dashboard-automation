@@ -4,12 +4,12 @@ Resource    ../Page/CreateCasePage.robot
 
 *** Keywords ***
 Input DipChip Case Detail
-    [Arguments]    ${citizenId}    ${citizenId2}    ${titleEN}    ${firstName}    ${middleName}    ${lastName}    ${dayOfBirth}    ${monthOfBirth}    ${yearOfBirth}
+    [Arguments]    ${citizenId}    ${citizenId2}    ${title}    ${firstName}    ${middleName}    ${lastName}    ${dayOfBirth}    ${monthOfBirth}    ${yearOfBirth}
     Click Create Case Button
     Input DipChip    
     ...    ${citizenId}    
     ...    ${citizenId2}    
-    ...    ${titleEN}    
+    ...    ${title}    
     ...    ${firstName}    
     ...    ${middleName}    
     ...    ${lastName}

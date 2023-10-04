@@ -7,8 +7,10 @@ Resource    ../Keywords/CreateCaseKeyword.robot
 Resource    ../Resourses/Common/InsuredInfo.robot
 
 *** Variables ***
-${Mrjuvenile}    //div[contains(text(),'Mr. (juvenile)')]
-${Msjuvenile}     //div[contains(text(),'Ms. (juvenile)')]
+# ${Mrjuvenile}    //div[contains(text(),'Mr. (juvenile)')]
+# ${Msjuvenile}     //div[contains(text(),'Ms. (juvenile)')]
+# ${title}    //div[contains(text(),'${titleName}')]
+
 *** Test Cases ***
 Test 01
     Open Browser And Sign In With Username And Password
@@ -18,7 +20,7 @@ Test 01
     Input DipChip Case Detail
     ...    1100400984897
     ...    1100400984897   
-    ...    ${Mrjuvenile}
+    ...    Mr. (juvenile)
     ...    จิดาภา
     ...    ชินวัด
     ...    โอบกิจกาจพล
