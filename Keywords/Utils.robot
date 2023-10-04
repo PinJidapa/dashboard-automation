@@ -1,7 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
 
-
 *** Keywords ***
 Click Element Using JavaScript Id ${ID}
     [Documentation]
