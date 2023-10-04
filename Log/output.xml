@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.17 on darwin)" generated="20231004 16:02:23.725" rpa="false" schemaversion="4">
+<suite id="s1" name="Demo" source="/Users/pinpinn/dashboard-automation/Testcases/demo.robot">
+<test id="s1-t1" name="Test 01" line="7">
+<kw name="Open Browser And Sign In With Username And Password" library="LoginKeyword">
+<arg>${clientAdminUsername1}</arg>
+<arg>${clientAdminPassword1}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231004 16:02:23.812" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x104a99790&gt;</msg>
+<status status="PASS" starttime="20231004 16:02:23.812" endtime="20231004 16:02:23.812"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231004 16:02:23.812" endtime="20231004 16:02:23.812"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231004 16:02:23.812" endtime="20231004 16:02:23.812"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231004 16:02:23.812" endtime="20231004 16:02:23.812"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${chrome_prefs}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231004 16:02:23.813" level="INFO">${chrome_prefs} = {}</msg>
+<status status="PASS" starttime="20231004 16:02:23.812" endtime="20231004 16:02:23.813"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${chrome_prefs}</arg>
+<arg>download.default_directory</arg>
+<arg>${EXECDIR}/assets</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231004 16:02:23.813" endtime="20231004 16:02:23.813"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${chrome_prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231004 16:02:23.813" endtime="20231004 16:02:23.813"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>browser=chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231004 16:02:23.813" level="INFO">Opening browser 'chrome' to base url 'https://portal-v2-qa.mac-non-prod.appmanteam.com/apps/case-keeper/cases'.</msg>
+<status status="PASS" starttime="20231004 16:02:23.813" endtime="20231004 16:02:28.264"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>0</arg>
+<arg>0</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231004 16:02:28.264" endtime="20231004 16:02:31.861"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231004 16:02:31.861" endtime="20231004 16:02:32.287"/>
+</kw>
+<kw name="Enter Username" library="LoginPage">
+<arg>${username}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231004 16:02:32.287" endtime="20231004 16:02:32.309"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231004 16:02:32.309" level="INFO">Typing text 'client_admin_1@mac-portal-v2.com' into text field '//input[@id='username']'.</msg>
+<status status="PASS" starttime="20231004 16:02:32.309" endtime="20231004 16:02:32.368"/>
+</kw>
+<status status="PASS" starttime="20231004 16:02:32.287" endtime="20231004 16:02:32.368"/>
+</kw>
+<kw name="Enter Password" library="LoginPage">
+<arg>${password}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231004 16:02:32.369" endtime="20231004 16:02:32.378"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231004 16:02:32.379" level="INFO">Typing text '!QAZ2wsx' into text field '//input[@id='password']'.</msg>
+<status status="PASS" starttime="20231004 16:02:32.379" endtime="20231004 16:02:32.410"/>
+</kw>
+<status status="PASS" starttime="20231004 16:02:32.368" endtime="20231004 16:02:32.410"/>
+</kw>
+<kw name="Click Sign In Button" library="LoginPage">
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${signInBtn}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231004 16:02:32.414" level="INFO">Clicking element '//input[@id='kc-login']'.</msg>
+<status status="PASS" starttime="20231004 16:02:32.413" endtime="20231004 16:02:32.912"/>
+</kw>
+<status status="PASS" starttime="20231004 16:02:32.411" endtime="20231004 16:02:32.912"/>
+</kw>
+<status status="PASS" starttime="20231004 16:02:32.410" endtime="20231004 16:02:32.912"/>
+</kw>
+<status status="PASS" starttime="20231004 16:02:32.410" endtime="20231004 16:02:32.912"/>
+</kw>
+<status status="PASS" starttime="20231004 16:02:23.812" endtime="20231004 16:02:32.912"/>
+</kw>
+<status status="PASS" starttime="20231004 16:02:23.811" endtime="20231004 16:02:32.912"/>
+</test>
+<status status="PASS" starttime="20231004 16:02:23.725" endtime="20231004 16:02:32.913"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Demo">Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

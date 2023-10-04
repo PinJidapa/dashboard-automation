@@ -1,12 +1,10 @@
 *** Settings ***
-Library           SeleniumLibrary
+Resource    ../Resourses/Imports.robot
+Resource    ../Resourses/TestData/${env}/UserLogin.robot
+Resource    ../Keywords/LoginKeyword.robot
 
 *** Test Cases ***
-Open Browser
-    Open Browser    https://www.google.com    chrome
-    Maximize Browser Window
-    Set Selenium Speed    0.5s
-    Input Text    name=q    Hello World
-    Click Button    name=btnK
-    Capture Page Screenshot
-    Close Browser
+Test 01
+    Open Browser And Sign In With Username And Password
+    ...    ${clientAdminUsername1}
+    ...    ${clientAdminPassword1}
