@@ -16,8 +16,6 @@ ${downloadPdfTag}    //div[contains(text(),'client_admin-EKYC-download')]
   # Replace with the directory where the files are stored
 
 *** Keywords ***
-
-
 Click Download Pdf Button
     Wait Until Element Is Visible    ${caseDetailPdfBtn}
     Click Element    ${caseDetailPdfBtn}
