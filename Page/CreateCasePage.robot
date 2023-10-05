@@ -21,9 +21,17 @@ ${emailRadioBtn}    //input[@type='radio' and @name='proprietor.insureds.fields.
 ${phoneNoField}    //input[@name="proprietor.insureds.fields.0.phoneNumber"]
 ${emailField}     //input[@name="proprietor.insureds.fields.0.email"]
 ${confirmCreateCaseBtn}    //button[contains(text(),'send')]
-${cancelCaseBtn}    //button[contains(text(),'cancel')]   
+${cancelCaseBtn}    //button[contains(text(),'cancel')] 
+${confirmSentLinkBtn}      //*[@id="ok-button"]
+${createNewRadio}    //input[@class="min-w-3.5 align-top mx-auto mt-1" and @type="radio" and @value="createNew"]
+${reuseRadio}     //input[@class="min-w-3.5 align-top mx-auto mt-1" and @type="radio" and @value="reUse"]
+${redoRadio}    //input[@class="min-w-3.5 align-top mx-auto mt-1" and @type="radio" and @value="reDo"]
+${cancelRadio}     //input[@class="min-w-3.5 align-top mx-auto mt-1" and @type="radio" and @value="cancel"]
+${confirmInDuplicateBtn}    //*[@id="root"]/div/div/div[5]/div[1]/div/div[5]/button
 
 *** Keywords ***
+Verify Create Case Button
+    Wait Until Element Is Visible    ${createCaseBtn}    
 Click Create Case Button
     Run Until Keyword Succeed    Click Element    ${createCaseBtn}
     Run Until Keyword Succeed    Click Element    ${expandCaseTypeButton}
@@ -67,4 +75,18 @@ Click Cancel Create Case Button
 
 Click Confirm Create Case Button
     Wait Until Element Is Enabled    ${createCaseBtn}    
-    Run Until Keyword Succeed    Click Element    ${ConfirmcreateCaseBtn}
+    Run Until Keyword Succeed    Click Element    ${confirmcreateCaseBtn}
+    Run Until Keyword Succeed    Click Element    ${confirmSentLinkBtn}
+
+Check The Duplicate Pop Up If Yes Click Create New
+    Sleep    5s
+    ${element_duplicate_popup_exists}    Run Keyword And Return Status    Element Should Be Visible    ${cancelRadio}
+    Run Keyword If    ${element_duplicate_popup_exists}    Select Cancel On Duplicate Pop Up
+    ...    ELSE    Verify Create Case Button
+
+Select Cancel On Duplicate Pop Up
+    Wait Until Page Contains Element    ${cancelRadio}      
+    Click Element    ${cancelRadio} 
+    Wait Until Element Is Enabled    ${confirmInDuplicateBtn}
+    Click Element    ${confirmInDuplicateBtn}
+    

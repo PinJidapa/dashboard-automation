@@ -5,6 +5,7 @@ Resource    ../Keywords/LoginKeyword.robot
 Resource    ../Keywords/CommonKeyword.robot
 Resource    ../Keywords/CreateCaseKeyword.robot
 Resource    ../Resourses/Common/InsuredInfo.robot
+Resource    ../Page/CommonPage.robot
 
 *** Variables ***
 # ${Mrjuvenile}    //div[contains(text(),'Mr. (juvenile)')]
@@ -18,8 +19,8 @@ Test 01
     ...    ${clientAdminPassword1}
     Skip The Patch Pop Up
     Input DipChip Case Detail
-    ...    1100400984897
-    ...    1100400984897   
+    ...    7843275804481   
+    ...    7843275804481    
     ...    Mr. (juvenile)
     ...    จิดาภา
     ...    ชินวัด
@@ -30,4 +31,10 @@ Test 01
     Input Contact Information And Confirm Button  
     ...    Phone No.
     ...    0619926554
-
+    If Duplicate Then Click Create New
+    Filter The Case 
+    ...    1100400984897
+    ...    Choose Saturday, October 7th, 2023
+    ...    Choose Sunday, October 29th, 2023
+    ...    Choose Saturday, October 7th, 2023
+    ...    Choose Sunday, October 29th, 2023  
