@@ -6,10 +6,11 @@ Resource    ../Page/CommonPage.robot
 Skip The Patch Pop Up
     Check Path Note Pop Up
 
-Filter Only ID Card No And Status
-    [Arguments]    ${searchInfo}    ${status}
+Filter Only ID Card No And Status And Case Type
+    [Arguments]    ${searchInfo}    ${status}    ${caseType}   
     Filter By Search    ${searchInfo}
     Filter By Ekyc Status    ${status}
+    Filter By Case Type    ${caseType} 
     Click Confirm To Search
 
 Filter The Case

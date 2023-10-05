@@ -15,6 +15,7 @@ ${ekycStatus}    //body/div[@id='root']/div[1]/div[1]/div[3]/div[1]/div[1]/div[1
 ${inprogressStatus}    //div[@class='text-info w-full']//span[@class='capitalize font-semibold text-xs' and text()='in progress']
 ${firstCase}    //table[@class='table-compact w-full']//tbody/tr[1]
 ${verifyOption}    //li/div[contains(@class, 'text-success')]
+${caseTypeDropDown}    xpath://input[@placeholder="Choose case type"]
 
 *** Keywords ***
 Check Path Note Pop Up
@@ -57,9 +58,14 @@ Filter By Ekyc Status
     ...        Click Element    ${verifyOption}
     ...    ELSE    Click Element    //div[@class='text-info w-full']//span[@class='capitalize font-semibold text-xs' and text()='${status}']
 
+Filter By Case Type
+    [Arguments]    ${caseType}
+    Wait Until Element Is Visible    ${caseTypeDropDown}
+    Click Element    ${caseTypeDropDown}   
+    Click Element    //p[contains(text(),'${caseType}')] 
+
 Select The First Case
     Wait Until Element Is Visible    ${firstCase}
     Click Element    ${firstCase}
-
 
     

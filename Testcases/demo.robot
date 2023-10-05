@@ -4,7 +4,6 @@ Resource    ../Resourses/TestData/${env}/UserLogin.robot
 Resource    ../Keywords/LoginKeyword.robot
 Resource    ../Keywords/CommonKeyword.robot
 Resource    ../Keywords/CreateCaseKeyword.robot
-Resource    ../Resourses/Common/InsuredInfo.robot
 Resource    ../Page/CommonPage.robot
 Resource    ../Page/CaseDetailPage.robot
 Resource    ../Keywords/CaseDetailKeyword.robot
@@ -34,8 +33,9 @@ Test 01
     ...    Phone No.
     ...    0619926554
     If Duplicate Then Click Cancel
-    Filter Only ID Card No And Status
+    Filter Only ID Card No And Status And Case Type
     ...    2100300026833
     ...    verify
+    ...    Dip Chip
     Select The First Case
     Download Case Detail
