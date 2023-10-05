@@ -6,6 +6,7 @@ Resource    ../Keywords/CommonKeyword.robot
 Resource    ../Keywords/CreateCaseKeyword.robot
 Resource    ../Resourses/Common/InsuredInfo.robot
 Resource    ../Page/CommonPage.robot
+Resource    ../Page/CaseDetailPage.robot
 
 *** Variables ***
 # ${Mrjuvenile}    //div[contains(text(),'Mr. (juvenile)')]
@@ -31,10 +32,10 @@ Test 01
     Input Contact Information And Confirm Button  
     ...    Phone No.
     ...    0619926554
-    If Duplicate Then Click Create New
-    Filter The Case 
-    ...    1100400984897
-    ...    Choose Saturday, October 7th, 2023
-    ...    Choose Sunday, October 29th, 2023
-    ...    Choose Saturday, October 7th, 2023
-    ...    Choose Sunday, October 29th, 2023  
+    If Duplicate Then Click Cancel
+    Filter Only ID Card No And Status
+    ...    2100300026833
+    ...    verify
+    Select The First Case
+    # Click Download Pdf Button
+    Sleep    10s

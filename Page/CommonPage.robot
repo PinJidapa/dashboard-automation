@@ -14,6 +14,7 @@ ${searchFilterBtn}    //*[@id="dashboard-filter-search-button"]
 ${ekycStatus}    //body/div[@id='root']/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]
 ${inprogressStatus}    //div[@class='text-info w-full']//span[@class='capitalize font-semibold text-xs' and text()='in progress']
 ${firstCase}    //table[@class='table-compact w-full']//tbody/tr[1]
+${verifyOption}    //li/div[contains(@class, 'text-success')]
 
 *** Keywords ***
 Check Path Note Pop Up
@@ -52,9 +53,12 @@ Filter By Ekyc Status
     [Arguments]    ${status}
     Click Element    ${ekycStatus} 
     Wait Until Element Is Visible    ${inprogressStatus}
-    Click Element    //div[@class='text-info w-full']//span[@class='capitalize font-semibold text-xs' and text()='${status}']
+    IF    "${status}"== "verify"
+    ...        Click Element    ${verifyOption}
+    ...    ELSE    Click Element    //div[@class='text-info w-full']//span[@class='capitalize font-semibold text-xs' and text()='${status}']
 
 Select The First Case
+    Wait Until Element Is Visible    ${firstCase}
     Click Element    ${firstCase}
 
 
