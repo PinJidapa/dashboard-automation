@@ -11,6 +11,10 @@ ${searchField}    xpath://input[@placeholder="Type something"]
 ${createAtField}    //input[@id="verification.createdAt"]
 ${verifyAtField}    //input[@id="verification.verifiedAt"]
 ${searchFilterBtn}    //*[@id="dashboard-filter-search-button"]
+${ekycStatus}    //body/div[@id='root']/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]
+${inprogressStatus}    //div[@class='text-info w-full']//span[@class='capitalize font-semibold text-xs' and text()='in progress']
+${firstCase}    //table[@class='table-compact w-full']//tbody/tr[1]
+
 *** Keywords ***
 Check Path Note Pop Up
     Sleep    2s
@@ -43,3 +47,15 @@ Filter By Verifydate Date
 
 Click Confirm To Search
     Click Element    ${searchFilterBtn}   
+
+Filter By Ekyc Status
+    [Arguments]    ${status}
+    Click Element    ${ekycStatus} 
+    Wait Until Element Is Visible    ${inprogressStatus}
+    Click Element    //div[@class='text-info w-full']//span[@class='capitalize font-semibold text-xs' and text()='${status}']
+
+Select The First Case
+    Click Element    ${firstCase}
+
+
+    

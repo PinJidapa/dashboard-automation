@@ -79,7 +79,7 @@ Click Confirm Create Case Button
     Run Until Keyword Succeed    Click Element    ${confirmSentLinkBtn}
 
 Check The Duplicate Pop Up If Yes Click Create New
-    Sleep    5s
+    Sleep    2s
     ${element_duplicate_popup_exists}    Run Keyword And Return Status    Element Should Be Visible    ${cancelRadio}
     Run Keyword If    ${element_duplicate_popup_exists}    Select Cancel On Duplicate Pop Up
     ...    ELSE    Verify Create Case Button

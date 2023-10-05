@@ -22,5 +22,5 @@ Input Contact Information And Confirm Button
     Input Contact   ${contact}    ${contactInfo}
     Click Confirm Create Case Button
 
-If Duplicate Then Click Create New
+If Duplicate Then Click Cancel
     Check The Duplicate Pop Up If Yes Click Create New
