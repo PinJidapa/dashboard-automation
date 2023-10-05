@@ -1,4 +1,3 @@
-import pdfplumber
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
@@ -35,9 +34,9 @@ class Pdf2TextLibrary(object):
     def extract_text_from_pdf(self, pdf_path):
         return self.convert_pdf_to_txt(pdf_path)
     
-    def extract_text_from_pdf(self, pdf_path):
-        text = ''
-        with pdfplumber.open(pdf_path) as pdf:
-            for page in pdf.pages:
-                text += page.extract_text()
-        return text
+    # def extract_text_from_pdf(self, pdf_path):
+    #     text = ''
+    #     with pdfplumber.open(pdf_path) as pdf:
+    #         for page in pdf.pages:
+    #             text += page.extract_text()
+    #     return text

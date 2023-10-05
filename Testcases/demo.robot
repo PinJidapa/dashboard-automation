@@ -7,6 +7,7 @@ Resource    ../Keywords/CreateCaseKeyword.robot
 Resource    ../Resourses/Common/InsuredInfo.robot
 Resource    ../Page/CommonPage.robot
 Resource    ../Page/CaseDetailPage.robot
+Resource    ../Keywords/CaseDetailKeyword.robot
 
 *** Variables ***
 # ${Mrjuvenile}    //div[contains(text(),'Mr. (juvenile)')]
@@ -37,5 +38,4 @@ Test 01
     ...    2100300026833
     ...    verify
     Select The First Case
-    # Click Download Pdf Button
-    Sleep    10s
+    Download Case Detail

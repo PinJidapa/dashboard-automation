@@ -5,7 +5,6 @@ Library     pdfminer.pdfinterp
 Library     pdfminer.converter
 Library     pdfminer.layout
 Library     OperatingSystem
-Library     PyPDF2
 Library     ../Scripts/Pdf2TextLibrary.py
 Library     Pdf2TextLibrary
 
@@ -13,24 +12,51 @@ Library     Pdf2TextLibrary
 ${caseDetailPdfBtn}    //div[contains(text(),'Case detail.pdf')]
 ${caseDetailBtn}    //div[contains(text(),'Case detail.zip')]
 ${sendlinkHistoryBtn}    //div[contains(text(),'Send link history.csv')]
+${downloadPdfTag}    //div[contains(text(),'client_admin-EKYC-download')]
+  # Replace with the directory where the files are stored
 
 *** Keywords ***
 
 
-Example Test
-# open downloaded PDF and read data from PDF${file_name} List Files in directory ${EXECDIR}/Files/Downloads
-    ${pdf_path}    Set Variable    ${EXECDIR}/assets/1.pdf
-    ${extracted_text}    Extract Text From PDF    ${pdf_path}
-    Log    Extracted Text: ${extracted_text}
+Click Download Pdf Button
+    Wait Until Element Is Visible    ${caseDetailPdfBtn}
+    Click Element    ${caseDetailPdfBtn}
+    Wait Until Element Is Visible    ${downloadPdfTag}
+    Sleep    5s
 
-# Extract Text From PDF
-#     ${pdf_file}     Open PDF     ${EXECDIR}/assets/1.pdf
-#     ${text}         Get PDF Text     ${pdf_file}
-#     Log             ${text}
-#     Close PDF       ${pdf_file}
+Check The PDF File Is Exist
+    ${pdfFiles} =    List Files In Directory    ${EXECDIR}/assets/    pattern=*_Thai ID card.pdf
+    ${pdfFile} =    Get From List    ${pdfFiles}    0
+    Run Keyword And Ignore Error   Wait Until Keyword Succeeds    1x    5s    File Should Exist    ${pdfFile}   
 
-# Click Download Pdf Button
-#     # Wait Until Element Is Visible    ${caseDetailPdfBtn}
-#     # Click Element    ${caseDetailPdfBtn}
-#     ${pdf_content}    Read PDF Content    ${EXECDIR}/assets/1.pdf
-#     Log    PDF Content: ${pdf_content}
+Click Download Case Detail Button
+    Wait Until Element Is Visible    ${caseDetailBtn}
+    Click Element    ${caseDetailBtn}  
+    Sleep    5s
+
+Check The Case Detail Zip File Is Exist
+    ${summaryFiles} =    List Files In Directory    ${EXECDIR}/assets/    pattern=*_Summary.zip
+    ${summaryFile} =    Get From List    ${summaryFiles}    0
+    Run Keyword And Ignore Error    Wait Until Keyword Succeeds    1x    5s    File Should Exist    ${summaryFile}  
+    # FOR    ${retry}    IN RANGE    2
+    #     ${summaryFiles} =    List Files In Directory    ${EXECDIR}/assets/    pattern=*_Summary.zip
+    #     ${summaryFile} =    Get From List    ${summaryFiles}    0
+    #     Run Keyword And Ignore Error    File Should Exist    ${summaryFile}    10s
+    #     Exit For Loop If    '${summaryFile}' != ''
+    # END
+
+Click Download Send Link History Button
+    Wait Until Element Is Visible    ${sendlinkHistoryBtn}
+    Click Element     ${sendlinkHistoryBtn}
+    Sleep    5s
+
+Check The Send Link Log Is Exist
+    ${SendLinkLogFiles} =    List Files In Directory    ${EXECDIR}/assets/    pattern=*_Send_Link_Log.csv
+    ${SendLinkLogFile} =    Get From List    ${SendLinkLogFiles}   0
+    Run Keyword And Ignore Error    Wait Until Keyword Succeeds    1x    5s    File Should Exist    ${SendLinkLogFile}  
+    # FOR    ${retry}    IN RANGE    2
+    #     ${SendLinkLogFiles} =    List Files In Directory    ${EXECDIR}/assets/    pattern=*_Send_Link_Log.csv
+    #     ${SendLinkLogFile} =    Get From List    ${SendLinkLogFiles}    0
+    #     Run Keyword And Ignore Error    File Should Exist    ${SendLinkLogFile}    10s
+    #     Exit For Loop If    '${SendLinkLogFile}' != ''
+    # END
