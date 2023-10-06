@@ -19,23 +19,25 @@ Test 01
     ...    ${clientAdminUsername1}
     ...    ${clientAdminPassword1}
     Skip The Patch Pop Up
-    Input DipChip Case Detail
-    ...    7843275804481   
-    ...    7843275804481    
-    ...    Mr. (juvenile)
-    ...    จิดาภา
-    ...    ชินวัด
-    ...    โอบกิจกาจพล
-    ...    2
-    ...    April
-    ...    1999
-    Input Contact Information And Confirm Button  
-    ...    Phone No.
-    ...    0619926554
-    If Duplicate Then Click Cancel
-    Filter Only ID Card No And Status And Case Type
+    # Input DipChip Case Detail
+    # ...    7843275804481   
+    # ...    7843275804481    
+    # ...    Mr. (juvenile)
+    # ...    จิดาภา
+    # ...    ชินวัด
+    # ...    โอบกิจกาจพล
+    # ...    2
+    # ...    April
+    # ...    1999
+    # Input Contact Information And Confirm Button  
+    # ...    Phone No.
+    # ...    0619926554
+    # If Duplicate Then Click Cancel
+    Filter The Case By Search And Previous Month Create Date And Verify Date
     ...    2100300026833
-    ...    verify
-    ...    Dip Chip
+    ...    Choose Friday, September 1st, 2023
+    ...    Choose Friday, September 8th, 2023
+    ...    Choose Saturday, October 14th, 2023
+    ...    Choose Friday, October 13th, 2023
     Select The First Case
     Download Case Detail
