@@ -23,7 +23,8 @@ Click Download Pdf Button
     Sleep    5s
 
 Check The PDF File Is Exist
-    ${pdfFiles} =    List Files In Directory    ${EXECDIR}/assets/    pattern=*_Thai ID card.pdf
+    [Arguments]    ${caseType}
+    ${pdfFiles} =    List Files In Directory    ${EXECDIR}/assets/    pattern=*_${caseType}.pdf
     ${pdfFile} =    Get From List    ${pdfFiles}    0
     Run Keyword And Ignore Error   Wait Until Keyword Succeeds    1x    5s    File Should Exist    ${pdfFile}   
 
