@@ -7,6 +7,8 @@ Resource    ../Keywords/CreateCaseKeyword.robot
 Resource    ../Page/CommonPage.robot
 Resource    ../Page/CaseDetailPage.robot
 Resource    ../Keywords/CaseDetailKeyword.robot
+Resource    ../Keywords/CaseListKeyword.robot
+Resource    ../Page/CreateCasePage.robot
 
 *** Variables ***
 # ${Mrjuvenile}    //div[contains(text(),'Mr. (juvenile)')]
@@ -33,11 +35,11 @@ Test 01
     # ...    Phone No.
     # ...    0619926554
     # If Duplicate Then Click Cancel
-    Filter The Case By Search And Previous Month Create Date And Verify Date
-    ...    2100300026833
-    ...    Choose Friday, September 1st, 2023
-    ...    Choose Friday, September 8th, 2023
-    ...    Choose Saturday, October 14th, 2023
-    ...    Choose Friday, October 13th, 2023
-    Select The First Case
-    Download Case Detail
+    # Filter The Case By Case Type
+    # ...    Dip Chip
+    # Check The Content In Case List Table
+    # ...    Dip Chip
+    # Download Case Detail
+    Create Case By CSV
+    ...    5
+    Click Cancel On Duplicate Pop Up Create Case By CSV

@@ -6,15 +6,23 @@ Resource    ../Page/CommonPage.robot
 Skip The Patch Pop Up
     Check Path Note Pop Up
 
-Filter Only ID Card No And Status And Case Type
-    [Arguments]    ${searchInfo}    ${status}    ${caseType}   
+Filter The Case By ID Card No And Status
+    [Arguments]    ${searchInfo}    ${status}    ${caseType}
+    Click Filter Icon   
     Filter By Search    ${searchInfo}
     Filter By Ekyc Status    ${status}
     Filter By Case Type    ${caseType} 
     Click Confirm To Search
 
+Filter The Case By Case Type
+    [Arguments]    ${caseType}   
+    Click Filter Icon
+    Filter By Case Type    ${caseType} 
+    Click Confirm To Search
+
 Filter The Case By Search And Current Month Create Date And Current Verify Date
     [Arguments]    ${searchInfo}    ${createAtDate}    ${createEndDate}    ${verifyAtDate}    ${verifyEndDate}
+    Click Filter Icon
     Filter By Search    ${searchInfo}
     Filter By Created Date    ${createAtDate}    ${createEndDate}
     Filter By Verify Date    ${verifyAtDate}    ${verifyEndDate}   
@@ -23,6 +31,7 @@ Filter The Case By Search And Current Month Create Date And Current Verify Date
 
 Filter The Case By Search And Previous Month Create Date And Verify Date
     [Arguments]    ${searchInfo}    ${createAtDate}    ${createEndDate}    ${verifyAtDate}    ${verifyEndDate}
+    Click Filter Icon
     Filter By Search    ${searchInfo}
     Click At Filter To Open Calendar
     Click Previous Month Button

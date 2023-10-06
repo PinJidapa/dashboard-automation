@@ -28,13 +28,15 @@ Check Path Note Pop Up
     ...    ELSE IF    ${element_en_exists}    Run Until Keyword Succeed    Click Element    ${gotItButton}
     ...    ELSE    Verify The Search Button    
 
+Click Filter Icon
+    Wait Until Element Is Visible   ${filterButton}    10s
+    Click Element    ${filterButton}
+
 Verify The Search Button
     Wait Until Element Is Visible    ${filterButton}
-      
+
 Filter By Search
     [Arguments]    ${searchInfo}
-    Wait Until Element Is Visible   ${filterButton}    10s
-    Click Element    ${filterButton}    
     Input Text    ${searchField}    ${searchInfo}
 
 Click At Filter To Open Calendar

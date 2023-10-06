@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.9.17 on darwin)" generated="20231006 10:21:23.668" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.9.17 on darwin)" generated="20231006 23:39:02.958" rpa="false" schemaversion="4">
 <suite id="s1" name="Demo" source="/Users/pinpinn/dashboard-automation/Testcases/demo.robot">
-<test id="s1-t1" name="Test 01" line="17">
+<test id="s1-t1" name="Test 01" line="19">
 <kw name="Open Browser And Sign In With Username And Password" library="LoginKeyword">
 <arg>${clientAdminUsername1}</arg>
 <arg>${clientAdminPassword1}</arg>
@@ -10,42 +10,42 @@
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231006 10:21:23.841" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x102d8a610&gt;</msg>
-<status status="PASS" starttime="20231006 10:21:23.841" endtime="20231006 10:21:23.841"/>
+<msg timestamp="20231006 23:39:03.123" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x106580a30&gt;</msg>
+<status status="PASS" starttime="20231006 23:39:03.123" endtime="20231006 23:39:03.123"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-extensions</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20231006 10:21:23.841" endtime="20231006 10:21:23.841"/>
+<status status="PASS" starttime="20231006 23:39:03.123" endtime="20231006 23:39:03.124"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-popup-blocking</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20231006 10:21:23.841" endtime="20231006 10:21:23.841"/>
+<status status="PASS" starttime="20231006 23:39:03.124" endtime="20231006 23:39:03.124"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--start-maximized</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20231006 10:21:23.842" endtime="20231006 10:21:23.842"/>
+<status status="PASS" starttime="20231006 23:39:03.124" endtime="20231006 23:39:03.124"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${chrome_prefs}</var>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231006 10:21:23.842" level="INFO">${chrome_prefs} = {}</msg>
-<status status="PASS" starttime="20231006 10:21:23.842" endtime="20231006 10:21:23.842"/>
+<msg timestamp="20231006 23:39:03.124" level="INFO">${chrome_prefs} = {}</msg>
+<status status="PASS" starttime="20231006 23:39:03.124" endtime="20231006 23:39:03.124"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${chrome_prefs}</arg>
 <arg>download.default_directory</arg>
 <arg>${EXECDIR}/assets</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20231006 10:21:23.842" endtime="20231006 10:21:23.842"/>
+<status status="PASS" starttime="20231006 23:39:03.124" endtime="20231006 23:39:03.124"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${chrome_options}</arg>
@@ -53,25 +53,25 @@
 <arg>prefs</arg>
 <arg>${chrome_prefs}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20231006 10:21:23.842" endtime="20231006 10:21:23.842"/>
+<status status="PASS" starttime="20231006 23:39:03.124" endtime="20231006 23:39:03.124"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>browser=chrome</arg>
 <arg>options=${chrome_options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231006 10:21:23.843" level="INFO">Opening browser 'chrome' to base url 'https://portal-v2-qa.mac-non-prod.appmanteam.com/apps/case-keeper/cases'.</msg>
-<status status="PASS" starttime="20231006 10:21:23.842" endtime="20231006 10:21:27.418"/>
+<msg timestamp="20231006 23:39:03.125" level="INFO">Opening browser 'chrome' to base url 'https://portal-v2-qa.mac-non-prod.appmanteam.com/apps/case-keeper/cases'.</msg>
+<status status="PASS" starttime="20231006 23:39:03.124" endtime="20231006 23:39:06.265"/>
 </kw>
 <kw name="Set Window Position" library="SeleniumLibrary">
 <arg>0</arg>
 <arg>0</arg>
 <doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
-<status status="PASS" starttime="20231006 10:21:27.419" endtime="20231006 10:21:28.694"/>
+<status status="PASS" starttime="20231006 23:39:06.265" endtime="20231006 23:39:07.629"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20231006 10:21:28.694" endtime="20231006 10:21:29.136"/>
+<status status="PASS" starttime="20231006 23:39:07.629" endtime="20231006 23:39:08.063"/>
 </kw>
 <kw name="Enter Username" library="LoginPage">
 <arg>${username}</arg>
@@ -79,16 +79,16 @@
 <arg>${username}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231006 10:21:29.137" endtime="20231006 10:21:29.157"/>
+<status status="PASS" starttime="20231006 23:39:08.064" endtime="20231006 23:39:08.085"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${username}</arg>
 <arg>${value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:29.158" level="INFO">Typing text 'client_admin_1@mac-portal-v2.com' into text field '//input[@id='username']'.</msg>
-<status status="PASS" starttime="20231006 10:21:29.157" endtime="20231006 10:21:29.228"/>
+<msg timestamp="20231006 23:39:08.086" level="INFO">Typing text 'client_admin_1@mac-portal-v2.com' into text field '//input[@id='username']'.</msg>
+<status status="PASS" starttime="20231006 23:39:08.085" endtime="20231006 23:39:08.201"/>
 </kw>
-<status status="PASS" starttime="20231006 10:21:29.137" endtime="20231006 10:21:29.228"/>
+<status status="PASS" starttime="20231006 23:39:08.064" endtime="20231006 23:39:08.201"/>
 </kw>
 <kw name="Enter Password" library="LoginPage">
 <arg>${password}</arg>
@@ -96,16 +96,16 @@
 <arg>${password}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231006 10:21:29.228" endtime="20231006 10:21:29.238"/>
+<status status="PASS" starttime="20231006 23:39:08.201" endtime="20231006 23:39:08.211"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${password}</arg>
 <arg>${value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:29.238" level="INFO">Typing text '!QAZ2wsx' into text field '//input[@id='password']'.</msg>
-<status status="PASS" starttime="20231006 10:21:29.238" endtime="20231006 10:21:29.277"/>
+<msg timestamp="20231006 23:39:08.212" level="INFO">Typing text '!QAZ2wsx' into text field '//input[@id='password']'.</msg>
+<status status="PASS" starttime="20231006 23:39:08.211" endtime="20231006 23:39:08.247"/>
 </kw>
-<status status="PASS" starttime="20231006 10:21:29.228" endtime="20231006 10:21:29.277"/>
+<status status="PASS" starttime="20231006 23:39:08.201" endtime="20231006 23:39:08.247"/>
 </kw>
 <kw name="Click Sign In Button" library="LoginPage">
 <kw name="Run Until Keyword Succeed" library="Utils">
@@ -121,24 +121,24 @@
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${args}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:29.281" level="INFO">Clicking element '//input[@id='kc-login']'.</msg>
-<status status="PASS" starttime="20231006 10:21:29.281" endtime="20231006 10:21:29.620"/>
+<msg timestamp="20231006 23:39:08.250" level="INFO">Clicking element '//input[@id='kc-login']'.</msg>
+<status status="PASS" starttime="20231006 23:39:08.250" endtime="20231006 23:39:08.598"/>
 </kw>
-<status status="PASS" starttime="20231006 10:21:29.278" endtime="20231006 10:21:29.620"/>
+<status status="PASS" starttime="20231006 23:39:08.247" endtime="20231006 23:39:08.598"/>
 </kw>
-<status status="PASS" starttime="20231006 10:21:29.278" endtime="20231006 10:21:29.620"/>
+<status status="PASS" starttime="20231006 23:39:08.247" endtime="20231006 23:39:08.598"/>
 </kw>
-<status status="PASS" starttime="20231006 10:21:29.277" endtime="20231006 10:21:29.620"/>
+<status status="PASS" starttime="20231006 23:39:08.247" endtime="20231006 23:39:08.598"/>
 </kw>
-<status status="PASS" starttime="20231006 10:21:23.841" endtime="20231006 10:21:29.620"/>
+<status status="PASS" starttime="20231006 23:39:03.123" endtime="20231006 23:39:08.598"/>
 </kw>
 <kw name="Skip The Patch Pop Up" library="CommonKeyword">
 <kw name="Check Path Note Pop Up" library="CommonPage">
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231006 10:21:31.625" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231006 10:21:29.621" endtime="20231006 10:21:31.627"/>
+<msg timestamp="20231006 23:39:10.601" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231006 23:39:08.598" endtime="20231006 23:39:10.601"/>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${element_th_exists}</var>
@@ -148,12 +148,12 @@
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${pathNotePopUpTH}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20231006 10:21:31.884" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-446.png"&gt;&lt;img src="selenium-screenshot-446.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20231006 10:21:31.885" level="FAIL">Element with locator '//div[contains(text(),'ฟีเจอร์ใหม่')]' not found.</msg>
-<status status="FAIL" starttime="20231006 10:21:31.628" endtime="20231006 10:21:31.887"/>
+<msg timestamp="20231006 23:39:10.862" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-679.png"&gt;&lt;img src="selenium-screenshot-679.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231006 23:39:10.863" level="FAIL">Element with locator '//div[contains(text(),'ฟีเจอร์ใหม่')]' not found.</msg>
+<status status="FAIL" starttime="20231006 23:39:10.602" endtime="20231006 23:39:10.865"/>
 </kw>
-<msg timestamp="20231006 10:21:31.887" level="INFO">${element_th_exists} = False</msg>
-<status status="PASS" starttime="20231006 10:21:31.627" endtime="20231006 10:21:31.887"/>
+<msg timestamp="20231006 23:39:10.865" level="INFO">${element_th_exists} = False</msg>
+<status status="PASS" starttime="20231006 23:39:10.601" endtime="20231006 23:39:10.865"/>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${element_en_exists}</var>
@@ -163,11 +163,11 @@
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${pathNotePopUpEN}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20231006 10:21:31.895" level="INFO">Element '//div[contains(text(),'New update')]' is displayed.</msg>
-<status status="PASS" starttime="20231006 10:21:31.887" endtime="20231006 10:21:31.896"/>
+<msg timestamp="20231006 23:39:10.874" level="INFO">Element '//div[contains(text(),'New update')]' is displayed.</msg>
+<status status="PASS" starttime="20231006 23:39:10.865" endtime="20231006 23:39:10.874"/>
 </kw>
-<msg timestamp="20231006 10:21:31.896" level="INFO">${element_en_exists} = True</msg>
-<status status="PASS" starttime="20231006 10:21:31.887" endtime="20231006 10:21:31.896"/>
+<msg timestamp="20231006 23:39:10.874" level="INFO">${element_en_exists} = True</msg>
+<status status="PASS" starttime="20231006 23:39:10.865" endtime="20231006 23:39:10.874"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>${element_th_exists}</arg>
@@ -195,343 +195,196 @@
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${args}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:31.899" level="INFO">Clicking element '//button[@id='ok-button']'.</msg>
-<status status="PASS" starttime="20231006 10:21:31.899" endtime="20231006 10:21:31.918"/>
+<msg timestamp="20231006 23:39:10.879" level="INFO">Clicking element '//button[@id='ok-button']'.</msg>
+<status status="PASS" starttime="20231006 23:39:10.878" endtime="20231006 23:39:10.899"/>
 </kw>
-<status status="PASS" starttime="20231006 10:21:31.896" endtime="20231006 10:21:31.918"/>
+<status status="PASS" starttime="20231006 23:39:10.875" endtime="20231006 23:39:10.899"/>
 </kw>
-<status status="PASS" starttime="20231006 10:21:31.896" endtime="20231006 10:21:31.918"/>
+<status status="PASS" starttime="20231006 23:39:10.874" endtime="20231006 23:39:10.899"/>
 </kw>
-<status status="PASS" starttime="20231006 10:21:31.896" endtime="20231006 10:21:31.918"/>
+<status status="PASS" starttime="20231006 23:39:10.874" endtime="20231006 23:39:10.899"/>
 </kw>
-<status status="PASS" starttime="20231006 10:21:29.620" endtime="20231006 10:21:31.918"/>
+<status status="PASS" starttime="20231006 23:39:08.598" endtime="20231006 23:39:10.899"/>
 </kw>
-<status status="PASS" starttime="20231006 10:21:29.620" endtime="20231006 10:21:31.918"/>
+<status status="PASS" starttime="20231006 23:39:08.598" endtime="20231006 23:39:10.899"/>
 </kw>
-<kw name="Filter The Case By Search And Previous Month Create Date And Verify Date" library="CommonKeyword">
-<arg>2100300026833</arg>
-<arg>Choose Friday, September 1st, 2023</arg>
-<arg>Choose Friday, September 8th, 2023</arg>
-<arg>Choose Saturday, October 14th, 2023</arg>
-<arg>Choose Friday, October 13th, 2023</arg>
-<kw name="Filter By Search" library="CommonPage">
-<arg>${searchInfo}</arg>
+<kw name="Create Case By CSV" library="CreateCaseKeyword">
+<arg>5</arg>
+<kw name="Click Create Case By CSV" library="CreateCasePage">
+<arg>${validCaseNo}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${filterButton}</arg>
+<arg>${dashBoardCSVMenuBtn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231006 23:39:10.899" endtime="20231006 23:39:10.909"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dashBoardCSVMenuBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231006 23:39:10.910" level="INFO">Clicking element '//button[@id='dashboard-csv-menu-button']'.</msg>
+<status status="PASS" starttime="20231006 23:39:10.909" endtime="20231006 23:39:11.747"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${importCsvBtn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231006 23:39:11.748" endtime="20231006 23:39:11.763"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${importCsvBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231006 23:39:11.764" level="INFO">Clicking element '//button[contains(text(), "Import client’s template")]'.</msg>
+<status status="PASS" starttime="20231006 23:39:11.764" endtime="20231006 23:39:11.786"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>${uploadCsvFileInput}</arg>
+<arg>${EXECDIR}/Resourses/TestData/csv/test1.csv</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20231006 23:39:11.786" level="INFO">Sending /Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv to browser.</msg>
+<status status="PASS" starttime="20231006 23:39:11.786" endtime="20231006 23:39:12.900"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${confirmWording}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231006 23:39:12.900" endtime="20231006 23:39:12.933"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${confirmWording}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231006 23:39:12.947" level="INFO">${text} = There are 5 valid cases. 
+Do you wish to proceed and import all of those successful case?</msg>
+<status status="PASS" starttime="20231006 23:39:12.934" endtime="20231006 23:39:12.947"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231006 23:39:12.947" endtime="20231006 23:39:12.947"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>There are ${validCaseNo} valid cases.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231006 23:39:12.947" endtime="20231006 23:39:12.947"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>Do you wish to proceed and import all of those successful case?</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231006 23:39:12.948" endtime="20231006 23:39:12.948"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231006 23:39:14.949" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231006 23:39:12.948" endtime="20231006 23:39:14.950"/>
+</kw>
+<status status="PASS" starttime="20231006 23:39:10.899" endtime="20231006 23:39:14.951"/>
+</kw>
+<kw name="Click Confirm To Import Case By CSV" library="CreateCasePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${confirmImportCsv}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231006 23:39:14.953" endtime="20231006 23:39:14.978"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${confirmImportCsv}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231006 23:39:14.979" level="INFO">Clicking element '//button[contains(text(),'confirm')]'.</msg>
+<status status="PASS" starttime="20231006 23:39:14.978" endtime="20231006 23:39:15.009"/>
+</kw>
+<status status="PASS" starttime="20231006 23:39:14.951" endtime="20231006 23:39:15.009"/>
+</kw>
+<status status="PASS" starttime="20231006 23:39:10.899" endtime="20231006 23:39:15.009"/>
+</kw>
+<kw name="Click Cancel On Duplicate Pop Up Create Case By CSV" library="CreateCasePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${cancelRadio}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231006 23:39:15.010" endtime="20231006 23:39:15.445"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{cancel_radio_buttons}</var>
+<arg>${cancelRadio}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231006 23:39:15.450" level="INFO">@{cancel_radio_buttons} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="a493acb0fd525e0d4689905b924c3cab", element="7BFA31FFA051D2C1664EB6D607DD7E08_element_130")&gt; | &lt;selenium.webdriver.remote.webelement.WebElem...</msg>
+<status status="PASS" starttime="20231006 23:39:15.445" endtime="20231006 23:39:15.450"/>
+</kw>
+<for flavor="IN">
+<var>${radio_button}</var>
+<value>@{cancel_radio_buttons}</value>
+<iter>
+<var name="${radio_button}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a493acb0fd525e0d4689905b924c3cab", element="7BFA31FFA051D2C1664EB6D607DD7E08_element_130")&gt;</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${radio_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231006 23:39:15.451" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="a493acb0fd525e0d4689905b924c3cab", element="7BFA31FFA051D2C1664EB6D607DD7E08_element_130")&gt;'.</msg>
+<status status="PASS" starttime="20231006 23:39:15.450" endtime="20231006 23:39:15.474"/>
+</kw>
+<status status="PASS" starttime="20231006 23:39:15.450" endtime="20231006 23:39:15.474"/>
+</iter>
+<iter>
+<var name="${radio_button}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a493acb0fd525e0d4689905b924c3cab", element="7BFA31FFA051D2C1664EB6D607DD7E08_element_134")&gt;</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${radio_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231006 23:39:15.475" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="a493acb0fd525e0d4689905b924c3cab", element="7BFA31FFA051D2C1664EB6D607DD7E08_element_134")&gt;'.</msg>
+<status status="PASS" starttime="20231006 23:39:15.474" endtime="20231006 23:39:15.490"/>
+</kw>
+<status status="PASS" starttime="20231006 23:39:15.474" endtime="20231006 23:39:15.490"/>
+</iter>
+<iter>
+<var name="${radio_button}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a493acb0fd525e0d4689905b924c3cab", element="7BFA31FFA051D2C1664EB6D607DD7E08_element_138")&gt;</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${radio_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231006 23:39:15.490" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="a493acb0fd525e0d4689905b924c3cab", element="7BFA31FFA051D2C1664EB6D607DD7E08_element_138")&gt;'.</msg>
+<status status="PASS" starttime="20231006 23:39:15.490" endtime="20231006 23:39:15.503"/>
+</kw>
+<status status="PASS" starttime="20231006 23:39:15.490" endtime="20231006 23:39:15.503"/>
+</iter>
+<iter>
+<var name="${radio_button}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a493acb0fd525e0d4689905b924c3cab", element="7BFA31FFA051D2C1664EB6D607DD7E08_element_142")&gt;</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${radio_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231006 23:39:15.503" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="a493acb0fd525e0d4689905b924c3cab", element="7BFA31FFA051D2C1664EB6D607DD7E08_element_142")&gt;'.</msg>
+<status status="PASS" starttime="20231006 23:39:15.503" endtime="20231006 23:39:15.517"/>
+</kw>
+<status status="PASS" starttime="20231006 23:39:15.503" endtime="20231006 23:39:15.517"/>
+</iter>
+<iter>
+<var name="${radio_button}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a493acb0fd525e0d4689905b924c3cab", element="7BFA31FFA051D2C1664EB6D607DD7E08_element_146")&gt;</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${radio_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231006 23:39:15.517" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="a493acb0fd525e0d4689905b924c3cab", element="7BFA31FFA051D2C1664EB6D607DD7E08_element_146")&gt;'.</msg>
+<status status="PASS" starttime="20231006 23:39:15.517" endtime="20231006 23:39:15.533"/>
+</kw>
+<status status="PASS" starttime="20231006 23:39:15.517" endtime="20231006 23:39:15.533"/>
+</iter>
+<status status="PASS" starttime="20231006 23:39:15.450" endtime="20231006 23:39:15.533"/>
+</for>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${confirmImportCsv}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231006 23:39:15.533" endtime="20231006 23:39:15.546"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${confirmImportCsv}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231006 23:39:15.546" level="INFO">Clicking element '//button[contains(text(),'confirm')]'.</msg>
+<status status="PASS" starttime="20231006 23:39:15.546" endtime="20231006 23:39:15.576"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
 <arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231006 10:21:31.918" endtime="20231006 10:21:31.928"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${filterButton}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:31.928" level="INFO">Clicking element '//body/div[@id='root']/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]/div[1]'.</msg>
-<status status="PASS" starttime="20231006 10:21:31.928" endtime="20231006 10:21:32.782"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchField}</arg>
-<arg>${searchInfo}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:32.783" level="INFO">Typing text '2100300026833' into text field 'xpath://input[@placeholder="Type something"]'.</msg>
-<status status="PASS" starttime="20231006 10:21:32.782" endtime="20231006 10:21:32.935"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:31.918" endtime="20231006 10:21:32.935"/>
-</kw>
-<kw name="Click At Filter To Open Calendar" library="CommonPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${createAtField}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:32.936" level="INFO">Clicking element '//input[@id="verification.createdAt"]'.</msg>
-<status status="PASS" starttime="20231006 10:21:32.935" endtime="20231006 10:21:32.972"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:32.935" endtime="20231006 10:21:32.972"/>
-</kw>
-<kw name="Click Previous Month Button" library="CommonPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${previousMonthBtn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:32.973" level="INFO">Clicking element 'xpath=//button[@aria-label="Previous Month"]'.</msg>
-<status status="PASS" starttime="20231006 10:21:32.972" endtime="20231006 10:21:32.996"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:32.972" endtime="20231006 10:21:32.996"/>
-</kw>
-<kw name="Filter By Created Date" library="CommonPage">
-<arg>${createAtDate}</arg>
-<arg>${createEndDate}</arg>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//div[@aria-label="${createAtDate}"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:32.996" level="INFO">Clicking element 'xpath=//div[@aria-label="Choose Friday, September 1st, 2023"]'.</msg>
-<status status="PASS" starttime="20231006 10:21:32.996" endtime="20231006 10:21:33.032"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//div[@aria-label="${createEndDate}"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:33.033" level="INFO">Clicking element 'xpath=//div[@aria-label="Choose Friday, September 8th, 2023"]'.</msg>
-<status status="PASS" starttime="20231006 10:21:33.032" endtime="20231006 10:21:33.061"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:32.996" endtime="20231006 10:21:33.061"/>
-</kw>
-<kw name="Click At Filter To Open Calendar" library="CommonPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${createAtField}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:33.062" level="INFO">Clicking element '//input[@id="verification.createdAt"]'.</msg>
-<status status="PASS" starttime="20231006 10:21:33.061" endtime="20231006 10:21:33.089"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:33.061" endtime="20231006 10:21:33.089"/>
-</kw>
-<kw name="Filter By Verify Date" library="CommonPage">
-<arg>${verifyAtDate}</arg>
-<arg>${verifyEndDate}</arg>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//div[@aria-label="${verifyAtDate}"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:33.090" level="INFO">Clicking element 'xpath=//div[@aria-label="Choose Saturday, October 14th, 2023"]'.</msg>
-<status status="PASS" starttime="20231006 10:21:33.090" endtime="20231006 10:21:33.121"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//div[@aria-label="${verifyEndDate}"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:33.121" level="INFO">Clicking element 'xpath=//div[@aria-label="Choose Friday, October 13th, 2023"]'.</msg>
-<status status="PASS" starttime="20231006 10:21:33.121" endtime="20231006 10:21:33.151"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:33.089" endtime="20231006 10:21:33.151"/>
-</kw>
-<kw name="Click Confirm To Search" library="CommonPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${searchFilterBtn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:33.151" level="INFO">Clicking element '//*[@id="dashboard-filter-search-button"]'.</msg>
-<status status="PASS" starttime="20231006 10:21:33.151" endtime="20231006 10:21:33.183"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:33.151" endtime="20231006 10:21:33.183"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:31.918" endtime="20231006 10:21:33.183"/>
-</kw>
-<kw name="Select The First Case" library="CommonPage">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${firstCase}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231006 10:21:33.184" endtime="20231006 10:21:33.196"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${firstCase}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:33.196" level="INFO">Clicking element '//table[@class='table-compact w-full']//tbody/tr[1]'.</msg>
-<status status="PASS" starttime="20231006 10:21:33.196" endtime="20231006 10:21:33.245"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:33.183" endtime="20231006 10:21:33.245"/>
-</kw>
-<kw name="Download Case Detail" library="CaseDetailKeyword">
-<kw name="Click Download Pdf Button" library="CaseDetailPage">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${caseDetailPdfBtn}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231006 10:21:33.245" endtime="20231006 10:21:33.257"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${caseDetailPdfBtn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:33.257" level="INFO">Clicking element '//div[contains(text(),'Case detail.pdf')]'.</msg>
-<status status="PASS" starttime="20231006 10:21:33.257" endtime="20231006 10:21:33.275"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${downloadPdfTag}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231006 10:21:33.275" endtime="20231006 10:21:33.285"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231006 10:21:38.286" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20231006 10:21:33.285" endtime="20231006 10:21:38.286"/>
+<msg timestamp="20231006 23:39:25.579" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20231006 23:39:15.576" endtime="20231006 23:39:25.580"/>
 </kw>
-<status status="PASS" starttime="20231006 10:21:33.245" endtime="20231006 10:21:38.287"/>
+<status status="PASS" starttime="20231006 23:39:15.009" endtime="20231006 23:39:25.580"/>
 </kw>
-<kw name="Check The PDF File Is Exist" library="CaseDetailPage">
-<kw name="List Files In Directory" library="OperatingSystem">
-<var>${pdfFiles}</var>
-<arg>${EXECDIR}/assets/</arg>
-<arg>pattern=*_Thai ID card.pdf</arg>
-<doc>Wrapper for `List Directory` that returns only files.</doc>
-<msg timestamp="20231006 10:21:38.289" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/pinpinn/dashboard-automation/assets"&gt;/Users/pinpinn/dashboard-automation/assets&lt;/a&gt;'.</msg>
-<msg timestamp="20231006 10:21:38.290" level="INFO">1 file:
-2100300026833_fb335_[e-KYC]_20231006_10-21-33_Thai ID card.pdf</msg>
-<msg timestamp="20231006 10:21:38.290" level="INFO">${pdfFiles} = ['2100300026833_fb335_[e-KYC]_20231006_10-21-33_Thai ID card.pdf']</msg>
-<status status="PASS" starttime="20231006 10:21:38.288" endtime="20231006 10:21:38.290"/>
-</kw>
-<kw name="Get From List" library="Collections">
-<var>${pdfFile}</var>
-<arg>${pdfFiles}</arg>
-<arg>0</arg>
-<doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20231006 10:21:38.291" level="INFO">${pdfFile} = 2100300026833_fb335_[e-KYC]_20231006_10-21-33_Thai ID card.pdf</msg>
-<status status="PASS" starttime="20231006 10:21:38.290" endtime="20231006 10:21:38.291"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" library="BuiltIn">
-<arg>Wait Until Keyword Succeeds</arg>
-<arg>1x</arg>
-<arg>5s</arg>
-<arg>File Should Exist</arg>
-<arg>${pdfFile}</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
-<arg>1x</arg>
-<arg>5s</arg>
-<arg>File Should Exist</arg>
-<arg>${pdfFile}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<kw name="File Should Exist" library="OperatingSystem">
-<arg>${pdfFile}</arg>
-<doc>Fails unless the given ``path`` points to an existing file.</doc>
-<msg timestamp="20231006 10:21:38.292" level="FAIL">error: bad character range e-K at position 25</msg>
-<status status="FAIL" starttime="20231006 10:21:38.291" endtime="20231006 10:21:38.296"/>
-</kw>
-<msg timestamp="20231006 10:21:38.296" level="FAIL">Keyword 'File Should Exist' failed after retrying 1 time. The last error was: error: bad character range e-K at position 25</msg>
-<status status="FAIL" starttime="20231006 10:21:38.291" endtime="20231006 10:21:38.296"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:38.291" endtime="20231006 10:21:38.296"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:38.287" endtime="20231006 10:21:38.296"/>
-</kw>
-<kw name="Click Download Case Detail Button" library="CaseDetailPage">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${caseDetailBtn}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231006 10:21:38.297" endtime="20231006 10:21:38.318"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${caseDetailBtn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:38.319" level="INFO">Clicking element '//div[contains(text(),'Case detail.zip')]'.</msg>
-<status status="PASS" starttime="20231006 10:21:38.318" endtime="20231006 10:21:38.343"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231006 10:21:43.346" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20231006 10:21:38.343" endtime="20231006 10:21:43.346"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:38.296" endtime="20231006 10:21:43.346"/>
-</kw>
-<kw name="Check The Case Detail Zip File Is Exist" library="CaseDetailPage">
-<kw name="List Files In Directory" library="OperatingSystem">
-<var>${summaryFiles}</var>
-<arg>${EXECDIR}/assets/</arg>
-<arg>pattern=*_Summary.zip</arg>
-<doc>Wrapper for `List Directory` that returns only files.</doc>
-<msg timestamp="20231006 10:21:43.347" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/pinpinn/dashboard-automation/assets"&gt;/Users/pinpinn/dashboard-automation/assets&lt;/a&gt;'.</msg>
-<msg timestamp="20231006 10:21:43.348" level="INFO">1 file:
-20231006_890383cf_Summary.zip</msg>
-<msg timestamp="20231006 10:21:43.348" level="INFO">${summaryFiles} = ['20231006_890383cf_Summary.zip']</msg>
-<status status="PASS" starttime="20231006 10:21:43.347" endtime="20231006 10:21:43.348"/>
-</kw>
-<kw name="Get From List" library="Collections">
-<var>${summaryFile}</var>
-<arg>${summaryFiles}</arg>
-<arg>0</arg>
-<doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20231006 10:21:43.348" level="INFO">${summaryFile} = 20231006_890383cf_Summary.zip</msg>
-<status status="PASS" starttime="20231006 10:21:43.348" endtime="20231006 10:21:43.348"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" library="BuiltIn">
-<arg>Wait Until Keyword Succeeds</arg>
-<arg>1x</arg>
-<arg>5s</arg>
-<arg>File Should Exist</arg>
-<arg>${summaryFile}</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
-<arg>1x</arg>
-<arg>5s</arg>
-<arg>File Should Exist</arg>
-<arg>${summaryFile}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<kw name="File Should Exist" library="OperatingSystem">
-<arg>${summaryFile}</arg>
-<doc>Fails unless the given ``path`` points to an existing file.</doc>
-<msg timestamp="20231006 10:21:43.350" level="FAIL">File '/Users/pinpinn/dashboard-automation/20231006_890383cf_Summary.zip' does not exist.</msg>
-<status status="FAIL" starttime="20231006 10:21:43.349" endtime="20231006 10:21:43.350"/>
-</kw>
-<msg timestamp="20231006 10:21:43.350" level="FAIL">Keyword 'File Should Exist' failed after retrying 1 time. The last error was: File '/Users/pinpinn/dashboard-automation/20231006_890383cf_Summary.zip' does not exist.</msg>
-<status status="FAIL" starttime="20231006 10:21:43.349" endtime="20231006 10:21:43.350"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:43.349" endtime="20231006 10:21:43.350"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:43.346" endtime="20231006 10:21:43.350"/>
-</kw>
-<kw name="Click Download Send Link History Button" library="CaseDetailPage">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${sendlinkHistoryBtn}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231006 10:21:43.351" endtime="20231006 10:21:43.369"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${sendlinkHistoryBtn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231006 10:21:43.369" level="INFO">Clicking element '//div[contains(text(),'Send link history.csv')]'.</msg>
-<status status="PASS" starttime="20231006 10:21:43.369" endtime="20231006 10:21:43.390"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231006 10:21:48.392" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20231006 10:21:43.390" endtime="20231006 10:21:48.392"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:43.350" endtime="20231006 10:21:48.393"/>
-</kw>
-<kw name="Check The Send Link Log Is Exist" library="CaseDetailPage">
-<kw name="List Files In Directory" library="OperatingSystem">
-<var>${SendLinkLogFiles}</var>
-<arg>${EXECDIR}/assets/</arg>
-<arg>pattern=*_Send_Link_Log.csv</arg>
-<doc>Wrapper for `List Directory` that returns only files.</doc>
-<msg timestamp="20231006 10:21:48.394" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/pinpinn/dashboard-automation/assets"&gt;/Users/pinpinn/dashboard-automation/assets&lt;/a&gt;'.</msg>
-<msg timestamp="20231006 10:21:48.397" level="INFO">1 file:
-20231006_Send_Link_Log.csv</msg>
-<msg timestamp="20231006 10:21:48.397" level="INFO">${SendLinkLogFiles} = ['20231006_Send_Link_Log.csv']</msg>
-<status status="PASS" starttime="20231006 10:21:48.393" endtime="20231006 10:21:48.397"/>
-</kw>
-<kw name="Get From List" library="Collections">
-<var>${SendLinkLogFile}</var>
-<arg>${SendLinkLogFiles}</arg>
-<arg>0</arg>
-<doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20231006 10:21:48.398" level="INFO">${SendLinkLogFile} = 20231006_Send_Link_Log.csv</msg>
-<status status="PASS" starttime="20231006 10:21:48.397" endtime="20231006 10:21:48.398"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" library="BuiltIn">
-<arg>Wait Until Keyword Succeeds</arg>
-<arg>1x</arg>
-<arg>5s</arg>
-<arg>File Should Exist</arg>
-<arg>${SendLinkLogFile}</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
-<arg>1x</arg>
-<arg>5s</arg>
-<arg>File Should Exist</arg>
-<arg>${SendLinkLogFile}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<kw name="File Should Exist" library="OperatingSystem">
-<arg>${SendLinkLogFile}</arg>
-<doc>Fails unless the given ``path`` points to an existing file.</doc>
-<msg timestamp="20231006 10:21:48.399" level="FAIL">File '/Users/pinpinn/dashboard-automation/20231006_Send_Link_Log.csv' does not exist.</msg>
-<status status="FAIL" starttime="20231006 10:21:48.398" endtime="20231006 10:21:48.399"/>
-</kw>
-<msg timestamp="20231006 10:21:48.399" level="FAIL">Keyword 'File Should Exist' failed after retrying 1 time. The last error was: File '/Users/pinpinn/dashboard-automation/20231006_Send_Link_Log.csv' does not exist.</msg>
-<status status="FAIL" starttime="20231006 10:21:48.398" endtime="20231006 10:21:48.399"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:48.398" endtime="20231006 10:21:48.399"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:48.393" endtime="20231006 10:21:48.399"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:33.245" endtime="20231006 10:21:48.399"/>
-</kw>
-<status status="PASS" starttime="20231006 10:21:23.840" endtime="20231006 10:21:48.400"/>
+<status status="PASS" starttime="20231006 23:39:03.123" endtime="20231006 23:39:25.581"/>
 </test>
-<status status="PASS" starttime="20231006 10:21:23.669" endtime="20231006 10:21:48.400"/>
+<status status="PASS" starttime="20231006 23:39:02.959" endtime="20231006 23:39:25.584"/>
 </suite>
 <statistics>
 <total>
