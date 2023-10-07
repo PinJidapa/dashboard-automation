@@ -4,15 +4,11 @@ Resource    ../Resourses/TestData/${env}/UserLogin.robot
 Resource    ../Keywords/LoginKeyword.robot
 Resource    ../Keywords/CommonKeyword.robot
 Resource    ../Keywords/CreateCaseKeyword.robot
-Resource    ../Resourses/Common/InsuredInfo.robot
 Resource    ../Page/CommonPage.robot
 Resource    ../Page/CaseDetailPage.robot
 Resource    ../Keywords/CaseDetailKeyword.robot
-
-*** Variables ***
-# ${Mrjuvenile}    //div[contains(text(),'Mr. (juvenile)')]
-# ${Msjuvenile}     //div[contains(text(),'Ms. (juvenile)')]
-# ${title}    //div[contains(text(),'${titleName}')]
+Resource    ../Keywords/CaseListKeyword.robot
+Resource    ../Page/CreateCasePage.robot
 
 *** Test Cases ***
 Test 01
@@ -34,8 +30,17 @@ Test 01
     ...    Phone No.
     ...    0619926554
     If Duplicate Then Click Cancel
-    Filter Only ID Card No And Status
-    ...    2100300026833
-    ...    verify
+    # Check The Case Detail After Create The Case
+    # ...    จิดาภา
+    # ...    ชินวัด
+    # ...    โอบกิจกาจพล
+    Filter The Case By Case Type
+    ...    Dip Chip
+    Check The Content In Case List Table
+    ...    Dip Chip
+    Create Case By CSV
+    ...    5
+    Click Cancel On Duplicate Pop Up Create Case By CSV
     Select The First Case
     Download Case Detail
+    ...    Dip Chip

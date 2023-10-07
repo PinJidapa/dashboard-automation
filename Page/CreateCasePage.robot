@@ -1,7 +1,8 @@
 *** Settings ***
-Library           SeleniumLibrary
+Library     SeleniumLibrary
 Resource    ../Keywords/Utils.robot
 Library     OperatingSystem
+Library    Process
 
 *** Variables ***
 ${createCaseBtn}    //button[@id='dashboard-create-link-button']
@@ -28,6 +29,12 @@ ${reuseRadio}     //input[@class="min-w-3.5 align-top mx-auto mt-1" and @type="r
 ${redoRadio}    //input[@class="min-w-3.5 align-top mx-auto mt-1" and @type="radio" and @value="reDo"]
 ${cancelRadio}     //input[@class="min-w-3.5 align-top mx-auto mt-1" and @type="radio" and @value="cancel"]
 ${confirmInDuplicateBtn}    //*[@id="root"]/div/div/div[5]/div[1]/div/div[5]/button
+${dashBoardCSVMenuBtn}    //button[@id='dashboard-csv-menu-button']
+${uploadCsvFileInput}    //input[@id='file-input']
+${importCsvBtn}    //button[contains(text(), "Import client’s template")]
+${confirmWording}    //p[@class="text-xs my-4 whitespace-pre text-left"]    
+${confirmImportCsv}    //button[contains(text(),'confirm')]
+${table_locator}    //table[@class='table-compact w-full']
 
 *** Keywords ***
 Verify Create Case Button
@@ -78,7 +85,7 @@ Click Confirm Create Case Button
     Run Until Keyword Succeed    Click Element    ${confirmcreateCaseBtn}
     Run Until Keyword Succeed    Click Element    ${confirmSentLinkBtn}
 
-Check The Duplicate Pop Up If Yes Click Create New
+Check The Duplicate Pop Up If Yes Click Cancel
     Sleep    2s
     ${element_duplicate_popup_exists}    Run Keyword And Return Status    Element Should Be Visible    ${cancelRadio}
     Run Keyword If    ${element_duplicate_popup_exists}    Select Cancel On Duplicate Pop Up
@@ -89,4 +96,61 @@ Select Cancel On Duplicate Pop Up
     Click Element    ${cancelRadio} 
     Wait Until Element Is Enabled    ${confirmInDuplicateBtn}
     Click Element    ${confirmInDuplicateBtn}
+
+Check The Case Detail After Create The Case
+    [Arguments]    ${firstName}    ${middleName}    ${lastName} 
+    ${NameRowOne}    Set Variable    //tbody/tr[1]/td[2]
+    Wait Until Element Is Visible    ${NameRowOne}
+    Should Contain    ${NameRowOne}    ${firstName}     
+    Should Contain    ${NameRowOne}    ${middleName}
+    Should Contain    ${NameRowOne}    ${lastName}
+
+Click Create Case By CSV
+    [Arguments]    ${validCaseNo}
+    Wait Until Element Is Visible   ${dashBoardCSVMenuBtn}
+    Click Element    ${dashBoardCSVMenuBtn}   
+
+    Wait Until Element Is Visible    ${importCsvBtn}
+    Click Element    ${importCsvBtn}
+    Choose File    ${uploadCsvFileInput}    ${EXECDIR}/Resourses/TestData/csv/test1.csv
     
+    Wait Until Element Is Visible    ${confirmWording}
+    ${text} =    Get Text    ${confirmWording}
+    Log To Console    ${text}    
+    Should Contain    ${text}    There are ${validCaseNo} valid cases.
+    Should Contain    ${text}    Do you wish to proceed and import all of those successful case?
+    Sleep    2s
+
+Click Confirm To Import Case By CSV
+    Wait Until Element Is Visible    ${confirmImportCsv}
+    Click Element    ${confirmImportCsv}
+
+
+Check The Duplicate Pop Up For Create Case By CSV If Yes Click Cancel
+    Sleep    2s
+    ${element_duplicate_popup_exists}    Run Keyword And Return Status    Element Should Be Visible    ${cancelRadio}
+    Run Keyword If    ${element_duplicate_popup_exists}    Click Cancel On Duplicate Pop Up Create Case By CSV
+    ...    ELSE    Verify Create Case Button
+
+
+Click Cancel On Duplicate Pop Up Create Case By CSV
+    Wait Until Element Is Visible   ${cancelRadio}
+    @{cancel_radio_buttons} =    Get WebElements    ${cancelRadio}
+    FOR    ${radio_button}    IN    @{cancel_radio_buttons}
+        Click Element    ${radio_button}
+    END 
+    Wait Until Element Is Enabled    ${confirmImportCsv}
+    Click Element    ${confirmImportCsv}
+
+
+
+    # ${result} =    Run Process    osascript    /Users/pinpinn/dashboard-automation/Scripts/close_finder_dialog.scpt
+    # Should Be Equal    ${result.rc}    0
+    
+    # Run Process    osascript    ../Scripts/close_finder_dialog.scpt
+    # Log To Console    AppleScript Execution Result: ${result.stdout} (Exit Code: ${result.rc})
+    # Sleep    2s
+    # Choose File    ${uploadCsvFileInput}    ${EXECDIR}/Resourses/TestData/csv/test1.csv
+    # ${fileInput} =    Execute JavaScript    return document.querySelector("input[type='file']")
+    # Log To Console   ${fileInput} 
+    # Choose File    ${fileInput}    ${EXECDIR}/Resourses/TestData/csv/test1.csv
