@@ -3,6 +3,7 @@ Library     SeleniumLibrary
 Resource    ../Keywords/Utils.robot
 Library     OperatingSystem
 Library    Process
+Library    RPA.CSV
 
 *** Variables ***
 ${createCaseBtn}    //button[@id='dashboard-create-link-button']
@@ -37,6 +38,34 @@ ${confirmImportCsv}    //button[contains(text(),'confirm')]
 ${table_locator}    //table[@class='table-compact w-full']
 
 *** Keywords ***
+Read and Parse CSV
+    ${file_contents} =    Get File    /Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv
+    
+    # Split the file contents into lines
+    ${lines} =    Split To Lines    ${file_contents}
+    
+    # Iterate over the lines and split them into a list of values
+    FOR    ${line}    IN    @{lines}
+        ${values} =    Split String    ${line}    ,
+        # Extract values from the list based on column index
+        ${case_type_code}    Set Variable    ${values[0]}
+        ${citizen_id}    Set Variable    ${values[1]}
+        ${title_code}    Set Variable    ${values[2]}
+        ${first_name}    Set Variable    ${values[3]}
+        ${last_name}    Set Variable    ${values[4]}
+        ${date_of_birth}    Set Variable    ${values[5]}
+        ${phone_number}    Set Variable    ${values[6]}
+        ${email}    Set Variable    ${values[7]}
+        ${proprietor_type}    Set Variable    ${values[8]}
+        ${notify_type}    Set Variable    ${values[9]}
+        
+        # Do something with the extracted values
+        Log    Last Name: ${title_code}
+        Log To Console    ${title_code}
+    END
+
+
+
 Verify Create Case Button
     Wait Until Element Is Visible    ${createCaseBtn}    
 Click Create Case Button
