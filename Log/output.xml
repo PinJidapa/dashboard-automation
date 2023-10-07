@@ -1,24 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.9.17 on darwin)" generated="20231007 12:52:22.158" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.9.17 on darwin)" generated="20231007 22:15:01.581" rpa="false" schemaversion="4">
 <suite id="s1" name="Demo" source="/Users/pinpinn/dashboard-automation/Testcases/demo.robot">
 <test id="s1-t1" name="Test 01" line="14">
-<kw name="Read and Parse CSV" library="CreateCasePage">
+<kw name="Open Browser And Sign In With Username And Password" library="LoginKeyword">
+<arg>${clientAdminUsername1}</arg>
+<arg>${clientAdminPassword1}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231007 22:15:01.746" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1048ef400&gt;</msg>
+<status status="PASS" starttime="20231007 22:15:01.746" endtime="20231007 22:15:01.746"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231007 22:15:01.746" endtime="20231007 22:15:01.746"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231007 22:15:01.746" endtime="20231007 22:15:01.746"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231007 22:15:01.746" endtime="20231007 22:15:01.746"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${chrome_prefs}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231007 22:15:01.746" level="INFO">${chrome_prefs} = {}</msg>
+<status status="PASS" starttime="20231007 22:15:01.746" endtime="20231007 22:15:01.746"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${chrome_prefs}</arg>
+<arg>download.default_directory</arg>
+<arg>${EXECDIR}/assets</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231007 22:15:01.746" endtime="20231007 22:15:01.747"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${chrome_prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231007 22:15:01.747" endtime="20231007 22:15:01.747"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>browser=chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231007 22:15:01.747" level="INFO">Opening browser 'chrome' to base url 'https://portal-v2-qa.mac-non-prod.appmanteam.com/apps/case-keeper/cases'.</msg>
+<status status="PASS" starttime="20231007 22:15:01.747" endtime="20231007 22:15:05.284"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>0</arg>
+<arg>0</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231007 22:15:05.285" endtime="20231007 22:15:06.559"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231007 22:15:06.559" endtime="20231007 22:15:06.992"/>
+</kw>
+<kw name="Enter Username" library="LoginPage">
+<arg>${username}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231007 22:15:06.993" endtime="20231007 22:15:07.017"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231007 22:15:07.017" level="INFO">Typing text 'client_admin_1@mac-portal-v2.com' into text field '//input[@id='username']'.</msg>
+<status status="PASS" starttime="20231007 22:15:07.017" endtime="20231007 22:15:07.134"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:06.992" endtime="20231007 22:15:07.134"/>
+</kw>
+<kw name="Enter Password" library="LoginPage">
+<arg>${password}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231007 22:15:07.134" endtime="20231007 22:15:07.144"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231007 22:15:07.144" level="INFO">Typing text '!QAZ2wsx' into text field '//input[@id='password']'.</msg>
+<status status="PASS" starttime="20231007 22:15:07.144" endtime="20231007 22:15:07.174"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:07.134" endtime="20231007 22:15:07.174"/>
+</kw>
+<kw name="Click Sign In Button" library="LoginPage">
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${signInBtn}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231007 22:15:07.179" level="INFO">Clicking element '//input[@id='kc-login']'.</msg>
+<status status="PASS" starttime="20231007 22:15:07.179" endtime="20231007 22:15:07.562"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:07.175" endtime="20231007 22:15:07.562"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:07.175" endtime="20231007 22:15:07.562"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:07.175" endtime="20231007 22:15:07.562"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:01.745" endtime="20231007 22:15:07.562"/>
+</kw>
+<kw name="Skip The Patch Pop Up" library="CommonKeyword">
+<kw name="Check Path Note Pop Up" library="CommonPage">
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231007 22:15:09.565" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231007 22:15:07.563" endtime="20231007 22:15:09.566"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${element_th_exists}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${pathNotePopUpTH}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${pathNotePopUpTH}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231007 22:15:09.835" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-750.png"&gt;&lt;img src="selenium-screenshot-750.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231007 22:15:09.835" level="FAIL">Element with locator '//div[contains(text(),'ฟีเจอร์ใหม่')]' not found.</msg>
+<status status="FAIL" starttime="20231007 22:15:09.568" endtime="20231007 22:15:09.839"/>
+</kw>
+<msg timestamp="20231007 22:15:09.839" level="INFO">${element_th_exists} = False</msg>
+<status status="PASS" starttime="20231007 22:15:09.567" endtime="20231007 22:15:09.839"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${element_en_exists}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${pathNotePopUpEN}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${pathNotePopUpEN}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231007 22:15:09.848" level="INFO">Element '//div[contains(text(),'New update')]' is displayed.</msg>
+<status status="PASS" starttime="20231007 22:15:09.839" endtime="20231007 22:15:09.848"/>
+</kw>
+<msg timestamp="20231007 22:15:09.848" level="INFO">${element_en_exists} = True</msg>
+<status status="PASS" starttime="20231007 22:15:09.839" endtime="20231007 22:15:09.848"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${element_th_exists}</arg>
+<arg>Run Until Keyword Succeed</arg>
+<arg>Click Element</arg>
+<arg>${gotItButton}</arg>
+<arg>ELSE IF</arg>
+<arg>${element_en_exists}</arg>
+<arg>Run Until Keyword Succeed</arg>
+<arg>Click Element</arg>
+<arg>${gotItButton}</arg>
+<arg>ELSE</arg>
+<arg>Verify The Search Button</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${gotItButton}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231007 22:15:09.851" level="INFO">Clicking element '//button[@id='ok-button']'.</msg>
+<status status="PASS" starttime="20231007 22:15:09.851" endtime="20231007 22:15:09.873"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:09.848" endtime="20231007 22:15:09.873"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:09.848" endtime="20231007 22:15:09.873"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:09.848" endtime="20231007 22:15:09.873"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:07.563" endtime="20231007 22:15:09.873"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:07.562" endtime="20231007 22:15:09.873"/>
+</kw>
+<kw name="Check Data In The Table After Create Case By CSV" library="CreateCaseKeyword">
+<arg>5</arg>
+<kw name="Read CSV File And Validate The Data In Table" library="CreateCasePage">
+<arg>${CaseCreateByCsvNo}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${table_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231007 22:15:09.874" endtime="20231007 22:15:09.884"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${fullNameValue}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231007 22:15:09.884" level="INFO">${fullNameValue} = []</msg>
+<status status="PASS" starttime="20231007 22:15:09.884" endtime="20231007 22:15:09.884"/>
+</kw>
 <kw name="Get File" library="OperatingSystem">
-<var>${file_contents}</var>
+<var>${fileContents}</var>
 <arg>/Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv</arg>
 <doc>Returns the contents of a specified file.</doc>
-<msg timestamp="20231007 12:52:22.318" level="INFO" html="true">Getting file '&lt;a href="file:///Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv"&gt;/Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv&lt;/a&gt;'.</msg>
-<msg timestamp="20231007 12:52:22.318" level="INFO">${file_contents} = caseTypeCode,citizenId,titleCode,firstName,lastName,dateOfBirth,phoneNumber,email,proprietorType,notifyType
+<msg timestamp="20231007 22:15:09.884" level="INFO" html="true">Getting file '&lt;a href="file:///Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv"&gt;/Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv&lt;/a&gt;'.</msg>
+<msg timestamp="20231007 22:15:09.885" level="INFO">${fileContents} = caseTypeCode,citizenId,titleCode,firstName,lastName,dateOfBirth,phoneNumber,email,proprietorType,notifyType
 """001""","""9082299541733""","""005""",ภราเดช,อาสน์สุวรรณ์,1990-08-21,,jidapa.o@appman.co.t...</msg>
-<status status="PASS" starttime="20231007 12:52:22.318" endtime="20231007 12:52:22.318"/>
+<status status="PASS" starttime="20231007 22:15:09.884" endtime="20231007 22:15:09.885"/>
 </kw>
 <kw name="Split To Lines" library="String">
 <var>${lines}</var>
-<arg>${file_contents}</arg>
+<arg>${fileContents}</arg>
 <doc>Splits the given string to lines.</doc>
-<msg timestamp="20231007 12:52:22.318" level="INFO">6 lines returned</msg>
-<msg timestamp="20231007 12:52:22.318" level="INFO">${lines} = ['caseTypeCode,citizenId,titleCode,firstName,lastName,dateOfBirth,phoneNumber,email,proprietorType,notifyType', '"""001""","""9082299541733""","""005""",ภราเดช,อาสน์สุวรรณ์,1990-08-21,,jidapa.o@appman...</msg>
-<status status="PASS" starttime="20231007 12:52:22.318" endtime="20231007 12:52:22.318"/>
+<msg timestamp="20231007 22:15:09.885" level="INFO">6 lines returned</msg>
+<msg timestamp="20231007 22:15:09.885" level="INFO">${lines} = ['caseTypeCode,citizenId,titleCode,firstName,lastName,dateOfBirth,phoneNumber,email,proprietorType,notifyType', '"""001""","""9082299541733""","""005""",ภราเดช,อาสน์สุวรรณ์,1990-08-21,,jidapa.o@appman...</msg>
+<status status="PASS" starttime="20231007 22:15:09.885" endtime="20231007 22:15:09.885"/>
 </kw>
 <for flavor="IN">
 <var>${line}</var>
@@ -30,91 +250,105 @@
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<msg timestamp="20231007 12:52:22.319" level="INFO">${values} = ['caseTypeCode', 'citizenId', 'titleCode', 'firstName', 'lastName', 'dateOfBirth', 'phoneNumber', 'email', 'proprietorType', 'notifyType']</msg>
-<status status="PASS" starttime="20231007 12:52:22.319" endtime="20231007 12:52:22.319"/>
+<msg timestamp="20231007 22:15:09.885" level="INFO">${values} = ['caseTypeCode', 'citizenId', 'titleCode', 'firstName', 'lastName', 'dateOfBirth', 'phoneNumber', 'email', 'proprietorType', 'notifyType']</msg>
+<status status="PASS" starttime="20231007 22:15:09.885" endtime="20231007 22:15:09.885"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${case_type_code}</var>
+<var>${caseTypeCodeCsv}</var>
 <arg>${values[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.319" level="INFO">${case_type_code} = caseTypeCode</msg>
-<status status="PASS" starttime="20231007 12:52:22.319" endtime="20231007 12:52:22.319"/>
+<msg timestamp="20231007 22:15:09.886" level="INFO">${caseTypeCodeCsv} = caseTypeCode</msg>
+<status status="PASS" starttime="20231007 22:15:09.885" endtime="20231007 22:15:09.886"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${citizen_id}</var>
+<var>${citizenIdCsv}</var>
 <arg>${values[1]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.320" level="INFO">${citizen_id} = citizenId</msg>
-<status status="PASS" starttime="20231007 12:52:22.319" endtime="20231007 12:52:22.320"/>
+<msg timestamp="20231007 22:15:09.886" level="INFO">${citizenIdCsv} = citizenId</msg>
+<status status="PASS" starttime="20231007 22:15:09.886" endtime="20231007 22:15:09.886"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${title_code}</var>
+<var>${titleCodeCsv}</var>
 <arg>${values[2]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.320" level="INFO">${title_code} = titleCode</msg>
-<status status="PASS" starttime="20231007 12:52:22.320" endtime="20231007 12:52:22.320"/>
+<msg timestamp="20231007 22:15:09.887" level="INFO">${titleCodeCsv} = titleCode</msg>
+<status status="PASS" starttime="20231007 22:15:09.886" endtime="20231007 22:15:09.887"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${first_name}</var>
+<var>${firstNameCsv}</var>
 <arg>${values[3]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.321" level="INFO">${first_name} = firstName</msg>
-<status status="PASS" starttime="20231007 12:52:22.320" endtime="20231007 12:52:22.321"/>
+<msg timestamp="20231007 22:15:09.887" level="INFO">${firstNameCsv} = firstName</msg>
+<status status="PASS" starttime="20231007 22:15:09.887" endtime="20231007 22:15:09.887"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${last_name}</var>
+<var>${lastNameCsv}</var>
 <arg>${values[4]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.321" level="INFO">${last_name} = lastName</msg>
-<status status="PASS" starttime="20231007 12:52:22.321" endtime="20231007 12:52:22.321"/>
+<msg timestamp="20231007 22:15:09.888" level="INFO">${lastNameCsv} = lastName</msg>
+<status status="PASS" starttime="20231007 22:15:09.887" endtime="20231007 22:15:09.888"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${date_of_birth}</var>
+<var>${dateOfBirthCsv}</var>
 <arg>${values[5]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.322" level="INFO">${date_of_birth} = dateOfBirth</msg>
-<status status="PASS" starttime="20231007 12:52:22.321" endtime="20231007 12:52:22.322"/>
+<msg timestamp="20231007 22:15:09.888" level="INFO">${dateOfBirthCsv} = dateOfBirth</msg>
+<status status="PASS" starttime="20231007 22:15:09.888" endtime="20231007 22:15:09.888"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${phone_number}</var>
+<var>${phoneNumberCsv}</var>
 <arg>${values[6]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.322" level="INFO">${phone_number} = phoneNumber</msg>
-<status status="PASS" starttime="20231007 12:52:22.322" endtime="20231007 12:52:22.322"/>
+<msg timestamp="20231007 22:15:09.889" level="INFO">${phoneNumberCsv} = phoneNumber</msg>
+<status status="PASS" starttime="20231007 22:15:09.888" endtime="20231007 22:15:09.889"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${email}</var>
+<var>${emailCsv}</var>
 <arg>${values[7]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.323" level="INFO">${email} = email</msg>
-<status status="PASS" starttime="20231007 12:52:22.323" endtime="20231007 12:52:22.323"/>
+<msg timestamp="20231007 22:15:09.889" level="INFO">${emailCsv} = email</msg>
+<status status="PASS" starttime="20231007 22:15:09.889" endtime="20231007 22:15:09.889"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${proprietor_type}</var>
+<var>${proprietorTypeCsv}</var>
 <arg>${values[8]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.324" level="INFO">${proprietor_type} = proprietorType</msg>
-<status status="PASS" starttime="20231007 12:52:22.323" endtime="20231007 12:52:22.324"/>
+<msg timestamp="20231007 22:15:09.890" level="INFO">${proprietorTypeCsv} = proprietorType</msg>
+<status status="PASS" starttime="20231007 22:15:09.889" endtime="20231007 22:15:09.890"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${notify_type}</var>
+<var>${notifyTypeCsv}</var>
 <arg>${values[9]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.324" level="INFO">${notify_type} = notifyType</msg>
-<status status="PASS" starttime="20231007 12:52:22.324" endtime="20231007 12:52:22.324"/>
+<msg timestamp="20231007 22:15:09.891" level="INFO">${notifyTypeCsv} = notifyType</msg>
+<status status="PASS" starttime="20231007 22:15:09.890" endtime="20231007 22:15:09.891"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>Last Name: ${title_code}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231007 12:52:22.324" level="INFO">Last Name: titleCode</msg>
-<status status="PASS" starttime="20231007 12:52:22.324" endtime="20231007 12:52:22.324"/>
+<kw name="Set Variable" library="BuiltIn">
+<var>${fullNameCsv}</var>
+<arg>${firstNameCsv} ${lastNameCsv}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231007 22:15:09.891" level="INFO">${fullNameCsv} = firstName lastName</msg>
+<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.891"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fullNameValue}</arg>
+<arg>${fullNameCsv}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.891"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${fullNamesListCsv}</var>
+<arg>[x for x in ${fullNameValue} if x != 'firstName lastName']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231007 22:15:09.891" level="INFO">${fullNamesListCsv} = []</msg>
+<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.891"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${title_code}</arg>
+<arg>${fullNamesListCsv}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231007 12:52:22.324" endtime="20231007 12:52:22.324"/>
+<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.891"/>
 </kw>
-<status status="PASS" starttime="20231007 12:52:22.318" endtime="20231007 12:52:22.324"/>
+<status status="PASS" starttime="20231007 22:15:09.885" endtime="20231007 22:15:09.891"/>
 </iter>
 <iter>
 <var name="${line}">"""001""","""9082299541733""","""005""",ภราเดช,อาสน์สุวรรณ์,1990-08-21,,jidapa.o@appman.co.th,insured,email</var>
@@ -123,91 +357,105 @@
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<msg timestamp="20231007 12:52:22.325" level="INFO">${values} = ['"""001"""', '"""9082299541733"""', '"""005"""', 'ภราเดช', 'อาสน์สุวรรณ์', '1990-08-21', '', 'jidapa.o@appman.co.th', 'insured', 'email']</msg>
-<status status="PASS" starttime="20231007 12:52:22.324" endtime="20231007 12:52:22.325"/>
+<msg timestamp="20231007 22:15:09.891" level="INFO">${values} = ['"""001"""', '"""9082299541733"""', '"""005"""', 'ภราเดช', 'อาสน์สุวรรณ์', '1990-08-21', '', 'jidapa.o@appman.co.th', 'insured', 'email']</msg>
+<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.891"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${case_type_code}</var>
+<var>${caseTypeCodeCsv}</var>
 <arg>${values[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.325" level="INFO">${case_type_code} = """001"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.325" endtime="20231007 12:52:22.325"/>
+<msg timestamp="20231007 22:15:09.892" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.892"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${citizen_id}</var>
+<var>${citizenIdCsv}</var>
 <arg>${values[1]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.326" level="INFO">${citizen_id} = """9082299541733"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.325" endtime="20231007 12:52:22.326"/>
+<msg timestamp="20231007 22:15:09.892" level="INFO">${citizenIdCsv} = """9082299541733"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.892" endtime="20231007 22:15:09.892"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${title_code}</var>
+<var>${titleCodeCsv}</var>
 <arg>${values[2]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.326" level="INFO">${title_code} = """005"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.326" endtime="20231007 12:52:22.326"/>
+<msg timestamp="20231007 22:15:09.893" level="INFO">${titleCodeCsv} = """005"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.893" endtime="20231007 22:15:09.893"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${first_name}</var>
+<var>${firstNameCsv}</var>
 <arg>${values[3]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.327" level="INFO">${first_name} = ภราเดช</msg>
-<status status="PASS" starttime="20231007 12:52:22.326" endtime="20231007 12:52:22.327"/>
+<msg timestamp="20231007 22:15:09.894" level="INFO">${firstNameCsv} = ภราเดช</msg>
+<status status="PASS" starttime="20231007 22:15:09.893" endtime="20231007 22:15:09.894"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${last_name}</var>
+<var>${lastNameCsv}</var>
 <arg>${values[4]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.327" level="INFO">${last_name} = อาสน์สุวรรณ์</msg>
-<status status="PASS" starttime="20231007 12:52:22.327" endtime="20231007 12:52:22.327"/>
+<msg timestamp="20231007 22:15:09.894" level="INFO">${lastNameCsv} = อาสน์สุวรรณ์</msg>
+<status status="PASS" starttime="20231007 22:15:09.894" endtime="20231007 22:15:09.894"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${date_of_birth}</var>
+<var>${dateOfBirthCsv}</var>
 <arg>${values[5]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.328" level="INFO">${date_of_birth} = 1990-08-21</msg>
-<status status="PASS" starttime="20231007 12:52:22.327" endtime="20231007 12:52:22.328"/>
+<msg timestamp="20231007 22:15:09.895" level="INFO">${dateOfBirthCsv} = 1990-08-21</msg>
+<status status="PASS" starttime="20231007 22:15:09.894" endtime="20231007 22:15:09.895"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${phone_number}</var>
+<var>${phoneNumberCsv}</var>
 <arg>${values[6]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.328" level="INFO">${phone_number} = </msg>
-<status status="PASS" starttime="20231007 12:52:22.328" endtime="20231007 12:52:22.328"/>
+<msg timestamp="20231007 22:15:09.895" level="INFO">${phoneNumberCsv} = </msg>
+<status status="PASS" starttime="20231007 22:15:09.895" endtime="20231007 22:15:09.895"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${email}</var>
+<var>${emailCsv}</var>
 <arg>${values[7]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.329" level="INFO">${email} = jidapa.o@appman.co.th</msg>
-<status status="PASS" starttime="20231007 12:52:22.328" endtime="20231007 12:52:22.329"/>
+<msg timestamp="20231007 22:15:09.896" level="INFO">${emailCsv} = jidapa.o@appman.co.th</msg>
+<status status="PASS" starttime="20231007 22:15:09.895" endtime="20231007 22:15:09.896"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${proprietor_type}</var>
+<var>${proprietorTypeCsv}</var>
 <arg>${values[8]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.329" level="INFO">${proprietor_type} = insured</msg>
-<status status="PASS" starttime="20231007 12:52:22.329" endtime="20231007 12:52:22.329"/>
+<msg timestamp="20231007 22:15:09.897" level="INFO">${proprietorTypeCsv} = insured</msg>
+<status status="PASS" starttime="20231007 22:15:09.896" endtime="20231007 22:15:09.897"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${notify_type}</var>
+<var>${notifyTypeCsv}</var>
 <arg>${values[9]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.330" level="INFO">${notify_type} = email</msg>
-<status status="PASS" starttime="20231007 12:52:22.329" endtime="20231007 12:52:22.330"/>
+<msg timestamp="20231007 22:15:09.897" level="INFO">${notifyTypeCsv} = email</msg>
+<status status="PASS" starttime="20231007 22:15:09.897" endtime="20231007 22:15:09.897"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>Last Name: ${title_code}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231007 12:52:22.330" level="INFO">Last Name: """005"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.330" endtime="20231007 12:52:22.330"/>
+<kw name="Set Variable" library="BuiltIn">
+<var>${fullNameCsv}</var>
+<arg>${firstNameCsv} ${lastNameCsv}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231007 22:15:09.897" level="INFO">${fullNameCsv} = ภราเดช อาสน์สุวรรณ์</msg>
+<status status="PASS" starttime="20231007 22:15:09.897" endtime="20231007 22:15:09.897"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fullNameValue}</arg>
+<arg>${fullNameCsv}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231007 22:15:09.898" endtime="20231007 22:15:09.898"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${fullNamesListCsv}</var>
+<arg>[x for x in ${fullNameValue} if x != 'firstName lastName']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231007 22:15:09.898" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์']</msg>
+<status status="PASS" starttime="20231007 22:15:09.898" endtime="20231007 22:15:09.898"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${title_code}</arg>
+<arg>${fullNamesListCsv}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231007 12:52:22.330" endtime="20231007 12:52:22.330"/>
+<status status="PASS" starttime="20231007 22:15:09.898" endtime="20231007 22:15:09.898"/>
 </kw>
-<status status="PASS" starttime="20231007 12:52:22.324" endtime="20231007 12:52:22.330"/>
+<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.898"/>
 </iter>
 <iter>
 <var name="${line}">"""001""","""1839900547382""","""005""",พันธกานต์,เกียรติไพศาลโสภณ,1999-03-19,"""0619926554""",,insured,sms</var>
@@ -216,91 +464,105 @@
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<msg timestamp="20231007 12:52:22.330" level="INFO">${values} = ['"""001"""', '"""1839900547382"""', '"""005"""', 'พันธกานต์', 'เกียรติไพศาลโสภณ', '1999-03-19', '"""0619926554"""', '', 'insured', 'sms']</msg>
-<status status="PASS" starttime="20231007 12:52:22.330" endtime="20231007 12:52:22.330"/>
+<msg timestamp="20231007 22:15:09.898" level="INFO">${values} = ['"""001"""', '"""1839900547382"""', '"""005"""', 'พันธกานต์', 'เกียรติไพศาลโสภณ', '1999-03-19', '"""0619926554"""', '', 'insured', 'sms']</msg>
+<status status="PASS" starttime="20231007 22:15:09.898" endtime="20231007 22:15:09.898"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${case_type_code}</var>
+<var>${caseTypeCodeCsv}</var>
 <arg>${values[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.331" level="INFO">${case_type_code} = """001"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.330" endtime="20231007 12:52:22.331"/>
+<msg timestamp="20231007 22:15:09.899" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.898" endtime="20231007 22:15:09.899"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${citizen_id}</var>
+<var>${citizenIdCsv}</var>
 <arg>${values[1]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.331" level="INFO">${citizen_id} = """1839900547382"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.331" endtime="20231007 12:52:22.331"/>
+<msg timestamp="20231007 22:15:09.900" level="INFO">${citizenIdCsv} = """1839900547382"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.899" endtime="20231007 22:15:09.900"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${title_code}</var>
+<var>${titleCodeCsv}</var>
 <arg>${values[2]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.332" level="INFO">${title_code} = """005"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.331" endtime="20231007 12:52:22.332"/>
+<msg timestamp="20231007 22:15:09.900" level="INFO">${titleCodeCsv} = """005"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.900" endtime="20231007 22:15:09.900"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${first_name}</var>
+<var>${firstNameCsv}</var>
 <arg>${values[3]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.332" level="INFO">${first_name} = พันธกานต์</msg>
-<status status="PASS" starttime="20231007 12:52:22.332" endtime="20231007 12:52:22.332"/>
+<msg timestamp="20231007 22:15:09.901" level="INFO">${firstNameCsv} = พันธกานต์</msg>
+<status status="PASS" starttime="20231007 22:15:09.900" endtime="20231007 22:15:09.901"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${last_name}</var>
+<var>${lastNameCsv}</var>
 <arg>${values[4]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.333" level="INFO">${last_name} = เกียรติไพศาลโสภณ</msg>
-<status status="PASS" starttime="20231007 12:52:22.333" endtime="20231007 12:52:22.333"/>
+<msg timestamp="20231007 22:15:09.901" level="INFO">${lastNameCsv} = เกียรติไพศาลโสภณ</msg>
+<status status="PASS" starttime="20231007 22:15:09.901" endtime="20231007 22:15:09.901"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${date_of_birth}</var>
+<var>${dateOfBirthCsv}</var>
 <arg>${values[5]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.334" level="INFO">${date_of_birth} = 1999-03-19</msg>
-<status status="PASS" starttime="20231007 12:52:22.333" endtime="20231007 12:52:22.334"/>
+<msg timestamp="20231007 22:15:09.902" level="INFO">${dateOfBirthCsv} = 1999-03-19</msg>
+<status status="PASS" starttime="20231007 22:15:09.901" endtime="20231007 22:15:09.902"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${phone_number}</var>
+<var>${phoneNumberCsv}</var>
 <arg>${values[6]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.334" level="INFO">${phone_number} = """0619926554"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.334" endtime="20231007 12:52:22.334"/>
+<msg timestamp="20231007 22:15:09.902" level="INFO">${phoneNumberCsv} = """0619926554"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.902" endtime="20231007 22:15:09.902"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${email}</var>
+<var>${emailCsv}</var>
 <arg>${values[7]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.335" level="INFO">${email} = </msg>
-<status status="PASS" starttime="20231007 12:52:22.334" endtime="20231007 12:52:22.335"/>
+<msg timestamp="20231007 22:15:09.903" level="INFO">${emailCsv} = </msg>
+<status status="PASS" starttime="20231007 22:15:09.903" endtime="20231007 22:15:09.903"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${proprietor_type}</var>
+<var>${proprietorTypeCsv}</var>
 <arg>${values[8]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.335" level="INFO">${proprietor_type} = insured</msg>
-<status status="PASS" starttime="20231007 12:52:22.335" endtime="20231007 12:52:22.335"/>
+<msg timestamp="20231007 22:15:09.904" level="INFO">${proprietorTypeCsv} = insured</msg>
+<status status="PASS" starttime="20231007 22:15:09.903" endtime="20231007 22:15:09.904"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${notify_type}</var>
+<var>${notifyTypeCsv}</var>
 <arg>${values[9]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.336" level="INFO">${notify_type} = sms</msg>
-<status status="PASS" starttime="20231007 12:52:22.335" endtime="20231007 12:52:22.336"/>
+<msg timestamp="20231007 22:15:09.904" level="INFO">${notifyTypeCsv} = sms</msg>
+<status status="PASS" starttime="20231007 22:15:09.904" endtime="20231007 22:15:09.904"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>Last Name: ${title_code}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231007 12:52:22.336" level="INFO">Last Name: """005"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.336" endtime="20231007 12:52:22.336"/>
+<kw name="Set Variable" library="BuiltIn">
+<var>${fullNameCsv}</var>
+<arg>${firstNameCsv} ${lastNameCsv}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231007 22:15:09.904" level="INFO">${fullNameCsv} = พันธกานต์ เกียรติไพศาลโสภณ</msg>
+<status status="PASS" starttime="20231007 22:15:09.904" endtime="20231007 22:15:09.904"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fullNameValue}</arg>
+<arg>${fullNameCsv}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231007 22:15:09.904" endtime="20231007 22:15:09.904"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${fullNamesListCsv}</var>
+<arg>[x for x in ${fullNameValue} if x != 'firstName lastName']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231007 22:15:09.905" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์', 'พันธกานต์ เกียรติไพศาลโสภณ']</msg>
+<status status="PASS" starttime="20231007 22:15:09.904" endtime="20231007 22:15:09.905"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${title_code}</arg>
+<arg>${fullNamesListCsv}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231007 12:52:22.336" endtime="20231007 12:52:22.336"/>
+<status status="PASS" starttime="20231007 22:15:09.905" endtime="20231007 22:15:09.905"/>
 </kw>
-<status status="PASS" starttime="20231007 12:52:22.330" endtime="20231007 12:52:22.336"/>
+<status status="PASS" starttime="20231007 22:15:09.898" endtime="20231007 22:15:09.905"/>
 </iter>
 <iter>
 <var name="${line}">"""001""","""1100800810926""","""005""",ชนินทร,รัตนจีนะ,1993-02-06,"""0666666666""",,insured,sms</var>
@@ -309,91 +571,105 @@
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<msg timestamp="20231007 12:52:22.336" level="INFO">${values} = ['"""001"""', '"""1100800810926"""', '"""005"""', 'ชนินทร', 'รัตนจีนะ', '1993-02-06', '"""0666666666"""', '', 'insured', 'sms']</msg>
-<status status="PASS" starttime="20231007 12:52:22.336" endtime="20231007 12:52:22.336"/>
+<msg timestamp="20231007 22:15:09.905" level="INFO">${values} = ['"""001"""', '"""1100800810926"""', '"""005"""', 'ชนินทร', 'รัตนจีนะ', '1993-02-06', '"""0666666666"""', '', 'insured', 'sms']</msg>
+<status status="PASS" starttime="20231007 22:15:09.905" endtime="20231007 22:15:09.905"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${case_type_code}</var>
+<var>${caseTypeCodeCsv}</var>
 <arg>${values[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.337" level="INFO">${case_type_code} = """001"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.336" endtime="20231007 12:52:22.337"/>
+<msg timestamp="20231007 22:15:09.906" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.905" endtime="20231007 22:15:09.906"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${citizen_id}</var>
+<var>${citizenIdCsv}</var>
 <arg>${values[1]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.337" level="INFO">${citizen_id} = """1100800810926"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.337" endtime="20231007 12:52:22.337"/>
+<msg timestamp="20231007 22:15:09.906" level="INFO">${citizenIdCsv} = """1100800810926"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.906" endtime="20231007 22:15:09.906"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${title_code}</var>
+<var>${titleCodeCsv}</var>
 <arg>${values[2]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.338" level="INFO">${title_code} = """005"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.337" endtime="20231007 12:52:22.338"/>
+<msg timestamp="20231007 22:15:09.907" level="INFO">${titleCodeCsv} = """005"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.906" endtime="20231007 22:15:09.907"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${first_name}</var>
+<var>${firstNameCsv}</var>
 <arg>${values[3]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.338" level="INFO">${first_name} = ชนินทร</msg>
-<status status="PASS" starttime="20231007 12:52:22.338" endtime="20231007 12:52:22.338"/>
+<msg timestamp="20231007 22:15:09.907" level="INFO">${firstNameCsv} = ชนินทร</msg>
+<status status="PASS" starttime="20231007 22:15:09.907" endtime="20231007 22:15:09.907"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${last_name}</var>
+<var>${lastNameCsv}</var>
 <arg>${values[4]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.339" level="INFO">${last_name} = รัตนจีนะ</msg>
-<status status="PASS" starttime="20231007 12:52:22.338" endtime="20231007 12:52:22.339"/>
+<msg timestamp="20231007 22:15:09.908" level="INFO">${lastNameCsv} = รัตนจีนะ</msg>
+<status status="PASS" starttime="20231007 22:15:09.907" endtime="20231007 22:15:09.908"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${date_of_birth}</var>
+<var>${dateOfBirthCsv}</var>
 <arg>${values[5]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.339" level="INFO">${date_of_birth} = 1993-02-06</msg>
-<status status="PASS" starttime="20231007 12:52:22.339" endtime="20231007 12:52:22.339"/>
+<msg timestamp="20231007 22:15:09.908" level="INFO">${dateOfBirthCsv} = 1993-02-06</msg>
+<status status="PASS" starttime="20231007 22:15:09.908" endtime="20231007 22:15:09.908"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${phone_number}</var>
+<var>${phoneNumberCsv}</var>
 <arg>${values[6]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.340" level="INFO">${phone_number} = """0666666666"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.339" endtime="20231007 12:52:22.340"/>
+<msg timestamp="20231007 22:15:09.909" level="INFO">${phoneNumberCsv} = """0666666666"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.908" endtime="20231007 22:15:09.909"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${email}</var>
+<var>${emailCsv}</var>
 <arg>${values[7]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.340" level="INFO">${email} = </msg>
-<status status="PASS" starttime="20231007 12:52:22.340" endtime="20231007 12:52:22.340"/>
+<msg timestamp="20231007 22:15:09.909" level="INFO">${emailCsv} = </msg>
+<status status="PASS" starttime="20231007 22:15:09.909" endtime="20231007 22:15:09.909"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${proprietor_type}</var>
+<var>${proprietorTypeCsv}</var>
 <arg>${values[8]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.341" level="INFO">${proprietor_type} = insured</msg>
-<status status="PASS" starttime="20231007 12:52:22.341" endtime="20231007 12:52:22.341"/>
+<msg timestamp="20231007 22:15:09.910" level="INFO">${proprietorTypeCsv} = insured</msg>
+<status status="PASS" starttime="20231007 22:15:09.909" endtime="20231007 22:15:09.910"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${notify_type}</var>
+<var>${notifyTypeCsv}</var>
 <arg>${values[9]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.342" level="INFO">${notify_type} = sms</msg>
-<status status="PASS" starttime="20231007 12:52:22.341" endtime="20231007 12:52:22.342"/>
+<msg timestamp="20231007 22:15:09.910" level="INFO">${notifyTypeCsv} = sms</msg>
+<status status="PASS" starttime="20231007 22:15:09.910" endtime="20231007 22:15:09.910"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>Last Name: ${title_code}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231007 12:52:22.342" level="INFO">Last Name: """005"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.342" endtime="20231007 12:52:22.342"/>
+<kw name="Set Variable" library="BuiltIn">
+<var>${fullNameCsv}</var>
+<arg>${firstNameCsv} ${lastNameCsv}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231007 22:15:09.911" level="INFO">${fullNameCsv} = ชนินทร รัตนจีนะ</msg>
+<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.911"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fullNameValue}</arg>
+<arg>${fullNameCsv}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.911"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${fullNamesListCsv}</var>
+<arg>[x for x in ${fullNameValue} if x != 'firstName lastName']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231007 22:15:09.911" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ชนินทร รัตนจีนะ']</msg>
+<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.911"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${title_code}</arg>
+<arg>${fullNamesListCsv}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231007 12:52:22.342" endtime="20231007 12:52:22.342"/>
+<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.911"/>
 </kw>
-<status status="PASS" starttime="20231007 12:52:22.336" endtime="20231007 12:52:22.342"/>
+<status status="PASS" starttime="20231007 22:15:09.905" endtime="20231007 22:15:09.911"/>
 </iter>
 <iter>
 <var name="${line}">"""001""","""0899479959791""","""005""",ภูริภัทร,โภคะมณี,1995-09-20,"""0666666666""",,insured,sms</var>
@@ -402,91 +678,105 @@
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<msg timestamp="20231007 12:52:22.342" level="INFO">${values} = ['"""001"""', '"""0899479959791"""', '"""005"""', 'ภูริภัทร', 'โภคะมณี', '1995-09-20', '"""0666666666"""', '', 'insured', 'sms']</msg>
-<status status="PASS" starttime="20231007 12:52:22.342" endtime="20231007 12:52:22.342"/>
+<msg timestamp="20231007 22:15:09.911" level="INFO">${values} = ['"""001"""', '"""0899479959791"""', '"""005"""', 'ภูริภัทร', 'โภคะมณี', '1995-09-20', '"""0666666666"""', '', 'insured', 'sms']</msg>
+<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.911"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${case_type_code}</var>
+<var>${caseTypeCodeCsv}</var>
 <arg>${values[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.343" level="INFO">${case_type_code} = """001"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.342" endtime="20231007 12:52:22.343"/>
+<msg timestamp="20231007 22:15:09.912" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.912"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${citizen_id}</var>
+<var>${citizenIdCsv}</var>
 <arg>${values[1]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.343" level="INFO">${citizen_id} = """0899479959791"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.343" endtime="20231007 12:52:22.343"/>
+<msg timestamp="20231007 22:15:09.913" level="INFO">${citizenIdCsv} = """0899479959791"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.912" endtime="20231007 22:15:09.913"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${title_code}</var>
+<var>${titleCodeCsv}</var>
 <arg>${values[2]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.344" level="INFO">${title_code} = """005"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.343" endtime="20231007 12:52:22.344"/>
+<msg timestamp="20231007 22:15:09.913" level="INFO">${titleCodeCsv} = """005"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.913" endtime="20231007 22:15:09.913"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${first_name}</var>
+<var>${firstNameCsv}</var>
 <arg>${values[3]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.344" level="INFO">${first_name} = ภูริภัทร</msg>
-<status status="PASS" starttime="20231007 12:52:22.344" endtime="20231007 12:52:22.344"/>
+<msg timestamp="20231007 22:15:09.914" level="INFO">${firstNameCsv} = ภูริภัทร</msg>
+<status status="PASS" starttime="20231007 22:15:09.913" endtime="20231007 22:15:09.914"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${last_name}</var>
+<var>${lastNameCsv}</var>
 <arg>${values[4]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.345" level="INFO">${last_name} = โภคะมณี</msg>
-<status status="PASS" starttime="20231007 12:52:22.344" endtime="20231007 12:52:22.345"/>
+<msg timestamp="20231007 22:15:09.914" level="INFO">${lastNameCsv} = โภคะมณี</msg>
+<status status="PASS" starttime="20231007 22:15:09.914" endtime="20231007 22:15:09.914"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${date_of_birth}</var>
+<var>${dateOfBirthCsv}</var>
 <arg>${values[5]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.345" level="INFO">${date_of_birth} = 1995-09-20</msg>
-<status status="PASS" starttime="20231007 12:52:22.345" endtime="20231007 12:52:22.345"/>
+<msg timestamp="20231007 22:15:09.915" level="INFO">${dateOfBirthCsv} = 1995-09-20</msg>
+<status status="PASS" starttime="20231007 22:15:09.914" endtime="20231007 22:15:09.915"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${phone_number}</var>
+<var>${phoneNumberCsv}</var>
 <arg>${values[6]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.346" level="INFO">${phone_number} = """0666666666"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.345" endtime="20231007 12:52:22.346"/>
+<msg timestamp="20231007 22:15:09.915" level="INFO">${phoneNumberCsv} = """0666666666"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.915" endtime="20231007 22:15:09.915"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${email}</var>
+<var>${emailCsv}</var>
 <arg>${values[7]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.346" level="INFO">${email} = </msg>
-<status status="PASS" starttime="20231007 12:52:22.346" endtime="20231007 12:52:22.346"/>
+<msg timestamp="20231007 22:15:09.916" level="INFO">${emailCsv} = </msg>
+<status status="PASS" starttime="20231007 22:15:09.916" endtime="20231007 22:15:09.916"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${proprietor_type}</var>
+<var>${proprietorTypeCsv}</var>
 <arg>${values[8]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.347" level="INFO">${proprietor_type} = insured</msg>
-<status status="PASS" starttime="20231007 12:52:22.346" endtime="20231007 12:52:22.347"/>
+<msg timestamp="20231007 22:15:09.917" level="INFO">${proprietorTypeCsv} = insured</msg>
+<status status="PASS" starttime="20231007 22:15:09.916" endtime="20231007 22:15:09.917"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${notify_type}</var>
+<var>${notifyTypeCsv}</var>
 <arg>${values[9]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.347" level="INFO">${notify_type} = sms</msg>
-<status status="PASS" starttime="20231007 12:52:22.347" endtime="20231007 12:52:22.347"/>
+<msg timestamp="20231007 22:15:09.917" level="INFO">${notifyTypeCsv} = sms</msg>
+<status status="PASS" starttime="20231007 22:15:09.917" endtime="20231007 22:15:09.917"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>Last Name: ${title_code}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231007 12:52:22.348" level="INFO">Last Name: """005"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.347" endtime="20231007 12:52:22.348"/>
+<kw name="Set Variable" library="BuiltIn">
+<var>${fullNameCsv}</var>
+<arg>${firstNameCsv} ${lastNameCsv}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231007 22:15:09.917" level="INFO">${fullNameCsv} = ภูริภัทร โภคะมณี</msg>
+<status status="PASS" starttime="20231007 22:15:09.917" endtime="20231007 22:15:09.917"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fullNameValue}</arg>
+<arg>${fullNameCsv}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231007 22:15:09.917" endtime="20231007 22:15:09.918"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${fullNamesListCsv}</var>
+<arg>[x for x in ${fullNameValue} if x != 'firstName lastName']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231007 22:15:09.918" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ชนินทร รัตนจีนะ', 'ภูริภัทร โภคะมณี']</msg>
+<status status="PASS" starttime="20231007 22:15:09.918" endtime="20231007 22:15:09.918"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${title_code}</arg>
+<arg>${fullNamesListCsv}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231007 12:52:22.348" endtime="20231007 12:52:22.348"/>
+<status status="PASS" starttime="20231007 22:15:09.918" endtime="20231007 22:15:09.918"/>
 </kw>
-<status status="PASS" starttime="20231007 12:52:22.342" endtime="20231007 12:52:22.348"/>
+<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.918"/>
 </iter>
 <iter>
 <var name="${line}">"""001""","""1100701970992""","""005""",ถีรพันธ์,เลิศชัยสหกุล,1994-12-12,"""0666666666""",,insured,sms</var>
@@ -495,99 +785,312 @@
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<msg timestamp="20231007 12:52:22.348" level="INFO">${values} = ['"""001"""', '"""1100701970992"""', '"""005"""', 'ถีรพันธ์', 'เลิศชัยสหกุล', '1994-12-12', '"""0666666666"""', '', 'insured', 'sms']</msg>
-<status status="PASS" starttime="20231007 12:52:22.348" endtime="20231007 12:52:22.348"/>
+<msg timestamp="20231007 22:15:09.918" level="INFO">${values} = ['"""001"""', '"""1100701970992"""', '"""005"""', 'ถีรพันธ์', 'เลิศชัยสหกุล', '1994-12-12', '"""0666666666"""', '', 'insured', 'sms']</msg>
+<status status="PASS" starttime="20231007 22:15:09.918" endtime="20231007 22:15:09.918"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${case_type_code}</var>
+<var>${caseTypeCodeCsv}</var>
 <arg>${values[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.349" level="INFO">${case_type_code} = """001"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.348" endtime="20231007 12:52:22.349"/>
+<msg timestamp="20231007 22:15:09.919" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.918" endtime="20231007 22:15:09.919"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${citizen_id}</var>
+<var>${citizenIdCsv}</var>
 <arg>${values[1]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.349" level="INFO">${citizen_id} = """1100701970992"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.349" endtime="20231007 12:52:22.349"/>
+<msg timestamp="20231007 22:15:09.919" level="INFO">${citizenIdCsv} = """1100701970992"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.919" endtime="20231007 22:15:09.919"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${title_code}</var>
+<var>${titleCodeCsv}</var>
 <arg>${values[2]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.350" level="INFO">${title_code} = """005"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.349" endtime="20231007 12:52:22.350"/>
+<msg timestamp="20231007 22:15:09.920" level="INFO">${titleCodeCsv} = """005"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.920" endtime="20231007 22:15:09.920"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${first_name}</var>
+<var>${firstNameCsv}</var>
 <arg>${values[3]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.350" level="INFO">${first_name} = ถีรพันธ์</msg>
-<status status="PASS" starttime="20231007 12:52:22.350" endtime="20231007 12:52:22.350"/>
+<msg timestamp="20231007 22:15:09.921" level="INFO">${firstNameCsv} = ถีรพันธ์</msg>
+<status status="PASS" starttime="20231007 22:15:09.920" endtime="20231007 22:15:09.921"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${last_name}</var>
+<var>${lastNameCsv}</var>
 <arg>${values[4]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.351" level="INFO">${last_name} = เลิศชัยสหกุล</msg>
-<status status="PASS" starttime="20231007 12:52:22.350" endtime="20231007 12:52:22.351"/>
+<msg timestamp="20231007 22:15:09.921" level="INFO">${lastNameCsv} = เลิศชัยสหกุล</msg>
+<status status="PASS" starttime="20231007 22:15:09.921" endtime="20231007 22:15:09.921"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${date_of_birth}</var>
+<var>${dateOfBirthCsv}</var>
 <arg>${values[5]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.351" level="INFO">${date_of_birth} = 1994-12-12</msg>
-<status status="PASS" starttime="20231007 12:52:22.351" endtime="20231007 12:52:22.351"/>
+<msg timestamp="20231007 22:15:09.922" level="INFO">${dateOfBirthCsv} = 1994-12-12</msg>
+<status status="PASS" starttime="20231007 22:15:09.921" endtime="20231007 22:15:09.922"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${phone_number}</var>
+<var>${phoneNumberCsv}</var>
 <arg>${values[6]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.352" level="INFO">${phone_number} = """0666666666"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.351" endtime="20231007 12:52:22.352"/>
+<msg timestamp="20231007 22:15:09.922" level="INFO">${phoneNumberCsv} = """0666666666"""</msg>
+<status status="PASS" starttime="20231007 22:15:09.922" endtime="20231007 22:15:09.922"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${email}</var>
+<var>${emailCsv}</var>
 <arg>${values[7]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.352" level="INFO">${email} = </msg>
-<status status="PASS" starttime="20231007 12:52:22.352" endtime="20231007 12:52:22.352"/>
+<msg timestamp="20231007 22:15:09.923" level="INFO">${emailCsv} = </msg>
+<status status="PASS" starttime="20231007 22:15:09.922" endtime="20231007 22:15:09.923"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${proprietor_type}</var>
+<var>${proprietorTypeCsv}</var>
 <arg>${values[8]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.353" level="INFO">${proprietor_type} = insured</msg>
-<status status="PASS" starttime="20231007 12:52:22.352" endtime="20231007 12:52:22.353"/>
+<msg timestamp="20231007 22:15:09.924" level="INFO">${proprietorTypeCsv} = insured</msg>
+<status status="PASS" starttime="20231007 22:15:09.923" endtime="20231007 22:15:09.924"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${notify_type}</var>
+<var>${notifyTypeCsv}</var>
 <arg>${values[9]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 12:52:22.353" level="INFO">${notify_type} = sms</msg>
-<status status="PASS" starttime="20231007 12:52:22.353" endtime="20231007 12:52:22.353"/>
+<msg timestamp="20231007 22:15:09.924" level="INFO">${notifyTypeCsv} = sms</msg>
+<status status="PASS" starttime="20231007 22:15:09.924" endtime="20231007 22:15:09.924"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>Last Name: ${title_code}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231007 12:52:22.354" level="INFO">Last Name: """005"""</msg>
-<status status="PASS" starttime="20231007 12:52:22.353" endtime="20231007 12:52:22.354"/>
+<kw name="Set Variable" library="BuiltIn">
+<var>${fullNameCsv}</var>
+<arg>${firstNameCsv} ${lastNameCsv}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231007 22:15:09.924" level="INFO">${fullNameCsv} = ถีรพันธ์ เลิศชัยสหกุล</msg>
+<status status="PASS" starttime="20231007 22:15:09.924" endtime="20231007 22:15:09.924"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fullNameValue}</arg>
+<arg>${fullNameCsv}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231007 22:15:09.924" endtime="20231007 22:15:09.925"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${fullNamesListCsv}</var>
+<arg>[x for x in ${fullNameValue} if x != 'firstName lastName']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231007 22:15:09.925" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ชนินทร รัตนจีนะ', 'ภูริภัทร โภคะมณี', 'ถีรพันธ์ เลิศชัยสหกุล']</msg>
+<status status="PASS" starttime="20231007 22:15:09.925" endtime="20231007 22:15:09.925"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${title_code}</arg>
+<arg>${fullNamesListCsv}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231007 12:52:22.354" endtime="20231007 12:52:22.354"/>
+<status status="PASS" starttime="20231007 22:15:09.925" endtime="20231007 22:15:09.925"/>
 </kw>
-<status status="PASS" starttime="20231007 12:52:22.348" endtime="20231007 12:52:22.354"/>
+<status status="PASS" starttime="20231007 22:15:09.918" endtime="20231007 22:15:09.925"/>
 </iter>
-<status status="PASS" starttime="20231007 12:52:22.318" endtime="20231007 12:52:22.354"/>
+<status status="PASS" starttime="20231007 22:15:09.885" endtime="20231007 22:15:09.925"/>
 </for>
-<status status="PASS" starttime="20231007 12:52:22.318" endtime="20231007 12:52:22.354"/>
+<kw name="Create List" library="BuiltIn">
+<var>${fullNameListTable}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231007 22:15:09.928" level="INFO">${fullNameListTable} = []</msg>
+<status status="PASS" starttime="20231007 22:15:09.928" endtime="20231007 22:15:09.928"/>
 </kw>
-<status status="PASS" starttime="20231007 12:52:22.317" endtime="20231007 12:52:22.354"/>
+<kw name="Set Variable" library="BuiltIn">
+<var>${matchingNameFound}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231007 22:15:09.929" level="INFO">${matchingNameFound} = False</msg>
+<status status="PASS" starttime="20231007 22:15:09.928" endtime="20231007 22:15:09.929"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${columnIndex}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231007 22:15:09.929" level="INFO">${columnIndex} = 1</msg>
+<status status="PASS" starttime="20231007 22:15:09.929" endtime="20231007 22:15:09.929"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${columnIndexAsInt}</var>
+<arg>${columnIndex}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20231007 22:15:09.929" level="INFO">${columnIndexAsInt} = 1</msg>
+<status status="PASS" starttime="20231007 22:15:09.929" endtime="20231007 22:15:09.929"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${tableElements}</var>
+<arg>xpath=${tableLocator}//tr/td[${columnIndexAsInt + 1}]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231007 22:15:09.938" level="INFO">${tableElements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="eee058c9ea83bded3671e409564a871d", element="0642D9A4CA2D4B7625A3004C1D5786E2_element_119")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
+<status status="PASS" starttime="20231007 22:15:09.929" endtime="20231007 22:15:09.938"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${CaseCreateByCsvNo}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get From List" library="Collections">
+<var>${element}</var>
+<arg>${tableElements}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231007 22:15:09.939" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="eee058c9ea83bded3671e409564a871d", element="0642D9A4CA2D4B7625A3004C1D5786E2_element_119")&gt;</msg>
+<status status="PASS" starttime="20231007 22:15:09.938" endtime="20231007 22:15:09.939"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${fullName}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231007 22:15:09.949" level="INFO">${fullName} = ถีรพันธ์ เลิศชัยสหกุล</msg>
+<status status="PASS" starttime="20231007 22:15:09.939" endtime="20231007 22:15:09.949"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fullNameListTable}</arg>
+<arg>${fullName}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231007 22:15:09.950" endtime="20231007 22:15:09.950"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:09.938" endtime="20231007 22:15:09.950"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get From List" library="Collections">
+<var>${element}</var>
+<arg>${tableElements}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231007 22:15:09.950" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="eee058c9ea83bded3671e409564a871d", element="0642D9A4CA2D4B7625A3004C1D5786E2_element_120")&gt;</msg>
+<status status="PASS" starttime="20231007 22:15:09.950" endtime="20231007 22:15:09.950"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${fullName}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231007 22:15:09.957" level="INFO">${fullName} = ภูริภัทร โภคะมณี</msg>
+<status status="PASS" starttime="20231007 22:15:09.950" endtime="20231007 22:15:09.957"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fullNameListTable}</arg>
+<arg>${fullName}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231007 22:15:09.957" endtime="20231007 22:15:09.958"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:09.950" endtime="20231007 22:15:09.958"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get From List" library="Collections">
+<var>${element}</var>
+<arg>${tableElements}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231007 22:15:09.958" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="eee058c9ea83bded3671e409564a871d", element="0642D9A4CA2D4B7625A3004C1D5786E2_element_121")&gt;</msg>
+<status status="PASS" starttime="20231007 22:15:09.958" endtime="20231007 22:15:09.958"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${fullName}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231007 22:15:09.961" level="INFO">${fullName} = พันธกานต์ เกียรติไพศาลโสภณ</msg>
+<status status="PASS" starttime="20231007 22:15:09.958" endtime="20231007 22:15:09.961"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fullNameListTable}</arg>
+<arg>${fullName}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231007 22:15:09.962" endtime="20231007 22:15:09.962"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:09.958" endtime="20231007 22:15:09.962"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get From List" library="Collections">
+<var>${element}</var>
+<arg>${tableElements}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231007 22:15:09.962" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="eee058c9ea83bded3671e409564a871d", element="0642D9A4CA2D4B7625A3004C1D5786E2_element_122")&gt;</msg>
+<status status="PASS" starttime="20231007 22:15:09.962" endtime="20231007 22:15:09.962"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${fullName}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231007 22:15:09.968" level="INFO">${fullName} = ชนินทร รัตนจีนะ</msg>
+<status status="PASS" starttime="20231007 22:15:09.962" endtime="20231007 22:15:09.968"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fullNameListTable}</arg>
+<arg>${fullName}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231007 22:15:09.968" endtime="20231007 22:15:09.969"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:09.962" endtime="20231007 22:15:09.969"/>
+</iter>
+<iter>
+<var name="${index}">4</var>
+<kw name="Get From List" library="Collections">
+<var>${element}</var>
+<arg>${tableElements}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231007 22:15:09.969" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="eee058c9ea83bded3671e409564a871d", element="0642D9A4CA2D4B7625A3004C1D5786E2_element_123")&gt;</msg>
+<status status="PASS" starttime="20231007 22:15:09.969" endtime="20231007 22:15:09.969"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${fullName}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231007 22:15:09.972" level="INFO">${fullName} = ภราเดช อาสน์สุวรรณ์</msg>
+<status status="PASS" starttime="20231007 22:15:09.969" endtime="20231007 22:15:09.972"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fullNameListTable}</arg>
+<arg>${fullName}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231007 22:15:09.973" endtime="20231007 22:15:09.973"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:09.969" endtime="20231007 22:15:09.973"/>
+</iter>
+<status status="PASS" starttime="20231007 22:15:09.938" endtime="20231007 22:15:09.973"/>
+</for>
+<kw name="Compare Lists" library="CreateCasePage">
+<var>${listsMatch}</var>
+<arg>${fullNameListTable}</arg>
+<arg>${fullNamesListCsv}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${sorted_list1}</var>
+<arg>sorted(${list1})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231007 22:15:09.973" level="INFO">${sorted_list1} = ['ชนินทร รัตนจีนะ', 'ถีรพันธ์ เลิศชัยสหกุล', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ภราเดช อาสน์สุวรรณ์', 'ภูริภัทร โภคะมณี']</msg>
+<status status="PASS" starttime="20231007 22:15:09.973" endtime="20231007 22:15:09.973"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${sorted_list2}</var>
+<arg>sorted(${list2})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231007 22:15:09.973" level="INFO">${sorted_list2} = ['ชนินทร รัตนจีนะ', 'ถีรพันธ์ เลิศชัยสหกุล', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ภราเดช อาสน์สุวรรณ์', 'ภูริภัทร โภคะมณี']</msg>
+<status status="PASS" starttime="20231007 22:15:09.973" endtime="20231007 22:15:09.973"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${lists_match}</var>
+<arg>${sorted_list1} == ${sorted_list2}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231007 22:15:09.973" level="INFO">${lists_match} = True</msg>
+<status status="PASS" starttime="20231007 22:15:09.973" endtime="20231007 22:15:09.973"/>
+</kw>
+<msg timestamp="20231007 22:15:09.973" level="INFO">${listsMatch} = True</msg>
+<status status="PASS" starttime="20231007 22:15:09.973" endtime="20231007 22:15:09.974"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${listsMatch}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20231007 22:15:09.974" endtime="20231007 22:15:09.974"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:09.874" endtime="20231007 22:15:09.974"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:09.874" endtime="20231007 22:15:09.974"/>
+</kw>
+<status status="PASS" starttime="20231007 22:15:01.745" endtime="20231007 22:15:09.974"/>
 </test>
-<status status="PASS" starttime="20231007 12:52:22.158" endtime="20231007 12:52:22.354"/>
+<status status="PASS" starttime="20231007 22:15:01.581" endtime="20231007 22:15:09.974"/>
 </suite>
 <statistics>
 <total>
@@ -600,7 +1103,7 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20231007 12:52:22.254" level="ERROR">Error in file '/Users/pinpinn/dashboard-automation/Page/CreateCasePage.robot' on line 6: Importing library 'RPA.CSV' failed: ModuleNotFoundError: No module named 'RPA'
+<msg timestamp="20231007 22:15:01.684" level="ERROR">Error in file '/Users/pinpinn/dashboard-automation/Page/CreateCasePage.robot' on line 6: Importing library 'RPA.CSV' failed: ModuleNotFoundError: No module named 'RPA'
 Traceback (most recent call last):
   None
 PYTHONPATH:

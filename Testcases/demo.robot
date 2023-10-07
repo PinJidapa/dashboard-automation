@@ -12,11 +12,10 @@ Resource    ../Page/CreateCasePage.robot
 
 *** Test Cases ***
 Test 01
-    Read and Parse CSV
-    # Open Browser And Sign In With Username And Password
-    # ...    ${clientAdminUsername1}
-    # ...    ${clientAdminPassword1}
-    # Skip The Patch Pop Up
+    Open Browser And Sign In With Username And Password
+    ...    ${clientAdminUsername1}
+    ...    ${clientAdminPassword1}
+    Skip The Patch Pop Up
     # Input DipChip Case Detail
     # ...    7843275804481   
     # ...    7843275804481    
@@ -42,6 +41,8 @@ Test 01
     # Create Case By CSV
     # ...    5
     # Click Cancel On Duplicate Pop Up Create Case By CSV
+    Check Data In The Table After Create Case By CSV
+    ...    5
     # Select The First Case
     # Download Case Detail
     # ...    Dip Chip

@@ -29,3 +29,7 @@ Create Case By CSV
     [Arguments]    ${validCaseNo}
     Click Create Case By CSV    ${validCaseNo}
     Click Confirm To Import Case By CSV    
+
+Check Data In The Table After Create Case By CSV
+    [Arguments]    ${CaseCreateByCsvNo}
+    Read CSV File And Validate The Data In Table    ${CaseCreateByCsvNo}    

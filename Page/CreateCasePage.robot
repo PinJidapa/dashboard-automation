@@ -35,39 +35,12 @@ ${uploadCsvFileInput}    //input[@id='file-input']
 ${importCsvBtn}    //button[contains(text(), "Import client’s template")]
 ${confirmWording}    //p[@class="text-xs my-4 whitespace-pre text-left"]    
 ${confirmImportCsv}    //button[contains(text(),'confirm')]
-${table_locator}    //table[@class='table-compact w-full']
+${tableLocator}    //table[@class='table-compact w-full']
 
 *** Keywords ***
-Read and Parse CSV
-    ${file_contents} =    Get File    /Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv
-    
-    # Split the file contents into lines
-    ${lines} =    Split To Lines    ${file_contents}
-    
-    # Iterate over the lines and split them into a list of values
-    FOR    ${line}    IN    @{lines}
-        ${values} =    Split String    ${line}    ,
-        # Extract values from the list based on column index
-        ${case_type_code}    Set Variable    ${values[0]}
-        ${citizen_id}    Set Variable    ${values[1]}
-        ${title_code}    Set Variable    ${values[2]}
-        ${first_name}    Set Variable    ${values[3]}
-        ${last_name}    Set Variable    ${values[4]}
-        ${date_of_birth}    Set Variable    ${values[5]}
-        ${phone_number}    Set Variable    ${values[6]}
-        ${email}    Set Variable    ${values[7]}
-        ${proprietor_type}    Set Variable    ${values[8]}
-        ${notify_type}    Set Variable    ${values[9]}
-        
-        # Do something with the extracted values
-        Log    Last Name: ${title_code}
-        Log To Console    ${title_code}
-    END
-
-
-
 Verify Create Case Button
-    Wait Until Element Is Visible    ${createCaseBtn}    
+    Wait Until Element Is Visible    ${createCaseBtn}  
+
 Click Create Case Button
     Run Until Keyword Succeed    Click Element    ${createCaseBtn}
     Run Until Keyword Succeed    Click Element    ${expandCaseTypeButton}
@@ -170,6 +143,55 @@ Click Cancel On Duplicate Pop Up Create Case By CSV
     END 
     Wait Until Element Is Enabled    ${confirmImportCsv}
     Click Element    ${confirmImportCsv}
+
+Read CSV File And Validate The Data In Table
+    [Arguments]    ${CaseCreateByCsvNo}
+    Wait Until Element Is Visible   ${table_locator}   
+    ${fullNameValue}=    Create List
+    ${fileContents} =    Get File    /Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv
+    
+    # Split the file contents into lines
+    ${lines} =    Split To Lines    ${fileContents}
+    
+    # Iterate over the lines and split them into a list of values
+    FOR    ${line}    IN    @{lines}
+        ${values} =    Split String    ${line}    ,
+        # Extract values from the list based on column index
+        ${caseTypeCodeCsv}    Set Variable    ${values[0]}
+        ${citizenIdCsv}    Set Variable    ${values[1]}
+        ${titleCodeCsv}    Set Variable    ${values[2]}
+        ${firstNameCsv}    Set Variable    ${values[3]}
+        ${lastNameCsv}    Set Variable    ${values[4]}
+        ${dateOfBirthCsv}    Set Variable    ${values[5]}
+        ${phoneNumberCsv}    Set Variable    ${values[6]}
+        ${emailCsv}    Set Variable    ${values[7]}
+        ${proprietorTypeCsv}    Set Variable    ${values[8]}
+        ${notifyTypeCsv}    Set Variable    ${values[9]}
+        
+        ${fullNameCsv} =    Set Variable    ${firstNameCsv} ${lastNameCsv}
+        Append To List    ${fullNameValue}    ${fullNameCsv}
+        ${fullNamesListCsv}=    Evaluate    [x for x in ${fullNameValue} if x != 'firstName lastName']
+    END
+    
+    ${fullNameListTable}=    Create List
+    ${matchingNameFound}    Set Variable    False 
+    ${columnIndex}    Set Variable    1  # Adjust this to the correct column index (zero-based) for "Case Type"
+    ${columnIndexAsInt}    Convert To Integer    ${columnIndex}
+    ${tableElements}    Get WebElements    xpath=${tableLocator}//tr/td[${columnIndexAsInt + 1}]  # Add 1 to the index to account for 1-based indexing in XPath
+    FOR    ${index}    IN RANGE    ${CaseCreateByCsvNo}
+        ${element}    Get From List    ${tableElements}    ${index}
+        ${fullName}    Get Text    ${element}
+        Append To List    ${fullNameListTable}    ${fullName} 
+    END
+    ${listsMatch}=    Compare Lists    ${fullNameListTable}   ${fullNamesListCsv}
+    Should Be True    ${listsMatch}
+
+Compare Lists
+    [Arguments]    ${list1}    ${list2}
+    ${sorted_list1} =    Evaluate    sorted(${list1})
+    ${sorted_list2} =    Evaluate    sorted(${list2})
+    ${lists_match} =    Evaluate    ${sorted_list1} == ${sorted_list2}
+    [Return]    ${lists_match}
 
 
 
