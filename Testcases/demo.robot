@@ -30,6 +30,10 @@ Test 01
     ...    Phone No.
     ...    0619926554
     If Duplicate Then Click Cancel
+    # Check The Case Detail After Create The Case
+    # ...    จิดาภา
+    # ...    ชินวัด
+    # ...    โอบกิจกาจพล
     Filter The Case By Case Type
     ...    Dip Chip
     Check The Content In Case List Table

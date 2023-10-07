@@ -34,6 +34,7 @@ ${uploadCsvFileInput}    //input[@id='file-input']
 ${importCsvBtn}    //button[contains(text(), "Import client’s template")]
 ${confirmWording}    //p[@class="text-xs my-4 whitespace-pre text-left"]    
 ${confirmImportCsv}    //button[contains(text(),'confirm')]
+${table_locator}    //table[@class='table-compact w-full']
 
 *** Keywords ***
 Verify Create Case Button
@@ -95,6 +96,14 @@ Select Cancel On Duplicate Pop Up
     Click Element    ${cancelRadio} 
     Wait Until Element Is Enabled    ${confirmInDuplicateBtn}
     Click Element    ${confirmInDuplicateBtn}
+
+Check The Case Detail After Create The Case
+    [Arguments]    ${firstName}    ${middleName}    ${lastName} 
+    ${NameRowOne}    Set Variable    //tbody/tr[1]/td[2]
+    Wait Until Element Is Visible    ${NameRowOne}
+    Should Contain    ${NameRowOne}    ${firstName}     
+    Should Contain    ${NameRowOne}    ${middleName}
+    Should Contain    ${NameRowOne}    ${lastName}
 
 Click Create Case By CSV
     [Arguments]    ${validCaseNo}
