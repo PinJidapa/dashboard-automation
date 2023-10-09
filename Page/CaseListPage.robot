@@ -89,7 +89,7 @@ Check Path Note Pop Up
     ...    ELSE IF    ${element_en_exists}    Run Until Keyword Succeed    Click Element    ${gotItButton}
     ...    ELSE    Wait Until Element Is Visible    ${firstCase}
 
-Check The Case Detail After Create The Case TT
+Check The Case After Create The Case
     [Arguments]    ${expectFullName}
     ${columnIndex}    Set Variable    1  # Adjust this to the correct column index (zero-based) for "Case Type"
     ${columnIndexAsInt}    Convert To Integer    ${columnIndex}

@@ -16,3 +16,7 @@ Check Data In The Table After Create Case By CSV
 
 Click The First Case
     Select The First Case
+
+Check Data In The Table After Create Case
+    [Arguments]    ${expectFullName}
+    Check The Case After Create The Case    ${expectFullName}

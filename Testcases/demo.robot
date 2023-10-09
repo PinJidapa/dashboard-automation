@@ -27,7 +27,7 @@ Test 01
     ...    Phone No.
     ...    0619926554
     If Duplicate Then Click Create New
-    Check The Case Detail After Create The Case TT
+    Check Data In The Table After Create Case
     ...    จิดาภา ชินวัด โอบกิจกาจพล
     Create Case By CSV
     ...    5
