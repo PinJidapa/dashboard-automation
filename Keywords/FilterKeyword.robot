@@ -1,10 +1,8 @@
 *** Settings ***
 Library     SeleniumLibrary
-Resource    ../Page/CommonPage.robot
+Resource    ../Page/FilterPage.robot
 
 *** Keywords ***
-Skip The Patch Pop Up
-    Check Path Note Pop Up
 
 Filter The Case By ID Card No And Status
     [Arguments]    ${searchInfo}    ${status}    ${caseType}

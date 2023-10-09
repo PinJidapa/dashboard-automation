@@ -25,7 +25,16 @@ Input Contact Information And Confirm Button
 If Duplicate Then Click Cancel
     Check The Duplicate Pop Up If Yes Click Cancel
 
+If Duplicate Then Click Create New
+    Check The Duplicate Pop Up If Yes Click Create New
+
+If Duplicate Then Click Create New CSV
+    Click Create New On Duplicate Pop Up Create Case By CSV
+
 Create Case By CSV
     [Arguments]    ${validCaseNo}
     Click Create Case By CSV    ${validCaseNo}
-    Click Confirm To Import Case By CSV    
+    Click Confirm To Import Case By CSV  
+
+  
+
