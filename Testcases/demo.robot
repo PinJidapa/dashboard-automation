@@ -13,11 +13,6 @@ Test 01
     ...    ${clientAdminUsername1}
     ...    ${clientAdminPassword1}
     Skip The Patch Pop Up
-    Create Case By CSV
-    ...    5
-    If Duplicate Then Click Create New CSV
-    Check Data In The Table After Create Case By CSV
-    ...    5
     Input DipChip Case Detail
     ...    7843275804481   
     ...    7843275804481    
@@ -34,6 +29,11 @@ Test 01
     If Duplicate Then Click Create New
     Check The Case Detail After Create The Case TT
     ...    จิดาภา ชินวัด โอบกิจกาจพล
+    Create Case By CSV
+    ...    5
+    If Duplicate Then Click Create New CSV
+    Check Data In The Table After Create Case By CSV
+    ...    5
     Filter The Case By Case Type
     ...    Dip Chip
     Check The Content In Case List Table
