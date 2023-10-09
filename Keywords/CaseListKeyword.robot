@@ -7,8 +7,8 @@ Skip The Patch Pop Up
     Check Path Note Pop Up
 
 Check The Content In Case List Table
-    [Arguments]    ${expected_status}
-    Check Status in Every Row    ${expected_status}
+    [Arguments]    ${expectedStatus}
+    Check Status in Every Row    ${expectedStatus}
 
 Check Data In The Table After Create Case By CSV
     [Arguments]    ${CaseCreateByCsvNo}

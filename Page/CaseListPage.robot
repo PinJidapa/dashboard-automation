@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Resource    ../Keywords/Utils.robot
 
 *** Variables ***
-${table_locator}    //table[@class='table-compact w-full']
+${tableLocator}     //table[@class='table-compact w-full']
 ${firstCase}    //table[@class='table-compact w-full']//tbody/tr[1]
 ${sixthCase}    //table[@class='table-compact w-full']//tbody/tr[6]
 ${pathNotePopUpTH}    //div[contains(text(),'ฟีเจอร์ใหม่')]
@@ -17,19 +17,19 @@ Select The First Case
     Click Element    ${firstCase}
 
 Check Status in Every Row
-    [Arguments]    ${expected_status}
-    ${column_index}    Set Variable    3  # Adjust this to the correct column index (zero-based) for "Case Type"
-    ${column_index_as_int}    Convert To Integer    ${column_index}
-    ${table_elements}    Get WebElements    xpath=${table_locator}//tr/td[${column_index_as_int + 1}]  # Add 1 to the index to account for 1-based indexing in XPath
-    FOR    ${element}    IN    @{table_elements}
+    [Arguments]    ${expectedStatus}
+    ${columnIndex}    Set Variable    3  # Adjust this to the correct column index (zero-based) for "Case Type"
+    ${columnIndexAsInt}    Convert To Integer    ${columnIndex}
+    ${table_elements}    Get WebElements    xpath=${tableLocator} //tr/td[${column_index_as_int + 1}]  # Add 1 to the index to account for 1-based indexing in XPath
+    FOR    ${element}    IN    @{tableElements}
         ${text}    Get Text    ${element}
         Log To Console   ${text}
-        Should Be Equal As Strings     ${text}    ${expected_status}
+        Should Be Equal As Strings     ${text}    ${expectedStatus}
     END
 
 Read CSV File And Validate The Data In Table
     [Arguments]    ${CaseCreateByCsvNo}
-    Wait Until Element Is Visible   ${table_locator} 
+    Wait Until Element Is Visible   ${tableLocator}  
     Wait Until Element Is Visible    ${firstCase} 
     # Wait Until Element Is Visible    ${sixthCase} 
     ${fullNameValue}=    Create List
@@ -75,18 +75,18 @@ Read CSV File And Validate The Data In Table
 
 Compare Lists
     [Arguments]    ${list1}    ${list2}
-    ${sorted_list1} =    Evaluate    sorted(${list1})
-    ${sorted_list2} =    Evaluate    sorted(${list2})
-    ${lists_match} =    Evaluate    ${sorted_list1} == ${sorted_list2}
-    [Return]    ${lists_match}
+    ${sortedList1} =    Evaluate    sorted(${list1})
+    ${sortedList2} =    Evaluate    sorted(${list2})
+    ${listsMatch} =    Evaluate    ${sortedList1} == ${sortedList2}
+    [Return]    ${listsMatch}
 
 Check Path Note Pop Up
     Sleep    2s
-    ${element_th_exists}    Run Keyword And Return Status    Element Should Be Visible    ${pathNotePopUpTH}
-    ${element_en_exists}    Run Keyword And Return Status    Element Should Be Visible    ${pathNotePopUpEN}
+    ${elementThExists}    Run Keyword And Return Status    Element Should Be Visible    ${pathNotePopUpTH}
+    ${elementEnExists}    Run Keyword And Return Status    Element Should Be Visible    ${pathNotePopUpEN}
 
-    Run Keyword If    ${element_th_exists}    Run Until Keyword Succeed    Click Element    ${gotItButton}
-    ...    ELSE IF    ${element_en_exists}    Run Until Keyword Succeed    Click Element    ${gotItButton}
+    Run Keyword If    ${elementThExists}    Run Until Keyword Succeed    Click Element    ${gotItButton}
+    ...    ELSE IF    ${elementEnExists}    Run Until Keyword Succeed    Click Element    ${gotItButton}
     ...    ELSE    Wait Until Element Is Visible    ${firstCase}
 
 Check The Case After Create The Case
