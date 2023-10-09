@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.9.17 on darwin)" generated="20231007 22:15:01.581" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.9.17 on darwin)" generated="20231009 13:39:19.515" rpa="false" schemaversion="4">
 <suite id="s1" name="Demo" source="/Users/pinpinn/dashboard-automation/Testcases/demo.robot">
-<test id="s1-t1" name="Test 01" line="14">
+<test id="s1-t1" name="Test 01" line="11">
 <kw name="Open Browser And Sign In With Username And Password" library="LoginKeyword">
 <arg>${clientAdminUsername1}</arg>
 <arg>${clientAdminPassword1}</arg>
@@ -10,42 +10,42 @@
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231007 22:15:01.746" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1048ef400&gt;</msg>
-<status status="PASS" starttime="20231007 22:15:01.746" endtime="20231007 22:15:01.746"/>
+<msg timestamp="20231009 13:39:19.679" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x106144d30&gt;</msg>
+<status status="PASS" starttime="20231009 13:39:19.679" endtime="20231009 13:39:19.679"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-extensions</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20231007 22:15:01.746" endtime="20231007 22:15:01.746"/>
+<status status="PASS" starttime="20231009 13:39:19.679" endtime="20231009 13:39:19.679"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-popup-blocking</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20231007 22:15:01.746" endtime="20231007 22:15:01.746"/>
+<status status="PASS" starttime="20231009 13:39:19.679" endtime="20231009 13:39:19.679"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--start-maximized</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20231007 22:15:01.746" endtime="20231007 22:15:01.746"/>
+<status status="PASS" starttime="20231009 13:39:19.679" endtime="20231009 13:39:19.679"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${chrome_prefs}</var>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231007 22:15:01.746" level="INFO">${chrome_prefs} = {}</msg>
-<status status="PASS" starttime="20231007 22:15:01.746" endtime="20231007 22:15:01.746"/>
+<msg timestamp="20231009 13:39:19.680" level="INFO">${chrome_prefs} = {}</msg>
+<status status="PASS" starttime="20231009 13:39:19.679" endtime="20231009 13:39:19.680"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${chrome_prefs}</arg>
 <arg>download.default_directory</arg>
 <arg>${EXECDIR}/assets</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20231007 22:15:01.746" endtime="20231007 22:15:01.747"/>
+<status status="PASS" starttime="20231009 13:39:19.680" endtime="20231009 13:39:19.680"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${chrome_options}</arg>
@@ -53,25 +53,25 @@
 <arg>prefs</arg>
 <arg>${chrome_prefs}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20231007 22:15:01.747" endtime="20231007 22:15:01.747"/>
+<status status="PASS" starttime="20231009 13:39:19.680" endtime="20231009 13:39:19.680"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>browser=chrome</arg>
 <arg>options=${chrome_options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231007 22:15:01.747" level="INFO">Opening browser 'chrome' to base url 'https://portal-v2-qa.mac-non-prod.appmanteam.com/apps/case-keeper/cases'.</msg>
-<status status="PASS" starttime="20231007 22:15:01.747" endtime="20231007 22:15:05.284"/>
+<msg timestamp="20231009 13:39:19.680" level="INFO">Opening browser 'chrome' to base url 'https://portal-v2-qa.mac-non-prod.appmanteam.com/apps/case-keeper/cases'.</msg>
+<status status="PASS" starttime="20231009 13:39:19.680" endtime="20231009 13:39:25.691"/>
 </kw>
 <kw name="Set Window Position" library="SeleniumLibrary">
 <arg>0</arg>
 <arg>0</arg>
 <doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
-<status status="PASS" starttime="20231007 22:15:05.285" endtime="20231007 22:15:06.559"/>
+<status status="PASS" starttime="20231009 13:39:25.691" endtime="20231009 13:39:31.304"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20231007 22:15:06.559" endtime="20231007 22:15:06.992"/>
+<status status="PASS" starttime="20231009 13:39:31.305" endtime="20231009 13:39:31.752"/>
 </kw>
 <kw name="Enter Username" library="LoginPage">
 <arg>${username}</arg>
@@ -79,16 +79,16 @@
 <arg>${username}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231007 22:15:06.993" endtime="20231007 22:15:07.017"/>
+<status status="PASS" starttime="20231009 13:39:31.753" endtime="20231009 13:39:31.796"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${username}</arg>
 <arg>${value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231007 22:15:07.017" level="INFO">Typing text 'client_admin_1@mac-portal-v2.com' into text field '//input[@id='username']'.</msg>
-<status status="PASS" starttime="20231007 22:15:07.017" endtime="20231007 22:15:07.134"/>
+<msg timestamp="20231009 13:39:31.796" level="INFO">Typing text 'client_admin_1@mac-portal-v2.com' into text field '//input[@id='username']'.</msg>
+<status status="PASS" starttime="20231009 13:39:31.796" endtime="20231009 13:39:31.917"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:06.992" endtime="20231007 22:15:07.134"/>
+<status status="PASS" starttime="20231009 13:39:31.752" endtime="20231009 13:39:31.917"/>
 </kw>
 <kw name="Enter Password" library="LoginPage">
 <arg>${password}</arg>
@@ -96,16 +96,16 @@
 <arg>${password}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231007 22:15:07.134" endtime="20231007 22:15:07.144"/>
+<status status="PASS" starttime="20231009 13:39:31.918" endtime="20231009 13:39:31.928"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${password}</arg>
 <arg>${value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231007 22:15:07.144" level="INFO">Typing text '!QAZ2wsx' into text field '//input[@id='password']'.</msg>
-<status status="PASS" starttime="20231007 22:15:07.144" endtime="20231007 22:15:07.174"/>
+<msg timestamp="20231009 13:39:31.929" level="INFO">Typing text '!QAZ2wsx' into text field '//input[@id='password']'.</msg>
+<status status="PASS" starttime="20231009 13:39:31.928" endtime="20231009 13:39:31.958"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:07.134" endtime="20231007 22:15:07.174"/>
+<status status="PASS" starttime="20231009 13:39:31.918" endtime="20231009 13:39:31.958"/>
 </kw>
 <kw name="Click Sign In Button" library="LoginPage">
 <kw name="Run Until Keyword Succeed" library="Utils">
@@ -121,24 +121,24 @@
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${args}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231007 22:15:07.179" level="INFO">Clicking element '//input[@id='kc-login']'.</msg>
-<status status="PASS" starttime="20231007 22:15:07.179" endtime="20231007 22:15:07.562"/>
+<msg timestamp="20231009 13:39:31.962" level="INFO">Clicking element '//input[@id='kc-login']'.</msg>
+<status status="PASS" starttime="20231009 13:39:31.961" endtime="20231009 13:39:32.463"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:07.175" endtime="20231007 22:15:07.562"/>
+<status status="PASS" starttime="20231009 13:39:31.958" endtime="20231009 13:39:32.463"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:07.175" endtime="20231007 22:15:07.562"/>
+<status status="PASS" starttime="20231009 13:39:31.958" endtime="20231009 13:39:32.463"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:07.175" endtime="20231007 22:15:07.562"/>
+<status status="PASS" starttime="20231009 13:39:31.958" endtime="20231009 13:39:32.463"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:01.745" endtime="20231007 22:15:07.562"/>
+<status status="PASS" starttime="20231009 13:39:19.679" endtime="20231009 13:39:32.463"/>
 </kw>
-<kw name="Skip The Patch Pop Up" library="CommonKeyword">
-<kw name="Check Path Note Pop Up" library="CommonPage">
+<kw name="Skip The Patch Pop Up" library="CaseListKeyword">
+<kw name="Check Path Note Pop Up" library="CaseListPage">
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231007 22:15:09.565" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231007 22:15:07.563" endtime="20231007 22:15:09.566"/>
+<msg timestamp="20231009 13:39:34.465" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231009 13:39:32.464" endtime="20231009 13:39:34.466"/>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${element_th_exists}</var>
@@ -148,12 +148,12 @@
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${pathNotePopUpTH}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20231007 22:15:09.835" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-750.png"&gt;&lt;img src="selenium-screenshot-750.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20231007 22:15:09.835" level="FAIL">Element with locator '//div[contains(text(),'ฟีเจอร์ใหม่')]' not found.</msg>
-<status status="FAIL" starttime="20231007 22:15:09.568" endtime="20231007 22:15:09.839"/>
+<msg timestamp="20231009 13:39:34.728" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-877.png"&gt;&lt;img src="selenium-screenshot-877.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231009 13:39:34.728" level="FAIL">Element with locator '//div[contains(text(),'ฟีเจอร์ใหม่')]' not found.</msg>
+<status status="FAIL" starttime="20231009 13:39:34.468" endtime="20231009 13:39:34.730"/>
 </kw>
-<msg timestamp="20231007 22:15:09.839" level="INFO">${element_th_exists} = False</msg>
-<status status="PASS" starttime="20231007 22:15:09.567" endtime="20231007 22:15:09.839"/>
+<msg timestamp="20231009 13:39:34.730" level="INFO">${element_th_exists} = False</msg>
+<status status="PASS" starttime="20231009 13:39:34.467" endtime="20231009 13:39:34.730"/>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${element_en_exists}</var>
@@ -163,11 +163,11 @@
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${pathNotePopUpEN}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20231007 22:15:09.848" level="INFO">Element '//div[contains(text(),'New update')]' is displayed.</msg>
-<status status="PASS" starttime="20231007 22:15:09.839" endtime="20231007 22:15:09.848"/>
+<msg timestamp="20231009 13:39:34.739" level="INFO">Element '//div[contains(text(),'New update')]' is displayed.</msg>
+<status status="PASS" starttime="20231009 13:39:34.730" endtime="20231009 13:39:34.739"/>
 </kw>
-<msg timestamp="20231007 22:15:09.848" level="INFO">${element_en_exists} = True</msg>
-<status status="PASS" starttime="20231007 22:15:09.839" endtime="20231007 22:15:09.848"/>
+<msg timestamp="20231009 13:39:34.739" level="INFO">${element_en_exists} = True</msg>
+<status status="PASS" starttime="20231009 13:39:34.730" endtime="20231009 13:39:34.739"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>${element_th_exists}</arg>
@@ -180,7 +180,8 @@
 <arg>Click Element</arg>
 <arg>${gotItButton}</arg>
 <arg>ELSE</arg>
-<arg>Verify The Search Button</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${firstCase}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <kw name="Run Until Keyword Succeed" library="Utils">
 <arg>Click Element</arg>
@@ -195,50 +196,316 @@
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${args}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231007 22:15:09.851" level="INFO">Clicking element '//button[@id='ok-button']'.</msg>
-<status status="PASS" starttime="20231007 22:15:09.851" endtime="20231007 22:15:09.873"/>
+<msg timestamp="20231009 13:39:34.743" level="INFO">Clicking element '//button[@id='ok-button']'.</msg>
+<status status="PASS" starttime="20231009 13:39:34.743" endtime="20231009 13:39:34.762"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:09.848" endtime="20231007 22:15:09.873"/>
+<status status="PASS" starttime="20231009 13:39:34.739" endtime="20231009 13:39:34.762"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:09.848" endtime="20231007 22:15:09.873"/>
+<status status="PASS" starttime="20231009 13:39:34.739" endtime="20231009 13:39:34.762"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:09.848" endtime="20231007 22:15:09.873"/>
+<status status="PASS" starttime="20231009 13:39:34.739" endtime="20231009 13:39:34.762"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:07.563" endtime="20231007 22:15:09.873"/>
+<status status="PASS" starttime="20231009 13:39:32.464" endtime="20231009 13:39:34.762"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:07.562" endtime="20231007 22:15:09.873"/>
+<status status="PASS" starttime="20231009 13:39:32.464" endtime="20231009 13:39:34.762"/>
 </kw>
-<kw name="Check Data In The Table After Create Case By CSV" library="CreateCaseKeyword">
+<kw name="Create Case By CSV" library="CreateCaseKeyword">
 <arg>5</arg>
-<kw name="Read CSV File And Validate The Data In Table" library="CreateCasePage">
+<kw name="Click Create Case By CSV" library="CreateCasePage">
+<arg>${validCaseNo}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dashBoardCSVMenuBtn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:39:34.763" endtime="20231009 13:39:34.772"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dashBoardCSVMenuBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:34.772" level="INFO">Clicking element '//button[@id='dashboard-csv-menu-button']'.</msg>
+<status status="PASS" starttime="20231009 13:39:34.772" endtime="20231009 13:39:35.658"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${importCsvBtn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:39:35.659" endtime="20231009 13:39:35.674"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${importCsvBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:35.675" level="INFO">Clicking element '//button[contains(text(), "Import client’s template")]'.</msg>
+<status status="PASS" starttime="20231009 13:39:35.675" endtime="20231009 13:39:35.699"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>${uploadCsvFileInput}</arg>
+<arg>${EXECDIR}/Resourses/TestData/csv/test1.csv</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20231009 13:39:35.699" level="INFO">Sending /Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv to browser.</msg>
+<status status="PASS" starttime="20231009 13:39:35.699" endtime="20231009 13:39:36.679"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${confirmWording}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:39:36.679" endtime="20231009 13:39:36.710"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${confirmWording}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:36.721" level="INFO">${text} = There are 5 valid cases. 
+Do you wish to proceed and import all of those successful case?</msg>
+<status status="PASS" starttime="20231009 13:39:36.710" endtime="20231009 13:39:36.721"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231009 13:39:36.722" endtime="20231009 13:39:36.723"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>There are ${validCaseNo} valid cases.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231009 13:39:36.723" endtime="20231009 13:39:36.723"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>Do you wish to proceed and import all of those successful case?</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231009 13:39:36.723" endtime="20231009 13:39:36.723"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 13:39:38.724" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231009 13:39:36.723" endtime="20231009 13:39:38.724"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:34.763" endtime="20231009 13:39:38.724"/>
+</kw>
+<kw name="Click Confirm To Import Case By CSV" library="CreateCasePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${confirmImportCsv}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:39:38.726" endtime="20231009 13:39:38.752"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${confirmImportCsv}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:38.752" level="INFO">Clicking element '//button[contains(text(),'confirm')]'.</msg>
+<status status="PASS" starttime="20231009 13:39:38.752" endtime="20231009 13:39:38.781"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:38.725" endtime="20231009 13:39:38.781"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:34.763" endtime="20231009 13:39:38.781"/>
+</kw>
+<kw name="If Duplicate Then Click Create New CSV" library="CreateCaseKeyword">
+<kw name="Click Create New On Duplicate Pop Up Create Case By CSV" library="CreateCasePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${cancelRadio}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:39:38.781" endtime="20231009 13:39:40.285"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{create_case_radio_buttons}</var>
+<arg>css:.max-h-52 tbody input[type="radio"][value="createNew"]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231009 13:39:40.291" level="INFO">@{create_case_radio_buttons} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_130")&gt; | &lt;selenium.webdriver.remote.webelement.WebElem...</msg>
+<status status="PASS" starttime="20231009 13:39:40.286" endtime="20231009 13:39:40.291"/>
+</kw>
+<for flavor="IN">
+<var>${radio_button}</var>
+<value>@{create_case_radio_buttons}</value>
+<iter>
+<var name="${radio_button}">&lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_130")&gt;</var>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${radio_button}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:40.295" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_130")&gt;'.</msg>
+<status status="PASS" starttime="20231009 13:39:40.294" endtime="20231009 13:39:40.321"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.291" endtime="20231009 13:39:40.321"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.291" endtime="20231009 13:39:40.321"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.291" endtime="20231009 13:39:40.321"/>
+</iter>
+<iter>
+<var name="${radio_button}">&lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_131")&gt;</var>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${radio_button}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:40.325" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_131")&gt;'.</msg>
+<status status="PASS" starttime="20231009 13:39:40.325" endtime="20231009 13:39:40.343"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.322" endtime="20231009 13:39:40.343"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.321" endtime="20231009 13:39:40.343"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.321" endtime="20231009 13:39:40.343"/>
+</iter>
+<iter>
+<var name="${radio_button}">&lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_132")&gt;</var>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${radio_button}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:40.346" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_132")&gt;'.</msg>
+<status status="PASS" starttime="20231009 13:39:40.346" endtime="20231009 13:39:40.364"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.343" endtime="20231009 13:39:40.364"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.343" endtime="20231009 13:39:40.364"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.343" endtime="20231009 13:39:40.364"/>
+</iter>
+<iter>
+<var name="${radio_button}">&lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_133")&gt;</var>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${radio_button}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:40.368" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_133")&gt;'.</msg>
+<status status="PASS" starttime="20231009 13:39:40.367" endtime="20231009 13:39:40.383"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.364" endtime="20231009 13:39:40.383"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.364" endtime="20231009 13:39:40.383"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.364" endtime="20231009 13:39:40.383"/>
+</iter>
+<iter>
+<var name="${radio_button}">&lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_134")&gt;</var>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${radio_button}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:40.387" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_134")&gt;'.</msg>
+<status status="PASS" starttime="20231009 13:39:40.387" endtime="20231009 13:39:40.413"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.384" endtime="20231009 13:39:40.413"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.383" endtime="20231009 13:39:40.413"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.383" endtime="20231009 13:39:40.413"/>
+</iter>
+<status status="PASS" starttime="20231009 13:39:40.291" endtime="20231009 13:39:40.413"/>
+</for>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${confirmImportCsv}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231009 13:39:40.414" endtime="20231009 13:39:40.425"/>
+</kw>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${confirmImportCsv}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:40.429" level="INFO">Clicking element '//button[contains(text(),'confirm')]'.</msg>
+<status status="PASS" starttime="20231009 13:39:40.428" endtime="20231009 13:39:40.455"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.425" endtime="20231009 13:39:40.455"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:40.425" endtime="20231009 13:39:40.455"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 13:39:45.457" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231009 13:39:40.456" endtime="20231009 13:39:45.457"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:38.781" endtime="20231009 13:39:45.458"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:38.781" endtime="20231009 13:39:45.458"/>
+</kw>
+<kw name="Check Data In The Table After Create Case By CSV" library="CaseListKeyword">
+<arg>5</arg>
+<kw name="Read CSV File And Validate The Data In Table" library="CaseListPage">
 <arg>${CaseCreateByCsvNo}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${table_locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231007 22:15:09.874" endtime="20231007 22:15:09.884"/>
+<status status="PASS" starttime="20231009 13:39:45.462" endtime="20231009 13:39:45.486"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${firstCase}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:39:45.486" endtime="20231009 13:39:45.500"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>${fullNameValue}</var>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20231007 22:15:09.884" level="INFO">${fullNameValue} = []</msg>
-<status status="PASS" starttime="20231007 22:15:09.884" endtime="20231007 22:15:09.884"/>
+<msg timestamp="20231009 13:39:45.500" level="INFO">${fullNameValue} = []</msg>
+<status status="PASS" starttime="20231009 13:39:45.500" endtime="20231009 13:39:45.500"/>
 </kw>
 <kw name="Get File" library="OperatingSystem">
 <var>${fileContents}</var>
 <arg>/Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv</arg>
 <doc>Returns the contents of a specified file.</doc>
-<msg timestamp="20231007 22:15:09.884" level="INFO" html="true">Getting file '&lt;a href="file:///Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv"&gt;/Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv&lt;/a&gt;'.</msg>
-<msg timestamp="20231007 22:15:09.885" level="INFO">${fileContents} = caseTypeCode,citizenId,titleCode,firstName,lastName,dateOfBirth,phoneNumber,email,proprietorType,notifyType
+<msg timestamp="20231009 13:39:45.500" level="INFO" html="true">Getting file '&lt;a href="file:///Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv"&gt;/Users/pinpinn/dashboard-automation/Resourses/TestData/csv/test1.csv&lt;/a&gt;'.</msg>
+<msg timestamp="20231009 13:39:45.500" level="INFO">${fileContents} = caseTypeCode,citizenId,titleCode,firstName,lastName,dateOfBirth,phoneNumber,email,proprietorType,notifyType
 """001""","""9082299541733""","""005""",ภราเดช,อาสน์สุวรรณ์,1990-08-21,,jidapa.o@appman.co.t...</msg>
-<status status="PASS" starttime="20231007 22:15:09.884" endtime="20231007 22:15:09.885"/>
+<status status="PASS" starttime="20231009 13:39:45.500" endtime="20231009 13:39:45.500"/>
 </kw>
 <kw name="Split To Lines" library="String">
 <var>${lines}</var>
 <arg>${fileContents}</arg>
 <doc>Splits the given string to lines.</doc>
-<msg timestamp="20231007 22:15:09.885" level="INFO">6 lines returned</msg>
-<msg timestamp="20231007 22:15:09.885" level="INFO">${lines} = ['caseTypeCode,citizenId,titleCode,firstName,lastName,dateOfBirth,phoneNumber,email,proprietorType,notifyType', '"""001""","""9082299541733""","""005""",ภราเดช,อาสน์สุวรรณ์,1990-08-21,,jidapa.o@appman...</msg>
-<status status="PASS" starttime="20231007 22:15:09.885" endtime="20231007 22:15:09.885"/>
+<msg timestamp="20231009 13:39:45.501" level="INFO">6 lines returned</msg>
+<msg timestamp="20231009 13:39:45.501" level="INFO">${lines} = ['caseTypeCode,citizenId,titleCode,firstName,lastName,dateOfBirth,phoneNumber,email,proprietorType,notifyType', '"""001""","""9082299541733""","""005""",ภราเดช,อาสน์สุวรรณ์,1990-08-21,,jidapa.o@appman...</msg>
+<status status="PASS" starttime="20231009 13:39:45.500" endtime="20231009 13:39:45.501"/>
 </kw>
 <for flavor="IN">
 <var>${line}</var>
@@ -250,105 +517,100 @@
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<msg timestamp="20231007 22:15:09.885" level="INFO">${values} = ['caseTypeCode', 'citizenId', 'titleCode', 'firstName', 'lastName', 'dateOfBirth', 'phoneNumber', 'email', 'proprietorType', 'notifyType']</msg>
-<status status="PASS" starttime="20231007 22:15:09.885" endtime="20231007 22:15:09.885"/>
+<msg timestamp="20231009 13:39:45.502" level="INFO">${values} = ['caseTypeCode', 'citizenId', 'titleCode', 'firstName', 'lastName', 'dateOfBirth', 'phoneNumber', 'email', 'proprietorType', 'notifyType']</msg>
+<status status="PASS" starttime="20231009 13:39:45.502" endtime="20231009 13:39:45.502"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${caseTypeCodeCsv}</var>
 <arg>${values[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.886" level="INFO">${caseTypeCodeCsv} = caseTypeCode</msg>
-<status status="PASS" starttime="20231007 22:15:09.885" endtime="20231007 22:15:09.886"/>
+<msg timestamp="20231009 13:39:45.503" level="INFO">${caseTypeCodeCsv} = caseTypeCode</msg>
+<status status="PASS" starttime="20231009 13:39:45.502" endtime="20231009 13:39:45.503"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${citizenIdCsv}</var>
 <arg>${values[1]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.886" level="INFO">${citizenIdCsv} = citizenId</msg>
-<status status="PASS" starttime="20231007 22:15:09.886" endtime="20231007 22:15:09.886"/>
+<msg timestamp="20231009 13:39:45.503" level="INFO">${citizenIdCsv} = citizenId</msg>
+<status status="PASS" starttime="20231009 13:39:45.503" endtime="20231009 13:39:45.503"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${titleCodeCsv}</var>
 <arg>${values[2]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.887" level="INFO">${titleCodeCsv} = titleCode</msg>
-<status status="PASS" starttime="20231007 22:15:09.886" endtime="20231007 22:15:09.887"/>
+<msg timestamp="20231009 13:39:45.504" level="INFO">${titleCodeCsv} = titleCode</msg>
+<status status="PASS" starttime="20231009 13:39:45.504" endtime="20231009 13:39:45.504"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${firstNameCsv}</var>
 <arg>${values[3]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.887" level="INFO">${firstNameCsv} = firstName</msg>
-<status status="PASS" starttime="20231007 22:15:09.887" endtime="20231007 22:15:09.887"/>
+<msg timestamp="20231009 13:39:45.505" level="INFO">${firstNameCsv} = firstName</msg>
+<status status="PASS" starttime="20231009 13:39:45.504" endtime="20231009 13:39:45.505"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${lastNameCsv}</var>
 <arg>${values[4]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.888" level="INFO">${lastNameCsv} = lastName</msg>
-<status status="PASS" starttime="20231007 22:15:09.887" endtime="20231007 22:15:09.888"/>
+<msg timestamp="20231009 13:39:45.506" level="INFO">${lastNameCsv} = lastName</msg>
+<status status="PASS" starttime="20231009 13:39:45.505" endtime="20231009 13:39:45.506"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${dateOfBirthCsv}</var>
 <arg>${values[5]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.888" level="INFO">${dateOfBirthCsv} = dateOfBirth</msg>
-<status status="PASS" starttime="20231007 22:15:09.888" endtime="20231007 22:15:09.888"/>
+<msg timestamp="20231009 13:39:45.506" level="INFO">${dateOfBirthCsv} = dateOfBirth</msg>
+<status status="PASS" starttime="20231009 13:39:45.506" endtime="20231009 13:39:45.507"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${phoneNumberCsv}</var>
 <arg>${values[6]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.889" level="INFO">${phoneNumberCsv} = phoneNumber</msg>
-<status status="PASS" starttime="20231007 22:15:09.888" endtime="20231007 22:15:09.889"/>
+<msg timestamp="20231009 13:39:45.507" level="INFO">${phoneNumberCsv} = phoneNumber</msg>
+<status status="PASS" starttime="20231009 13:39:45.507" endtime="20231009 13:39:45.507"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${emailCsv}</var>
 <arg>${values[7]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.889" level="INFO">${emailCsv} = email</msg>
-<status status="PASS" starttime="20231007 22:15:09.889" endtime="20231007 22:15:09.889"/>
+<msg timestamp="20231009 13:39:45.508" level="INFO">${emailCsv} = email</msg>
+<status status="PASS" starttime="20231009 13:39:45.507" endtime="20231009 13:39:45.508"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${proprietorTypeCsv}</var>
 <arg>${values[8]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.890" level="INFO">${proprietorTypeCsv} = proprietorType</msg>
-<status status="PASS" starttime="20231007 22:15:09.889" endtime="20231007 22:15:09.890"/>
+<msg timestamp="20231009 13:39:45.509" level="INFO">${proprietorTypeCsv} = proprietorType</msg>
+<status status="PASS" starttime="20231009 13:39:45.508" endtime="20231009 13:39:45.509"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${notifyTypeCsv}</var>
 <arg>${values[9]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.891" level="INFO">${notifyTypeCsv} = notifyType</msg>
-<status status="PASS" starttime="20231007 22:15:09.890" endtime="20231007 22:15:09.891"/>
+<msg timestamp="20231009 13:39:45.510" level="INFO">${notifyTypeCsv} = notifyType</msg>
+<status status="PASS" starttime="20231009 13:39:45.509" endtime="20231009 13:39:45.510"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${fullNameCsv}</var>
 <arg>${firstNameCsv} ${lastNameCsv}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.891" level="INFO">${fullNameCsv} = firstName lastName</msg>
-<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.891"/>
+<msg timestamp="20231009 13:39:45.510" level="INFO">${fullNameCsv} = firstName lastName</msg>
+<status status="PASS" starttime="20231009 13:39:45.510" endtime="20231009 13:39:45.510"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${fullNameValue}</arg>
 <arg>${fullNameCsv}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.891"/>
+<status status="PASS" starttime="20231009 13:39:45.510" endtime="20231009 13:39:45.510"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${fullNamesListCsv}</var>
 <arg>[x for x in ${fullNameValue} if x != 'firstName lastName']</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231007 22:15:09.891" level="INFO">${fullNamesListCsv} = []</msg>
-<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.891"/>
+<msg timestamp="20231009 13:39:45.510" level="INFO">${fullNamesListCsv} = []</msg>
+<status status="PASS" starttime="20231009 13:39:45.510" endtime="20231009 13:39:45.510"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${fullNamesListCsv}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.891"/>
-</kw>
-<status status="PASS" starttime="20231007 22:15:09.885" endtime="20231007 22:15:09.891"/>
+<status status="PASS" starttime="20231009 13:39:45.502" endtime="20231009 13:39:45.510"/>
 </iter>
 <iter>
 <var name="${line}">"""001""","""9082299541733""","""005""",ภราเดช,อาสน์สุวรรณ์,1990-08-21,,jidapa.o@appman.co.th,insured,email</var>
@@ -357,105 +619,100 @@
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<msg timestamp="20231007 22:15:09.891" level="INFO">${values} = ['"""001"""', '"""9082299541733"""', '"""005"""', 'ภราเดช', 'อาสน์สุวรรณ์', '1990-08-21', '', 'jidapa.o@appman.co.th', 'insured', 'email']</msg>
-<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.891"/>
+<msg timestamp="20231009 13:39:45.511" level="INFO">${values} = ['"""001"""', '"""9082299541733"""', '"""005"""', 'ภราเดช', 'อาสน์สุวรรณ์', '1990-08-21', '', 'jidapa.o@appman.co.th', 'insured', 'email']</msg>
+<status status="PASS" starttime="20231009 13:39:45.511" endtime="20231009 13:39:45.511"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${caseTypeCodeCsv}</var>
 <arg>${values[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.892" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.892"/>
+<msg timestamp="20231009 13:39:45.511" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.511" endtime="20231009 13:39:45.511"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${citizenIdCsv}</var>
 <arg>${values[1]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.892" level="INFO">${citizenIdCsv} = """9082299541733"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.892" endtime="20231007 22:15:09.892"/>
+<msg timestamp="20231009 13:39:45.512" level="INFO">${citizenIdCsv} = """9082299541733"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.512" endtime="20231009 13:39:45.512"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${titleCodeCsv}</var>
 <arg>${values[2]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.893" level="INFO">${titleCodeCsv} = """005"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.893" endtime="20231007 22:15:09.893"/>
+<msg timestamp="20231009 13:39:45.513" level="INFO">${titleCodeCsv} = """005"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.512" endtime="20231009 13:39:45.513"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${firstNameCsv}</var>
 <arg>${values[3]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.894" level="INFO">${firstNameCsv} = ภราเดช</msg>
-<status status="PASS" starttime="20231007 22:15:09.893" endtime="20231007 22:15:09.894"/>
+<msg timestamp="20231009 13:39:45.514" level="INFO">${firstNameCsv} = ภราเดช</msg>
+<status status="PASS" starttime="20231009 13:39:45.513" endtime="20231009 13:39:45.514"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${lastNameCsv}</var>
 <arg>${values[4]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.894" level="INFO">${lastNameCsv} = อาสน์สุวรรณ์</msg>
-<status status="PASS" starttime="20231007 22:15:09.894" endtime="20231007 22:15:09.894"/>
+<msg timestamp="20231009 13:39:45.514" level="INFO">${lastNameCsv} = อาสน์สุวรรณ์</msg>
+<status status="PASS" starttime="20231009 13:39:45.514" endtime="20231009 13:39:45.514"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${dateOfBirthCsv}</var>
 <arg>${values[5]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.895" level="INFO">${dateOfBirthCsv} = 1990-08-21</msg>
-<status status="PASS" starttime="20231007 22:15:09.894" endtime="20231007 22:15:09.895"/>
+<msg timestamp="20231009 13:39:45.515" level="INFO">${dateOfBirthCsv} = 1990-08-21</msg>
+<status status="PASS" starttime="20231009 13:39:45.515" endtime="20231009 13:39:45.515"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${phoneNumberCsv}</var>
 <arg>${values[6]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.895" level="INFO">${phoneNumberCsv} = </msg>
-<status status="PASS" starttime="20231007 22:15:09.895" endtime="20231007 22:15:09.895"/>
+<msg timestamp="20231009 13:39:45.516" level="INFO">${phoneNumberCsv} = </msg>
+<status status="PASS" starttime="20231009 13:39:45.515" endtime="20231009 13:39:45.516"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${emailCsv}</var>
 <arg>${values[7]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.896" level="INFO">${emailCsv} = jidapa.o@appman.co.th</msg>
-<status status="PASS" starttime="20231007 22:15:09.895" endtime="20231007 22:15:09.896"/>
+<msg timestamp="20231009 13:39:45.517" level="INFO">${emailCsv} = jidapa.o@appman.co.th</msg>
+<status status="PASS" starttime="20231009 13:39:45.516" endtime="20231009 13:39:45.517"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${proprietorTypeCsv}</var>
 <arg>${values[8]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.897" level="INFO">${proprietorTypeCsv} = insured</msg>
-<status status="PASS" starttime="20231007 22:15:09.896" endtime="20231007 22:15:09.897"/>
+<msg timestamp="20231009 13:39:45.517" level="INFO">${proprietorTypeCsv} = insured</msg>
+<status status="PASS" starttime="20231009 13:39:45.517" endtime="20231009 13:39:45.517"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${notifyTypeCsv}</var>
 <arg>${values[9]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.897" level="INFO">${notifyTypeCsv} = email</msg>
-<status status="PASS" starttime="20231007 22:15:09.897" endtime="20231007 22:15:09.897"/>
+<msg timestamp="20231009 13:39:45.518" level="INFO">${notifyTypeCsv} = email</msg>
+<status status="PASS" starttime="20231009 13:39:45.517" endtime="20231009 13:39:45.518"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${fullNameCsv}</var>
 <arg>${firstNameCsv} ${lastNameCsv}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.897" level="INFO">${fullNameCsv} = ภราเดช อาสน์สุวรรณ์</msg>
-<status status="PASS" starttime="20231007 22:15:09.897" endtime="20231007 22:15:09.897"/>
+<msg timestamp="20231009 13:39:45.518" level="INFO">${fullNameCsv} = ภราเดช อาสน์สุวรรณ์</msg>
+<status status="PASS" starttime="20231009 13:39:45.518" endtime="20231009 13:39:45.518"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${fullNameValue}</arg>
 <arg>${fullNameCsv}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231007 22:15:09.898" endtime="20231007 22:15:09.898"/>
+<status status="PASS" starttime="20231009 13:39:45.518" endtime="20231009 13:39:45.518"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${fullNamesListCsv}</var>
 <arg>[x for x in ${fullNameValue} if x != 'firstName lastName']</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231007 22:15:09.898" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์']</msg>
-<status status="PASS" starttime="20231007 22:15:09.898" endtime="20231007 22:15:09.898"/>
+<msg timestamp="20231009 13:39:45.519" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์']</msg>
+<status status="PASS" starttime="20231009 13:39:45.518" endtime="20231009 13:39:45.519"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${fullNamesListCsv}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231007 22:15:09.898" endtime="20231007 22:15:09.898"/>
-</kw>
-<status status="PASS" starttime="20231007 22:15:09.891" endtime="20231007 22:15:09.898"/>
+<status status="PASS" starttime="20231009 13:39:45.510" endtime="20231009 13:39:45.519"/>
 </iter>
 <iter>
 <var name="${line}">"""001""","""1839900547382""","""005""",พันธกานต์,เกียรติไพศาลโสภณ,1999-03-19,"""0619926554""",,insured,sms</var>
@@ -464,105 +721,100 @@
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<msg timestamp="20231007 22:15:09.898" level="INFO">${values} = ['"""001"""', '"""1839900547382"""', '"""005"""', 'พันธกานต์', 'เกียรติไพศาลโสภณ', '1999-03-19', '"""0619926554"""', '', 'insured', 'sms']</msg>
-<status status="PASS" starttime="20231007 22:15:09.898" endtime="20231007 22:15:09.898"/>
+<msg timestamp="20231009 13:39:45.519" level="INFO">${values} = ['"""001"""', '"""1839900547382"""', '"""005"""', 'พันธกานต์', 'เกียรติไพศาลโสภณ', '1999-03-19', '"""0619926554"""', '', 'insured', 'sms']</msg>
+<status status="PASS" starttime="20231009 13:39:45.519" endtime="20231009 13:39:45.519"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${caseTypeCodeCsv}</var>
 <arg>${values[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.899" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.898" endtime="20231007 22:15:09.899"/>
+<msg timestamp="20231009 13:39:45.520" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.519" endtime="20231009 13:39:45.520"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${citizenIdCsv}</var>
 <arg>${values[1]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.900" level="INFO">${citizenIdCsv} = """1839900547382"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.899" endtime="20231007 22:15:09.900"/>
+<msg timestamp="20231009 13:39:45.520" level="INFO">${citizenIdCsv} = """1839900547382"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.520" endtime="20231009 13:39:45.520"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${titleCodeCsv}</var>
 <arg>${values[2]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.900" level="INFO">${titleCodeCsv} = """005"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.900" endtime="20231007 22:15:09.900"/>
+<msg timestamp="20231009 13:39:45.521" level="INFO">${titleCodeCsv} = """005"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.520" endtime="20231009 13:39:45.521"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${firstNameCsv}</var>
 <arg>${values[3]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.901" level="INFO">${firstNameCsv} = พันธกานต์</msg>
-<status status="PASS" starttime="20231007 22:15:09.900" endtime="20231007 22:15:09.901"/>
+<msg timestamp="20231009 13:39:45.522" level="INFO">${firstNameCsv} = พันธกานต์</msg>
+<status status="PASS" starttime="20231009 13:39:45.521" endtime="20231009 13:39:45.522"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${lastNameCsv}</var>
 <arg>${values[4]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.901" level="INFO">${lastNameCsv} = เกียรติไพศาลโสภณ</msg>
-<status status="PASS" starttime="20231007 22:15:09.901" endtime="20231007 22:15:09.901"/>
+<msg timestamp="20231009 13:39:45.522" level="INFO">${lastNameCsv} = เกียรติไพศาลโสภณ</msg>
+<status status="PASS" starttime="20231009 13:39:45.522" endtime="20231009 13:39:45.522"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${dateOfBirthCsv}</var>
 <arg>${values[5]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.902" level="INFO">${dateOfBirthCsv} = 1999-03-19</msg>
-<status status="PASS" starttime="20231007 22:15:09.901" endtime="20231007 22:15:09.902"/>
+<msg timestamp="20231009 13:39:45.523" level="INFO">${dateOfBirthCsv} = 1999-03-19</msg>
+<status status="PASS" starttime="20231009 13:39:45.522" endtime="20231009 13:39:45.523"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${phoneNumberCsv}</var>
 <arg>${values[6]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.902" level="INFO">${phoneNumberCsv} = """0619926554"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.902" endtime="20231007 22:15:09.902"/>
+<msg timestamp="20231009 13:39:45.524" level="INFO">${phoneNumberCsv} = """0619926554"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.523" endtime="20231009 13:39:45.524"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${emailCsv}</var>
 <arg>${values[7]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.903" level="INFO">${emailCsv} = </msg>
-<status status="PASS" starttime="20231007 22:15:09.903" endtime="20231007 22:15:09.903"/>
+<msg timestamp="20231009 13:39:45.524" level="INFO">${emailCsv} = </msg>
+<status status="PASS" starttime="20231009 13:39:45.524" endtime="20231009 13:39:45.524"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${proprietorTypeCsv}</var>
 <arg>${values[8]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.904" level="INFO">${proprietorTypeCsv} = insured</msg>
-<status status="PASS" starttime="20231007 22:15:09.903" endtime="20231007 22:15:09.904"/>
+<msg timestamp="20231009 13:39:45.525" level="INFO">${proprietorTypeCsv} = insured</msg>
+<status status="PASS" starttime="20231009 13:39:45.524" endtime="20231009 13:39:45.525"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${notifyTypeCsv}</var>
 <arg>${values[9]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.904" level="INFO">${notifyTypeCsv} = sms</msg>
-<status status="PASS" starttime="20231007 22:15:09.904" endtime="20231007 22:15:09.904"/>
+<msg timestamp="20231009 13:39:45.526" level="INFO">${notifyTypeCsv} = sms</msg>
+<status status="PASS" starttime="20231009 13:39:45.525" endtime="20231009 13:39:45.526"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${fullNameCsv}</var>
 <arg>${firstNameCsv} ${lastNameCsv}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.904" level="INFO">${fullNameCsv} = พันธกานต์ เกียรติไพศาลโสภณ</msg>
-<status status="PASS" starttime="20231007 22:15:09.904" endtime="20231007 22:15:09.904"/>
+<msg timestamp="20231009 13:39:45.526" level="INFO">${fullNameCsv} = พันธกานต์ เกียรติไพศาลโสภณ</msg>
+<status status="PASS" starttime="20231009 13:39:45.526" endtime="20231009 13:39:45.526"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${fullNameValue}</arg>
 <arg>${fullNameCsv}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231007 22:15:09.904" endtime="20231007 22:15:09.904"/>
+<status status="PASS" starttime="20231009 13:39:45.526" endtime="20231009 13:39:45.526"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${fullNamesListCsv}</var>
 <arg>[x for x in ${fullNameValue} if x != 'firstName lastName']</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231007 22:15:09.905" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์', 'พันธกานต์ เกียรติไพศาลโสภณ']</msg>
-<status status="PASS" starttime="20231007 22:15:09.904" endtime="20231007 22:15:09.905"/>
+<msg timestamp="20231009 13:39:45.526" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์', 'พันธกานต์ เกียรติไพศาลโสภณ']</msg>
+<status status="PASS" starttime="20231009 13:39:45.526" endtime="20231009 13:39:45.526"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${fullNamesListCsv}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231007 22:15:09.905" endtime="20231007 22:15:09.905"/>
-</kw>
-<status status="PASS" starttime="20231007 22:15:09.898" endtime="20231007 22:15:09.905"/>
+<status status="PASS" starttime="20231009 13:39:45.519" endtime="20231009 13:39:45.526"/>
 </iter>
 <iter>
 <var name="${line}">"""001""","""1100800810926""","""005""",ชนินทร,รัตนจีนะ,1993-02-06,"""0666666666""",,insured,sms</var>
@@ -571,105 +823,100 @@
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<msg timestamp="20231007 22:15:09.905" level="INFO">${values} = ['"""001"""', '"""1100800810926"""', '"""005"""', 'ชนินทร', 'รัตนจีนะ', '1993-02-06', '"""0666666666"""', '', 'insured', 'sms']</msg>
-<status status="PASS" starttime="20231007 22:15:09.905" endtime="20231007 22:15:09.905"/>
+<msg timestamp="20231009 13:39:45.526" level="INFO">${values} = ['"""001"""', '"""1100800810926"""', '"""005"""', 'ชนินทร', 'รัตนจีนะ', '1993-02-06', '"""0666666666"""', '', 'insured', 'sms']</msg>
+<status status="PASS" starttime="20231009 13:39:45.526" endtime="20231009 13:39:45.526"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${caseTypeCodeCsv}</var>
 <arg>${values[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.906" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.905" endtime="20231007 22:15:09.906"/>
+<msg timestamp="20231009 13:39:45.527" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.527" endtime="20231009 13:39:45.527"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${citizenIdCsv}</var>
 <arg>${values[1]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.906" level="INFO">${citizenIdCsv} = """1100800810926"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.906" endtime="20231007 22:15:09.906"/>
+<msg timestamp="20231009 13:39:45.528" level="INFO">${citizenIdCsv} = """1100800810926"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.527" endtime="20231009 13:39:45.528"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${titleCodeCsv}</var>
 <arg>${values[2]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.907" level="INFO">${titleCodeCsv} = """005"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.906" endtime="20231007 22:15:09.907"/>
+<msg timestamp="20231009 13:39:45.528" level="INFO">${titleCodeCsv} = """005"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.528" endtime="20231009 13:39:45.528"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${firstNameCsv}</var>
 <arg>${values[3]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.907" level="INFO">${firstNameCsv} = ชนินทร</msg>
-<status status="PASS" starttime="20231007 22:15:09.907" endtime="20231007 22:15:09.907"/>
+<msg timestamp="20231009 13:39:45.529" level="INFO">${firstNameCsv} = ชนินทร</msg>
+<status status="PASS" starttime="20231009 13:39:45.528" endtime="20231009 13:39:45.529"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${lastNameCsv}</var>
 <arg>${values[4]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.908" level="INFO">${lastNameCsv} = รัตนจีนะ</msg>
-<status status="PASS" starttime="20231007 22:15:09.907" endtime="20231007 22:15:09.908"/>
+<msg timestamp="20231009 13:39:45.530" level="INFO">${lastNameCsv} = รัตนจีนะ</msg>
+<status status="PASS" starttime="20231009 13:39:45.529" endtime="20231009 13:39:45.530"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${dateOfBirthCsv}</var>
 <arg>${values[5]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.908" level="INFO">${dateOfBirthCsv} = 1993-02-06</msg>
-<status status="PASS" starttime="20231007 22:15:09.908" endtime="20231007 22:15:09.908"/>
+<msg timestamp="20231009 13:39:45.530" level="INFO">${dateOfBirthCsv} = 1993-02-06</msg>
+<status status="PASS" starttime="20231009 13:39:45.530" endtime="20231009 13:39:45.530"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${phoneNumberCsv}</var>
 <arg>${values[6]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.909" level="INFO">${phoneNumberCsv} = """0666666666"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.908" endtime="20231007 22:15:09.909"/>
+<msg timestamp="20231009 13:39:45.531" level="INFO">${phoneNumberCsv} = """0666666666"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.530" endtime="20231009 13:39:45.531"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${emailCsv}</var>
 <arg>${values[7]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.909" level="INFO">${emailCsv} = </msg>
-<status status="PASS" starttime="20231007 22:15:09.909" endtime="20231007 22:15:09.909"/>
+<msg timestamp="20231009 13:39:45.532" level="INFO">${emailCsv} = </msg>
+<status status="PASS" starttime="20231009 13:39:45.531" endtime="20231009 13:39:45.532"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${proprietorTypeCsv}</var>
 <arg>${values[8]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.910" level="INFO">${proprietorTypeCsv} = insured</msg>
-<status status="PASS" starttime="20231007 22:15:09.909" endtime="20231007 22:15:09.910"/>
+<msg timestamp="20231009 13:39:45.532" level="INFO">${proprietorTypeCsv} = insured</msg>
+<status status="PASS" starttime="20231009 13:39:45.532" endtime="20231009 13:39:45.532"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${notifyTypeCsv}</var>
 <arg>${values[9]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.910" level="INFO">${notifyTypeCsv} = sms</msg>
-<status status="PASS" starttime="20231007 22:15:09.910" endtime="20231007 22:15:09.910"/>
+<msg timestamp="20231009 13:39:45.533" level="INFO">${notifyTypeCsv} = sms</msg>
+<status status="PASS" starttime="20231009 13:39:45.532" endtime="20231009 13:39:45.533"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${fullNameCsv}</var>
 <arg>${firstNameCsv} ${lastNameCsv}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.911" level="INFO">${fullNameCsv} = ชนินทร รัตนจีนะ</msg>
-<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.911"/>
+<msg timestamp="20231009 13:39:45.533" level="INFO">${fullNameCsv} = ชนินทร รัตนจีนะ</msg>
+<status status="PASS" starttime="20231009 13:39:45.533" endtime="20231009 13:39:45.533"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${fullNameValue}</arg>
 <arg>${fullNameCsv}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.911"/>
+<status status="PASS" starttime="20231009 13:39:45.533" endtime="20231009 13:39:45.533"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${fullNamesListCsv}</var>
 <arg>[x for x in ${fullNameValue} if x != 'firstName lastName']</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231007 22:15:09.911" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ชนินทร รัตนจีนะ']</msg>
-<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.911"/>
+<msg timestamp="20231009 13:39:45.533" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ชนินทร รัตนจีนะ']</msg>
+<status status="PASS" starttime="20231009 13:39:45.533" endtime="20231009 13:39:45.533"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${fullNamesListCsv}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.911"/>
-</kw>
-<status status="PASS" starttime="20231007 22:15:09.905" endtime="20231007 22:15:09.911"/>
+<status status="PASS" starttime="20231009 13:39:45.526" endtime="20231009 13:39:45.533"/>
 </iter>
 <iter>
 <var name="${line}">"""001""","""0899479959791""","""005""",ภูริภัทร,โภคะมณี,1995-09-20,"""0666666666""",,insured,sms</var>
@@ -678,105 +925,100 @@
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<msg timestamp="20231007 22:15:09.911" level="INFO">${values} = ['"""001"""', '"""0899479959791"""', '"""005"""', 'ภูริภัทร', 'โภคะมณี', '1995-09-20', '"""0666666666"""', '', 'insured', 'sms']</msg>
-<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.911"/>
+<msg timestamp="20231009 13:39:45.534" level="INFO">${values} = ['"""001"""', '"""0899479959791"""', '"""005"""', 'ภูริภัทร', 'โภคะมณี', '1995-09-20', '"""0666666666"""', '', 'insured', 'sms']</msg>
+<status status="PASS" starttime="20231009 13:39:45.533" endtime="20231009 13:39:45.534"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${caseTypeCodeCsv}</var>
 <arg>${values[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.912" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.912"/>
+<msg timestamp="20231009 13:39:45.534" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.534" endtime="20231009 13:39:45.534"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${citizenIdCsv}</var>
 <arg>${values[1]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.913" level="INFO">${citizenIdCsv} = """0899479959791"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.912" endtime="20231007 22:15:09.913"/>
+<msg timestamp="20231009 13:39:45.535" level="INFO">${citizenIdCsv} = """0899479959791"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.534" endtime="20231009 13:39:45.535"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${titleCodeCsv}</var>
 <arg>${values[2]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.913" level="INFO">${titleCodeCsv} = """005"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.913" endtime="20231007 22:15:09.913"/>
+<msg timestamp="20231009 13:39:45.535" level="INFO">${titleCodeCsv} = """005"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.535" endtime="20231009 13:39:45.535"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${firstNameCsv}</var>
 <arg>${values[3]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.914" level="INFO">${firstNameCsv} = ภูริภัทร</msg>
-<status status="PASS" starttime="20231007 22:15:09.913" endtime="20231007 22:15:09.914"/>
+<msg timestamp="20231009 13:39:45.536" level="INFO">${firstNameCsv} = ภูริภัทร</msg>
+<status status="PASS" starttime="20231009 13:39:45.535" endtime="20231009 13:39:45.536"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${lastNameCsv}</var>
 <arg>${values[4]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.914" level="INFO">${lastNameCsv} = โภคะมณี</msg>
-<status status="PASS" starttime="20231007 22:15:09.914" endtime="20231007 22:15:09.914"/>
+<msg timestamp="20231009 13:39:45.537" level="INFO">${lastNameCsv} = โภคะมณี</msg>
+<status status="PASS" starttime="20231009 13:39:45.536" endtime="20231009 13:39:45.537"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${dateOfBirthCsv}</var>
 <arg>${values[5]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.915" level="INFO">${dateOfBirthCsv} = 1995-09-20</msg>
-<status status="PASS" starttime="20231007 22:15:09.914" endtime="20231007 22:15:09.915"/>
+<msg timestamp="20231009 13:39:45.537" level="INFO">${dateOfBirthCsv} = 1995-09-20</msg>
+<status status="PASS" starttime="20231009 13:39:45.537" endtime="20231009 13:39:45.537"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${phoneNumberCsv}</var>
 <arg>${values[6]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.915" level="INFO">${phoneNumberCsv} = """0666666666"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.915" endtime="20231007 22:15:09.915"/>
+<msg timestamp="20231009 13:39:45.538" level="INFO">${phoneNumberCsv} = """0666666666"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.537" endtime="20231009 13:39:45.538"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${emailCsv}</var>
 <arg>${values[7]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.916" level="INFO">${emailCsv} = </msg>
-<status status="PASS" starttime="20231007 22:15:09.916" endtime="20231007 22:15:09.916"/>
+<msg timestamp="20231009 13:39:45.538" level="INFO">${emailCsv} = </msg>
+<status status="PASS" starttime="20231009 13:39:45.538" endtime="20231009 13:39:45.538"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${proprietorTypeCsv}</var>
 <arg>${values[8]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.917" level="INFO">${proprietorTypeCsv} = insured</msg>
-<status status="PASS" starttime="20231007 22:15:09.916" endtime="20231007 22:15:09.917"/>
+<msg timestamp="20231009 13:39:45.539" level="INFO">${proprietorTypeCsv} = insured</msg>
+<status status="PASS" starttime="20231009 13:39:45.538" endtime="20231009 13:39:45.539"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${notifyTypeCsv}</var>
 <arg>${values[9]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.917" level="INFO">${notifyTypeCsv} = sms</msg>
-<status status="PASS" starttime="20231007 22:15:09.917" endtime="20231007 22:15:09.917"/>
+<msg timestamp="20231009 13:39:45.540" level="INFO">${notifyTypeCsv} = sms</msg>
+<status status="PASS" starttime="20231009 13:39:45.539" endtime="20231009 13:39:45.540"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${fullNameCsv}</var>
 <arg>${firstNameCsv} ${lastNameCsv}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.917" level="INFO">${fullNameCsv} = ภูริภัทร โภคะมณี</msg>
-<status status="PASS" starttime="20231007 22:15:09.917" endtime="20231007 22:15:09.917"/>
+<msg timestamp="20231009 13:39:45.540" level="INFO">${fullNameCsv} = ภูริภัทร โภคะมณี</msg>
+<status status="PASS" starttime="20231009 13:39:45.540" endtime="20231009 13:39:45.540"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${fullNameValue}</arg>
 <arg>${fullNameCsv}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231007 22:15:09.917" endtime="20231007 22:15:09.918"/>
+<status status="PASS" starttime="20231009 13:39:45.540" endtime="20231009 13:39:45.540"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${fullNamesListCsv}</var>
 <arg>[x for x in ${fullNameValue} if x != 'firstName lastName']</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231007 22:15:09.918" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ชนินทร รัตนจีนะ', 'ภูริภัทร โภคะมณี']</msg>
-<status status="PASS" starttime="20231007 22:15:09.918" endtime="20231007 22:15:09.918"/>
+<msg timestamp="20231009 13:39:45.540" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ชนินทร รัตนจีนะ', 'ภูริภัทร โภคะมณี']</msg>
+<status status="PASS" starttime="20231009 13:39:45.540" endtime="20231009 13:39:45.540"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${fullNamesListCsv}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231007 22:15:09.918" endtime="20231007 22:15:09.918"/>
-</kw>
-<status status="PASS" starttime="20231007 22:15:09.911" endtime="20231007 22:15:09.918"/>
+<status status="PASS" starttime="20231009 13:39:45.533" endtime="20231009 13:39:45.540"/>
 </iter>
 <iter>
 <var name="${line}">"""001""","""1100701970992""","""005""",ถีรพันธ์,เลิศชัยสหกุล,1994-12-12,"""0666666666""",,insured,sms</var>
@@ -785,141 +1027,136 @@
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<msg timestamp="20231007 22:15:09.918" level="INFO">${values} = ['"""001"""', '"""1100701970992"""', '"""005"""', 'ถีรพันธ์', 'เลิศชัยสหกุล', '1994-12-12', '"""0666666666"""', '', 'insured', 'sms']</msg>
-<status status="PASS" starttime="20231007 22:15:09.918" endtime="20231007 22:15:09.918"/>
+<msg timestamp="20231009 13:39:45.540" level="INFO">${values} = ['"""001"""', '"""1100701970992"""', '"""005"""', 'ถีรพันธ์', 'เลิศชัยสหกุล', '1994-12-12', '"""0666666666"""', '', 'insured', 'sms']</msg>
+<status status="PASS" starttime="20231009 13:39:45.540" endtime="20231009 13:39:45.540"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${caseTypeCodeCsv}</var>
 <arg>${values[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.919" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.918" endtime="20231007 22:15:09.919"/>
+<msg timestamp="20231009 13:39:45.541" level="INFO">${caseTypeCodeCsv} = """001"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.540" endtime="20231009 13:39:45.541"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${citizenIdCsv}</var>
 <arg>${values[1]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.919" level="INFO">${citizenIdCsv} = """1100701970992"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.919" endtime="20231007 22:15:09.919"/>
+<msg timestamp="20231009 13:39:45.541" level="INFO">${citizenIdCsv} = """1100701970992"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.541" endtime="20231009 13:39:45.541"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${titleCodeCsv}</var>
 <arg>${values[2]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.920" level="INFO">${titleCodeCsv} = """005"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.920" endtime="20231007 22:15:09.920"/>
+<msg timestamp="20231009 13:39:45.542" level="INFO">${titleCodeCsv} = """005"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.542" endtime="20231009 13:39:45.542"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${firstNameCsv}</var>
 <arg>${values[3]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.921" level="INFO">${firstNameCsv} = ถีรพันธ์</msg>
-<status status="PASS" starttime="20231007 22:15:09.920" endtime="20231007 22:15:09.921"/>
+<msg timestamp="20231009 13:39:45.543" level="INFO">${firstNameCsv} = ถีรพันธ์</msg>
+<status status="PASS" starttime="20231009 13:39:45.542" endtime="20231009 13:39:45.543"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${lastNameCsv}</var>
 <arg>${values[4]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.921" level="INFO">${lastNameCsv} = เลิศชัยสหกุล</msg>
-<status status="PASS" starttime="20231007 22:15:09.921" endtime="20231007 22:15:09.921"/>
+<msg timestamp="20231009 13:39:45.543" level="INFO">${lastNameCsv} = เลิศชัยสหกุล</msg>
+<status status="PASS" starttime="20231009 13:39:45.543" endtime="20231009 13:39:45.543"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${dateOfBirthCsv}</var>
 <arg>${values[5]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.922" level="INFO">${dateOfBirthCsv} = 1994-12-12</msg>
-<status status="PASS" starttime="20231007 22:15:09.921" endtime="20231007 22:15:09.922"/>
+<msg timestamp="20231009 13:39:45.544" level="INFO">${dateOfBirthCsv} = 1994-12-12</msg>
+<status status="PASS" starttime="20231009 13:39:45.543" endtime="20231009 13:39:45.544"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${phoneNumberCsv}</var>
 <arg>${values[6]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.922" level="INFO">${phoneNumberCsv} = """0666666666"""</msg>
-<status status="PASS" starttime="20231007 22:15:09.922" endtime="20231007 22:15:09.922"/>
+<msg timestamp="20231009 13:39:45.544" level="INFO">${phoneNumberCsv} = """0666666666"""</msg>
+<status status="PASS" starttime="20231009 13:39:45.544" endtime="20231009 13:39:45.544"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${emailCsv}</var>
 <arg>${values[7]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.923" level="INFO">${emailCsv} = </msg>
-<status status="PASS" starttime="20231007 22:15:09.922" endtime="20231007 22:15:09.923"/>
+<msg timestamp="20231009 13:39:45.545" level="INFO">${emailCsv} = </msg>
+<status status="PASS" starttime="20231009 13:39:45.544" endtime="20231009 13:39:45.545"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${proprietorTypeCsv}</var>
 <arg>${values[8]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.924" level="INFO">${proprietorTypeCsv} = insured</msg>
-<status status="PASS" starttime="20231007 22:15:09.923" endtime="20231007 22:15:09.924"/>
+<msg timestamp="20231009 13:39:45.545" level="INFO">${proprietorTypeCsv} = insured</msg>
+<status status="PASS" starttime="20231009 13:39:45.545" endtime="20231009 13:39:45.545"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${notifyTypeCsv}</var>
 <arg>${values[9]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.924" level="INFO">${notifyTypeCsv} = sms</msg>
-<status status="PASS" starttime="20231007 22:15:09.924" endtime="20231007 22:15:09.924"/>
+<msg timestamp="20231009 13:39:45.546" level="INFO">${notifyTypeCsv} = sms</msg>
+<status status="PASS" starttime="20231009 13:39:45.546" endtime="20231009 13:39:45.546"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${fullNameCsv}</var>
 <arg>${firstNameCsv} ${lastNameCsv}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.924" level="INFO">${fullNameCsv} = ถีรพันธ์ เลิศชัยสหกุล</msg>
-<status status="PASS" starttime="20231007 22:15:09.924" endtime="20231007 22:15:09.924"/>
+<msg timestamp="20231009 13:39:45.546" level="INFO">${fullNameCsv} = ถีรพันธ์ เลิศชัยสหกุล</msg>
+<status status="PASS" starttime="20231009 13:39:45.546" endtime="20231009 13:39:45.546"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${fullNameValue}</arg>
 <arg>${fullNameCsv}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231007 22:15:09.924" endtime="20231007 22:15:09.925"/>
+<status status="PASS" starttime="20231009 13:39:45.546" endtime="20231009 13:39:45.546"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${fullNamesListCsv}</var>
 <arg>[x for x in ${fullNameValue} if x != 'firstName lastName']</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231007 22:15:09.925" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ชนินทร รัตนจีนะ', 'ภูริภัทร โภคะมณี', 'ถีรพันธ์ เลิศชัยสหกุล']</msg>
-<status status="PASS" starttime="20231007 22:15:09.925" endtime="20231007 22:15:09.925"/>
+<msg timestamp="20231009 13:39:45.547" level="INFO">${fullNamesListCsv} = ['ภราเดช อาสน์สุวรรณ์', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ชนินทร รัตนจีนะ', 'ภูริภัทร โภคะมณี', 'ถีรพันธ์ เลิศชัยสหกุล']</msg>
+<status status="PASS" starttime="20231009 13:39:45.546" endtime="20231009 13:39:45.547"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${fullNamesListCsv}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231007 22:15:09.925" endtime="20231007 22:15:09.925"/>
-</kw>
-<status status="PASS" starttime="20231007 22:15:09.918" endtime="20231007 22:15:09.925"/>
+<status status="PASS" starttime="20231009 13:39:45.540" endtime="20231009 13:39:45.547"/>
 </iter>
-<status status="PASS" starttime="20231007 22:15:09.885" endtime="20231007 22:15:09.925"/>
+<status status="PASS" starttime="20231009 13:39:45.501" endtime="20231009 13:39:45.547"/>
 </for>
 <kw name="Create List" library="BuiltIn">
 <var>${fullNameListTable}</var>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20231007 22:15:09.928" level="INFO">${fullNameListTable} = []</msg>
-<status status="PASS" starttime="20231007 22:15:09.928" endtime="20231007 22:15:09.928"/>
+<msg timestamp="20231009 13:39:45.547" level="INFO">${fullNameListTable} = []</msg>
+<status status="PASS" starttime="20231009 13:39:45.547" endtime="20231009 13:39:45.547"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${matchingNameFound}</var>
 <arg>False</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.929" level="INFO">${matchingNameFound} = False</msg>
-<status status="PASS" starttime="20231007 22:15:09.928" endtime="20231007 22:15:09.929"/>
+<msg timestamp="20231009 13:39:45.547" level="INFO">${matchingNameFound} = False</msg>
+<status status="PASS" starttime="20231009 13:39:45.547" endtime="20231009 13:39:45.547"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${columnIndex}</var>
 <arg>1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231007 22:15:09.929" level="INFO">${columnIndex} = 1</msg>
-<status status="PASS" starttime="20231007 22:15:09.929" endtime="20231007 22:15:09.929"/>
+<msg timestamp="20231009 13:39:45.547" level="INFO">${columnIndex} = 1</msg>
+<status status="PASS" starttime="20231009 13:39:45.547" endtime="20231009 13:39:45.547"/>
 </kw>
 <kw name="Convert To Integer" library="BuiltIn">
 <var>${columnIndexAsInt}</var>
 <arg>${columnIndex}</arg>
 <doc>Converts the given item to an integer number.</doc>
-<msg timestamp="20231007 22:15:09.929" level="INFO">${columnIndexAsInt} = 1</msg>
-<status status="PASS" starttime="20231007 22:15:09.929" endtime="20231007 22:15:09.929"/>
+<msg timestamp="20231009 13:39:45.547" level="INFO">${columnIndexAsInt} = 1</msg>
+<status status="PASS" starttime="20231009 13:39:45.547" endtime="20231009 13:39:45.547"/>
 </kw>
 <kw name="Get WebElements" library="SeleniumLibrary">
 <var>${tableElements}</var>
 <arg>xpath=${tableLocator}//tr/td[${columnIndexAsInt + 1}]</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20231007 22:15:09.938" level="INFO">${tableElements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="eee058c9ea83bded3671e409564a871d", element="0642D9A4CA2D4B7625A3004C1D5786E2_element_119")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
-<status status="PASS" starttime="20231007 22:15:09.929" endtime="20231007 22:15:09.938"/>
+<msg timestamp="20231009 13:39:45.554" level="INFO">${tableElements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_313")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
+<status status="PASS" starttime="20231009 13:39:45.547" endtime="20231009 13:39:45.554"/>
 </kw>
 <for flavor="IN RANGE">
 <var>${index}</var>
@@ -931,23 +1168,23 @@
 <arg>${tableElements}</arg>
 <arg>${index}</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20231007 22:15:09.939" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="eee058c9ea83bded3671e409564a871d", element="0642D9A4CA2D4B7625A3004C1D5786E2_element_119")&gt;</msg>
-<status status="PASS" starttime="20231007 22:15:09.938" endtime="20231007 22:15:09.939"/>
+<msg timestamp="20231009 13:39:45.554" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_313")&gt;</msg>
+<status status="PASS" starttime="20231009 13:39:45.554" endtime="20231009 13:39:45.554"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${fullName}</var>
 <arg>${element}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231007 22:15:09.949" level="INFO">${fullName} = ถีรพันธ์ เลิศชัยสหกุล</msg>
-<status status="PASS" starttime="20231007 22:15:09.939" endtime="20231007 22:15:09.949"/>
+<msg timestamp="20231009 13:39:45.558" level="INFO">${fullName} = ถีรพันธ์ เลิศชัยสหกุล</msg>
+<status status="PASS" starttime="20231009 13:39:45.554" endtime="20231009 13:39:45.558"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${fullNameListTable}</arg>
 <arg>${fullName}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231007 22:15:09.950" endtime="20231007 22:15:09.950"/>
+<status status="PASS" starttime="20231009 13:39:45.558" endtime="20231009 13:39:45.558"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:09.938" endtime="20231007 22:15:09.950"/>
+<status status="PASS" starttime="20231009 13:39:45.554" endtime="20231009 13:39:45.558"/>
 </iter>
 <iter>
 <var name="${index}">1</var>
@@ -956,23 +1193,23 @@
 <arg>${tableElements}</arg>
 <arg>${index}</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20231007 22:15:09.950" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="eee058c9ea83bded3671e409564a871d", element="0642D9A4CA2D4B7625A3004C1D5786E2_element_120")&gt;</msg>
-<status status="PASS" starttime="20231007 22:15:09.950" endtime="20231007 22:15:09.950"/>
+<msg timestamp="20231009 13:39:45.558" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_314")&gt;</msg>
+<status status="PASS" starttime="20231009 13:39:45.558" endtime="20231009 13:39:45.558"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${fullName}</var>
 <arg>${element}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231007 22:15:09.957" level="INFO">${fullName} = ภูริภัทร โภคะมณี</msg>
-<status status="PASS" starttime="20231007 22:15:09.950" endtime="20231007 22:15:09.957"/>
+<msg timestamp="20231009 13:39:45.562" level="INFO">${fullName} = ภูริภัทร โภคะมณี</msg>
+<status status="PASS" starttime="20231009 13:39:45.558" endtime="20231009 13:39:45.562"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${fullNameListTable}</arg>
 <arg>${fullName}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231007 22:15:09.957" endtime="20231007 22:15:09.958"/>
+<status status="PASS" starttime="20231009 13:39:45.562" endtime="20231009 13:39:45.562"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:09.950" endtime="20231007 22:15:09.958"/>
+<status status="PASS" starttime="20231009 13:39:45.558" endtime="20231009 13:39:45.562"/>
 </iter>
 <iter>
 <var name="${index}">2</var>
@@ -981,23 +1218,23 @@
 <arg>${tableElements}</arg>
 <arg>${index}</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20231007 22:15:09.958" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="eee058c9ea83bded3671e409564a871d", element="0642D9A4CA2D4B7625A3004C1D5786E2_element_121")&gt;</msg>
-<status status="PASS" starttime="20231007 22:15:09.958" endtime="20231007 22:15:09.958"/>
+<msg timestamp="20231009 13:39:45.562" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_315")&gt;</msg>
+<status status="PASS" starttime="20231009 13:39:45.562" endtime="20231009 13:39:45.562"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${fullName}</var>
 <arg>${element}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231007 22:15:09.961" level="INFO">${fullName} = พันธกานต์ เกียรติไพศาลโสภณ</msg>
-<status status="PASS" starttime="20231007 22:15:09.958" endtime="20231007 22:15:09.961"/>
+<msg timestamp="20231009 13:39:45.565" level="INFO">${fullName} = ชนินทร รัตนจีนะ</msg>
+<status status="PASS" starttime="20231009 13:39:45.562" endtime="20231009 13:39:45.565"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${fullNameListTable}</arg>
 <arg>${fullName}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231007 22:15:09.962" endtime="20231007 22:15:09.962"/>
+<status status="PASS" starttime="20231009 13:39:45.566" endtime="20231009 13:39:45.566"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:09.958" endtime="20231007 22:15:09.962"/>
+<status status="PASS" starttime="20231009 13:39:45.562" endtime="20231009 13:39:45.566"/>
 </iter>
 <iter>
 <var name="${index}">3</var>
@@ -1006,23 +1243,23 @@
 <arg>${tableElements}</arg>
 <arg>${index}</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20231007 22:15:09.962" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="eee058c9ea83bded3671e409564a871d", element="0642D9A4CA2D4B7625A3004C1D5786E2_element_122")&gt;</msg>
-<status status="PASS" starttime="20231007 22:15:09.962" endtime="20231007 22:15:09.962"/>
+<msg timestamp="20231009 13:39:45.566" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_316")&gt;</msg>
+<status status="PASS" starttime="20231009 13:39:45.566" endtime="20231009 13:39:45.566"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${fullName}</var>
 <arg>${element}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231007 22:15:09.968" level="INFO">${fullName} = ชนินทร รัตนจีนะ</msg>
-<status status="PASS" starttime="20231007 22:15:09.962" endtime="20231007 22:15:09.968"/>
+<msg timestamp="20231009 13:39:45.569" level="INFO">${fullName} = พันธกานต์ เกียรติไพศาลโสภณ</msg>
+<status status="PASS" starttime="20231009 13:39:45.566" endtime="20231009 13:39:45.569"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${fullNameListTable}</arg>
 <arg>${fullName}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231007 22:15:09.968" endtime="20231007 22:15:09.969"/>
+<status status="PASS" starttime="20231009 13:39:45.569" endtime="20231009 13:39:45.569"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:09.962" endtime="20231007 22:15:09.969"/>
+<status status="PASS" starttime="20231009 13:39:45.566" endtime="20231009 13:39:45.569"/>
 </iter>
 <iter>
 <var name="${index}">4</var>
@@ -1031,27 +1268,27 @@
 <arg>${tableElements}</arg>
 <arg>${index}</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20231007 22:15:09.969" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="eee058c9ea83bded3671e409564a871d", element="0642D9A4CA2D4B7625A3004C1D5786E2_element_123")&gt;</msg>
-<status status="PASS" starttime="20231007 22:15:09.969" endtime="20231007 22:15:09.969"/>
+<msg timestamp="20231009 13:39:45.569" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_317")&gt;</msg>
+<status status="PASS" starttime="20231009 13:39:45.569" endtime="20231009 13:39:45.569"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${fullName}</var>
 <arg>${element}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231007 22:15:09.972" level="INFO">${fullName} = ภราเดช อาสน์สุวรรณ์</msg>
-<status status="PASS" starttime="20231007 22:15:09.969" endtime="20231007 22:15:09.972"/>
+<msg timestamp="20231009 13:39:45.573" level="INFO">${fullName} = ภราเดช อาสน์สุวรรณ์</msg>
+<status status="PASS" starttime="20231009 13:39:45.570" endtime="20231009 13:39:45.573"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${fullNameListTable}</arg>
 <arg>${fullName}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231007 22:15:09.973" endtime="20231007 22:15:09.973"/>
+<status status="PASS" starttime="20231009 13:39:45.573" endtime="20231009 13:39:45.573"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:09.969" endtime="20231007 22:15:09.973"/>
+<status status="PASS" starttime="20231009 13:39:45.569" endtime="20231009 13:39:45.573"/>
 </iter>
-<status status="PASS" starttime="20231007 22:15:09.938" endtime="20231007 22:15:09.973"/>
+<status status="PASS" starttime="20231009 13:39:45.554" endtime="20231009 13:39:45.573"/>
 </for>
-<kw name="Compare Lists" library="CreateCasePage">
+<kw name="Compare Lists" library="CaseListPage">
 <var>${listsMatch}</var>
 <arg>${fullNameListTable}</arg>
 <arg>${fullNamesListCsv}</arg>
@@ -1059,38 +1296,789 @@
 <var>${sorted_list1}</var>
 <arg>sorted(${list1})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231007 22:15:09.973" level="INFO">${sorted_list1} = ['ชนินทร รัตนจีนะ', 'ถีรพันธ์ เลิศชัยสหกุล', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ภราเดช อาสน์สุวรรณ์', 'ภูริภัทร โภคะมณี']</msg>
-<status status="PASS" starttime="20231007 22:15:09.973" endtime="20231007 22:15:09.973"/>
+<msg timestamp="20231009 13:39:45.573" level="INFO">${sorted_list1} = ['ชนินทร รัตนจีนะ', 'ถีรพันธ์ เลิศชัยสหกุล', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ภราเดช อาสน์สุวรรณ์', 'ภูริภัทร โภคะมณี']</msg>
+<status status="PASS" starttime="20231009 13:39:45.573" endtime="20231009 13:39:45.573"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${sorted_list2}</var>
 <arg>sorted(${list2})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231007 22:15:09.973" level="INFO">${sorted_list2} = ['ชนินทร รัตนจีนะ', 'ถีรพันธ์ เลิศชัยสหกุล', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ภราเดช อาสน์สุวรรณ์', 'ภูริภัทร โภคะมณี']</msg>
-<status status="PASS" starttime="20231007 22:15:09.973" endtime="20231007 22:15:09.973"/>
+<msg timestamp="20231009 13:39:45.573" level="INFO">${sorted_list2} = ['ชนินทร รัตนจีนะ', 'ถีรพันธ์ เลิศชัยสหกุล', 'พันธกานต์ เกียรติไพศาลโสภณ', 'ภราเดช อาสน์สุวรรณ์', 'ภูริภัทร โภคะมณี']</msg>
+<status status="PASS" starttime="20231009 13:39:45.573" endtime="20231009 13:39:45.573"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${lists_match}</var>
 <arg>${sorted_list1} == ${sorted_list2}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231007 22:15:09.973" level="INFO">${lists_match} = True</msg>
-<status status="PASS" starttime="20231007 22:15:09.973" endtime="20231007 22:15:09.973"/>
+<msg timestamp="20231009 13:39:45.574" level="INFO">${lists_match} = True</msg>
+<status status="PASS" starttime="20231009 13:39:45.574" endtime="20231009 13:39:45.574"/>
 </kw>
-<msg timestamp="20231007 22:15:09.973" level="INFO">${listsMatch} = True</msg>
-<status status="PASS" starttime="20231007 22:15:09.973" endtime="20231007 22:15:09.974"/>
+<msg timestamp="20231009 13:39:45.574" level="INFO">${listsMatch} = True</msg>
+<status status="PASS" starttime="20231009 13:39:45.573" endtime="20231009 13:39:45.574"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${fullNameListTable}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231009 13:39:45.574" endtime="20231009 13:39:45.574"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${fullNamesListCsv}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231009 13:39:45.574" endtime="20231009 13:39:45.574"/>
 </kw>
 <kw name="Should Be True" library="BuiltIn">
 <arg>${listsMatch}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" starttime="20231007 22:15:09.974" endtime="20231007 22:15:09.974"/>
+<status status="PASS" starttime="20231009 13:39:45.574" endtime="20231009 13:39:45.574"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:09.874" endtime="20231007 22:15:09.974"/>
+<status status="PASS" starttime="20231009 13:39:45.461" endtime="20231009 13:39:45.574"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:09.874" endtime="20231007 22:15:09.974"/>
+<status status="PASS" starttime="20231009 13:39:45.459" endtime="20231009 13:39:45.574"/>
 </kw>
-<status status="PASS" starttime="20231007 22:15:01.745" endtime="20231007 22:15:09.974"/>
+<kw name="Input DipChip Case Detail" library="CreateCaseKeyword">
+<arg>7843275804481</arg>
+<arg>7843275804481</arg>
+<arg>Mr. (juvenile)</arg>
+<arg>จิดาภา</arg>
+<arg>ชินวัด</arg>
+<arg>โอบกิจกาจพล</arg>
+<arg>2</arg>
+<arg>April</arg>
+<arg>1999</arg>
+<kw name="Click Create Case Button" library="CreateCasePage">
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${createCaseBtn}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:45.578" level="INFO">Clicking element '//button[@id='dashboard-create-link-button']'.</msg>
+<status status="PASS" starttime="20231009 13:39:45.577" endtime="20231009 13:39:45.606"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.575" endtime="20231009 13:39:45.606"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.575" endtime="20231009 13:39:45.606"/>
+</kw>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${expandCaseTypeButton}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:45.610" level="INFO">Clicking element '//body/div[@id='root']/div[1]/div[1]/div[5]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]'.</msg>
+<status status="PASS" starttime="20231009 13:39:45.610" endtime="20231009 13:39:45.652"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.607" endtime="20231009 13:39:45.652"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.607" endtime="20231009 13:39:45.652"/>
+</kw>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${dipChipCase}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:45.656" level="INFO">Clicking element '//div[contains(text(),'DipChip')]'.</msg>
+<status status="PASS" starttime="20231009 13:39:45.655" endtime="20231009 13:39:45.696"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.652" endtime="20231009 13:39:45.696"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.652" endtime="20231009 13:39:45.696"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.574" endtime="20231009 13:39:45.696"/>
+</kw>
+<kw name="Input DipChip" library="CreateCasePage">
+<arg>${citizenId}</arg>
+<arg>${citizenId2}</arg>
+<arg>${title}</arg>
+<arg>${firstName}</arg>
+<arg>${middleName}</arg>
+<arg>${lastName}</arg>
+<arg>${dayOfBirth}</arg>
+<arg>${monthOfBirth}</arg>
+<arg>${yearOfBirth}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${citizenIdField}</arg>
+<arg>${citizenId}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:45.697" level="INFO">Typing text '7843275804481' into text field '//input[@name="proprietor.insureds.fields.0.citizenId"]'.</msg>
+<status status="PASS" starttime="20231009 13:39:45.697" endtime="20231009 13:39:45.761"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${citizenIdField}</arg>
+<arg>${citizenId2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:45.761" level="INFO">Typing text '7843275804481' into text field '//input[@name="proprietor.insureds.fields.0.citizenId"]'.</msg>
+<status status="PASS" starttime="20231009 13:39:45.761" endtime="20231009 13:39:45.802"/>
+</kw>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${titleDropDownField}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:45.806" level="INFO">Clicking element '//div[@class="reselect__indicator reselect__dropdown-indicator css-tlfecz-indicatorContainer"]'.</msg>
+<status status="PASS" starttime="20231009 13:39:45.806" endtime="20231009 13:39:45.834"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.802" endtime="20231009 13:39:45.834"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.802" endtime="20231009 13:39:45.834"/>
+</kw>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>//div[contains(text(),'${title}')]</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:45.838" level="INFO">Clicking element '//div[contains(text(),'Mr. (juvenile)')]'.</msg>
+<status status="PASS" starttime="20231009 13:39:45.838" endtime="20231009 13:39:45.868"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.835" endtime="20231009 13:39:45.868"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.835" endtime="20231009 13:39:45.868"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${firstNameField}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:45.869" level="INFO">Typing text 'จิดาภา' into text field '//input[@name="proprietor.insureds.fields.0.firstName"]'.</msg>
+<status status="PASS" starttime="20231009 13:39:45.869" endtime="20231009 13:39:45.938"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${middleNameField}</arg>
+<arg>${middleName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:45.939" level="INFO">Typing text 'ชินวัด' into text field '//input[@name="proprietor.insureds.fields.0.middleName"]'.</msg>
+<status status="PASS" starttime="20231009 13:39:45.939" endtime="20231009 13:39:45.995"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${lastNameField}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:45.995" level="INFO">Typing text 'โอบกิจกาจพล' into text field '//input[@name="proprietor.insureds.fields.0.lastName"]'.</msg>
+<status status="PASS" starttime="20231009 13:39:45.995" endtime="20231009 13:39:46.067"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${dayOfBirthField}</arg>
+<arg>${dayOfBirth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:46.067" level="INFO">Typing text '2' into text field '//input[@id='react-select-4-input']'.</msg>
+<status status="PASS" starttime="20231009 13:39:46.067" endtime="20231009 13:39:46.117"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${dayOfBirthField}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231009 13:39:46.118" level="INFO">Sending key(s) ('ENTER',) to //input[@id='react-select-4-input'] element.</msg>
+<msg timestamp="20231009 13:39:46.394" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20231009 13:39:46.394" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20231009 13:39:46.118" endtime="20231009 13:39:46.405"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${monthOfBirthField}</arg>
+<arg>${monthOfBirth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:46.406" level="INFO">Typing text 'April' into text field '//input[@id='react-select-5-input']'.</msg>
+<status status="PASS" starttime="20231009 13:39:46.405" endtime="20231009 13:39:46.470"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${monthOfBirthField}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231009 13:39:46.471" level="INFO">Sending key(s) ('ENTER',) to //input[@id='react-select-5-input'] element.</msg>
+<msg timestamp="20231009 13:39:46.742" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20231009 13:39:46.742" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20231009 13:39:46.471" endtime="20231009 13:39:46.752"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${yearOfBirthField}</arg>
+<arg>${yearOfBirth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:46.753" level="INFO">Typing text '1999' into text field '//input[@id='react-select-6-input']'.</msg>
+<status status="PASS" starttime="20231009 13:39:46.753" endtime="20231009 13:39:46.817"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${yearOfBirthField}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231009 13:39:46.818" level="INFO">Sending key(s) ('ENTER',) to //input[@id='react-select-6-input'] element.</msg>
+<msg timestamp="20231009 13:39:47.099" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20231009 13:39:47.099" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20231009 13:39:46.817" endtime="20231009 13:39:47.108"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.696" endtime="20231009 13:39:47.108"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:45.574" endtime="20231009 13:39:47.108"/>
+</kw>
+<kw name="Input Contact Information And Confirm Button" library="CreateCaseKeyword">
+<arg>Phone No.</arg>
+<arg>0619926554</arg>
+<kw name="Input Contact" library="CreateCasePage">
+<arg>${contact}</arg>
+<arg>${contactInfo}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${contact}" == "Phone No."</arg>
+<arg>Input Phone Number</arg>
+<arg>${contactInfo}</arg>
+<arg>ELSE IF</arg>
+<arg>"${contact}" == "Email"</arg>
+<arg>Input Email</arg>
+<arg>${contactInfo}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Input Phone Number" library="CreateCasePage">
+<arg>${contactInfo}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${phoneNoRadioBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:47.110" level="INFO">Clicking element '//input[@type='radio' and @name='proprietor.insureds.fields.0.notifyType' and @value='sms']'.</msg>
+<status status="PASS" starttime="20231009 13:39:47.110" endtime="20231009 13:39:47.148"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${phoneNoField}</arg>
+<arg>${phoneNo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:47.149" level="INFO">Typing text '0619926554' into text field '//input[@name="proprietor.insureds.fields.0.phoneNumber"]'.</msg>
+<status status="PASS" starttime="20231009 13:39:47.148" endtime="20231009 13:39:47.194"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:47.110" endtime="20231009 13:39:47.194"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:47.109" endtime="20231009 13:39:47.194"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:47.109" endtime="20231009 13:39:47.194"/>
+</kw>
+<kw name="Click Confirm Create Case Button" library="CreateCasePage">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${createCaseBtn}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231009 13:39:47.194" endtime="20231009 13:39:47.206"/>
+</kw>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${confirmcreateCaseBtn}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:47.209" level="INFO">Clicking element '//button[contains(text(),'send')]'.</msg>
+<status status="PASS" starttime="20231009 13:39:47.209" endtime="20231009 13:39:47.252"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:47.206" endtime="20231009 13:39:47.252"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:47.206" endtime="20231009 13:39:47.252"/>
+</kw>
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${confirmSentLinkBtn}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:47.255" level="INFO">Clicking element '//*[@id="ok-button"]'.</msg>
+<status status="PASS" starttime="20231009 13:39:47.255" endtime="20231009 13:39:47.283"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:47.252" endtime="20231009 13:39:47.283"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:47.252" endtime="20231009 13:39:47.283"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:47.194" endtime="20231009 13:39:47.283"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:47.108" endtime="20231009 13:39:47.283"/>
+</kw>
+<kw name="If Duplicate Then Click Create New" library="CreateCaseKeyword">
+<kw name="Check The Duplicate Pop Up If Yes Click Create New" library="CreateCasePage">
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 13:39:49.286" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231009 13:39:47.283" endtime="20231009 13:39:49.287"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${element_duplicate_popup_exists}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${cancelRadio}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${cancelRadio}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231009 13:39:49.307" level="INFO">Element '//input[@class="min-w-3.5 align-top mx-auto mt-1" and @type="radio" and @value="cancel"]' is displayed.</msg>
+<status status="PASS" starttime="20231009 13:39:49.288" endtime="20231009 13:39:49.307"/>
+</kw>
+<msg timestamp="20231009 13:39:49.307" level="INFO">${element_duplicate_popup_exists} = True</msg>
+<status status="PASS" starttime="20231009 13:39:49.287" endtime="20231009 13:39:49.307"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${element_duplicate_popup_exists}</arg>
+<arg>Select Create New On Duplicate Pop Up</arg>
+<arg>ELSE</arg>
+<arg>Verify Create Case Button</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Select Create New On Duplicate Pop Up" library="CreateCasePage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${createNewRadio}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20231009 13:39:49.308" endtime="20231009 13:39:49.317"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${createNewRadio}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:49.317" level="INFO">Clicking element '//input[@class="min-w-3.5 align-top mx-auto mt-1" and @type="radio" and @value="createNew"]'.</msg>
+<status status="PASS" starttime="20231009 13:39:49.317" endtime="20231009 13:39:49.348"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${confirmInDuplicateBtn}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231009 13:39:49.348" endtime="20231009 13:39:49.365"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${confirmInDuplicateBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:49.366" level="INFO">Clicking element '//*[@id="root"]/div/div/div[5]/div[1]/div/div[5]/button'.</msg>
+<status status="PASS" starttime="20231009 13:39:49.365" endtime="20231009 13:39:49.387"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:49.308" endtime="20231009 13:39:49.387"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:49.308" endtime="20231009 13:39:49.387"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 13:39:54.389" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231009 13:39:49.387" endtime="20231009 13:39:54.389"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:47.283" endtime="20231009 13:39:54.390"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:47.283" endtime="20231009 13:39:54.390"/>
+</kw>
+<kw name="Check The Case Detail After Create The Case TT" library="CaseListPage">
+<arg>จิดาภา ชินวัด โอบกิจกาจพล</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${columnIndex}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231009 13:39:54.393" level="INFO">${columnIndex} = 1</msg>
+<status status="PASS" starttime="20231009 13:39:54.392" endtime="20231009 13:39:54.393"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${columnIndexAsInt}</var>
+<arg>${columnIndex}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20231009 13:39:54.393" level="INFO">${columnIndexAsInt} = 1</msg>
+<status status="PASS" starttime="20231009 13:39:54.393" endtime="20231009 13:39:54.393"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${tableElements}</var>
+<arg>xpath=${tableLocator}//tr/td[${columnIndexAsInt + 1}]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231009 13:39:54.408" level="INFO">${tableElements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_462")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
+<status status="PASS" starttime="20231009 13:39:54.394" endtime="20231009 13:39:54.408"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${element}</var>
+<arg>${tableElements}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231009 13:39:54.408" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="0240d4e5b08cf11b28cded4de64cbfed", element="D6ADCEF5CB2AA46D7834D89D40024847_element_462")&gt;</msg>
+<status status="PASS" starttime="20231009 13:39:54.408" endtime="20231009 13:39:54.408"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${fullName}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:54.417" level="INFO">${fullName} = จิดาภา ชินวัด โอบกิจกาจพล</msg>
+<status status="PASS" starttime="20231009 13:39:54.409" endtime="20231009 13:39:54.417"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${fullName}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231009 13:39:54.417" endtime="20231009 13:39:54.417"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${fullName}</arg>
+<arg>${expectFullName}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231009 13:39:54.418" endtime="20231009 13:39:54.418"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:54.391" endtime="20231009 13:39:54.418"/>
+</kw>
+<kw name="Filter The Case By Case Type" library="FilterKeyword">
+<arg>Dip Chip</arg>
+<kw name="Click Filter Icon" library="FilterPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${filterButton}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:39:54.419" endtime="20231009 13:39:54.433"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${filterButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:54.433" level="INFO">Clicking element '//body/div[@id='root']/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]/div[1]'.</msg>
+<status status="PASS" starttime="20231009 13:39:54.433" endtime="20231009 13:39:54.468"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:54.418" endtime="20231009 13:39:54.468"/>
+</kw>
+<kw name="Filter By Case Type" library="FilterPage">
+<arg>${caseType}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${caseTypeDropDown}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:39:54.468" endtime="20231009 13:39:54.480"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${caseTypeDropDown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:54.480" level="INFO">Clicking element 'xpath://input[@placeholder="Choose case type"]'.</msg>
+<status status="PASS" starttime="20231009 13:39:54.480" endtime="20231009 13:39:54.500"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//p[contains(text(),'${caseType}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:54.500" level="INFO">Clicking element '//p[contains(text(),'Dip Chip')]'.</msg>
+<status status="PASS" starttime="20231009 13:39:54.500" endtime="20231009 13:39:54.529"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:54.468" endtime="20231009 13:39:54.529"/>
+</kw>
+<kw name="Click Confirm To Search" library="FilterPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${searchFilterBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:54.530" level="INFO">Clicking element '//*[@id="dashboard-filter-search-button"]'.</msg>
+<status status="PASS" starttime="20231009 13:39:54.530" endtime="20231009 13:39:54.558"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:54.529" endtime="20231009 13:39:54.558"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:54.418" endtime="20231009 13:39:54.558"/>
+</kw>
+<kw name="Check The Content In Case List Table" library="CaseListKeyword">
+<arg>Dip Chip</arg>
+<kw name="Check Status in Every Row" library="CaseListPage">
+<arg>${expected_status}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${column_index}</var>
+<arg>3</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231009 13:39:54.559" level="INFO">${column_index} = 3</msg>
+<status status="PASS" starttime="20231009 13:39:54.559" endtime="20231009 13:39:54.559"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${column_index_as_int}</var>
+<arg>${column_index}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20231009 13:39:54.559" level="INFO">${column_index_as_int} = 3</msg>
+<status status="PASS" starttime="20231009 13:39:54.559" endtime="20231009 13:39:54.559"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${table_elements}</var>
+<arg>xpath=${table_locator}//tr/td[${column_index_as_int + 1}]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231009 13:39:54.568" level="INFO">${table_elements} = []</msg>
+<status status="PASS" starttime="20231009 13:39:54.559" endtime="20231009 13:39:54.568"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{table_elements}</value>
+<iter>
+<var name="${element}"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 13:39:54.568" endtime="20231009 13:39:54.568"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231009 13:39:54.568" endtime="20231009 13:39:54.568"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${expected_status}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20231009 13:39:54.568" endtime="20231009 13:39:54.568"/>
+</kw>
+<status status="NOT RUN" starttime="20231009 13:39:54.568" endtime="20231009 13:39:54.568"/>
+</iter>
+<status status="NOT RUN" starttime="20231009 13:39:54.568" endtime="20231009 13:39:54.568"/>
+</for>
+<status status="PASS" starttime="20231009 13:39:54.559" endtime="20231009 13:39:54.568"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:54.559" endtime="20231009 13:39:54.568"/>
+</kw>
+<kw name="Click The First Case" library="CaseListKeyword">
+<kw name="Select The First Case" library="CaseListPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${firstCase}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:39:54.569" endtime="20231009 13:39:55.000"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${firstCase}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:55.001" level="INFO">Clicking element '//table[@class='table-compact w-full']//tbody/tr[1]'.</msg>
+<status status="PASS" starttime="20231009 13:39:55.001" endtime="20231009 13:39:55.048"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:54.568" endtime="20231009 13:39:55.048"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:54.568" endtime="20231009 13:39:55.048"/>
+</kw>
+<kw name="Download Case Detail" library="CaseDetailKeyword">
+<arg>Dip Chip</arg>
+<kw name="Click Download Pdf Button" library="CaseDetailPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${caseDetailPdfBtn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:39:55.048" endtime="20231009 13:39:55.059"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${caseDetailPdfBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:39:55.060" level="INFO">Clicking element '//div[contains(text(),'Case detail.pdf')]'.</msg>
+<status status="PASS" starttime="20231009 13:39:55.060" endtime="20231009 13:39:55.076"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${downloadPdfTag}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:39:55.076" endtime="20231009 13:39:58.239"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 13:40:03.240" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231009 13:39:58.239" endtime="20231009 13:40:03.241"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:55.048" endtime="20231009 13:40:03.241"/>
+</kw>
+<kw name="Check The PDF File Is Exist" library="CaseDetailPage">
+<arg>${caseType}</arg>
+<kw name="List Files In Directory" library="OperatingSystem">
+<var>${pdfFiles}</var>
+<arg>${EXECDIR}/assets/</arg>
+<arg>pattern=*_${caseType}.pdf</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<msg timestamp="20231009 13:40:03.245" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/pinpinn/dashboard-automation/assets"&gt;/Users/pinpinn/dashboard-automation/assets&lt;/a&gt;'.</msg>
+<msg timestamp="20231009 13:40:03.246" level="INFO">1 file:
+7843275804481_08bf0_[e-KYC]_20231009_13-39-55_Dip Chip.pdf</msg>
+<msg timestamp="20231009 13:40:03.246" level="INFO">${pdfFiles} = ['7843275804481_08bf0_[e-KYC]_20231009_13-39-55_Dip Chip.pdf']</msg>
+<status status="PASS" starttime="20231009 13:40:03.244" endtime="20231009 13:40:03.246"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${pdfFile}</var>
+<arg>${pdfFiles}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231009 13:40:03.247" level="INFO">${pdfFile} = 7843275804481_08bf0_[e-KYC]_20231009_13-39-55_Dip Chip.pdf</msg>
+<status status="PASS" starttime="20231009 13:40:03.247" endtime="20231009 13:40:03.247"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Wait Until Keyword Succeeds</arg>
+<arg>1x</arg>
+<arg>5s</arg>
+<arg>File Should Exist</arg>
+<arg>${pdfFile}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>1x</arg>
+<arg>5s</arg>
+<arg>File Should Exist</arg>
+<arg>${pdfFile}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="File Should Exist" library="OperatingSystem">
+<arg>${pdfFile}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<msg timestamp="20231009 13:40:03.249" level="FAIL">error: bad character range e-K at position 25</msg>
+<status status="FAIL" starttime="20231009 13:40:03.248" endtime="20231009 13:40:03.253"/>
+</kw>
+<msg timestamp="20231009 13:40:03.253" level="FAIL">Keyword 'File Should Exist' failed after retrying 1 time. The last error was: error: bad character range e-K at position 25</msg>
+<status status="FAIL" starttime="20231009 13:40:03.248" endtime="20231009 13:40:03.253"/>
+</kw>
+<status status="PASS" starttime="20231009 13:40:03.247" endtime="20231009 13:40:03.253"/>
+</kw>
+<status status="PASS" starttime="20231009 13:40:03.242" endtime="20231009 13:40:03.254"/>
+</kw>
+<kw name="Click Download Case Detail Button" library="CaseDetailPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${caseDetailBtn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:40:03.254" endtime="20231009 13:40:03.272"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${caseDetailBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:40:03.272" level="INFO">Clicking element '//div[contains(text(),'Case detail.zip')]'.</msg>
+<status status="PASS" starttime="20231009 13:40:03.272" endtime="20231009 13:40:03.296"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 13:40:08.296" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231009 13:40:03.296" endtime="20231009 13:40:08.296"/>
+</kw>
+<status status="PASS" starttime="20231009 13:40:03.254" endtime="20231009 13:40:08.296"/>
+</kw>
+<kw name="Check The Case Detail Zip File Is Exist" library="CaseDetailPage">
+<kw name="List Files In Directory" library="OperatingSystem">
+<var>${summaryFiles}</var>
+<arg>${EXECDIR}/assets/</arg>
+<arg>pattern=*_Summary.zip</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<msg timestamp="20231009 13:40:08.298" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/pinpinn/dashboard-automation/assets"&gt;/Users/pinpinn/dashboard-automation/assets&lt;/a&gt;'.</msg>
+<msg timestamp="20231009 13:40:08.298" level="INFO">1 file:
+20231009_64dde97f_Summary.zip</msg>
+<msg timestamp="20231009 13:40:08.298" level="INFO">${summaryFiles} = ['20231009_64dde97f_Summary.zip']</msg>
+<status status="PASS" starttime="20231009 13:40:08.297" endtime="20231009 13:40:08.298"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${summaryFile}</var>
+<arg>${summaryFiles}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231009 13:40:08.299" level="INFO">${summaryFile} = 20231009_64dde97f_Summary.zip</msg>
+<status status="PASS" starttime="20231009 13:40:08.298" endtime="20231009 13:40:08.299"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Wait Until Keyword Succeeds</arg>
+<arg>1x</arg>
+<arg>5s</arg>
+<arg>File Should Exist</arg>
+<arg>${summaryFile}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>1x</arg>
+<arg>5s</arg>
+<arg>File Should Exist</arg>
+<arg>${summaryFile}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="File Should Exist" library="OperatingSystem">
+<arg>${summaryFile}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<msg timestamp="20231009 13:40:08.301" level="FAIL">File '/Users/pinpinn/dashboard-automation/20231009_64dde97f_Summary.zip' does not exist.</msg>
+<status status="FAIL" starttime="20231009 13:40:08.300" endtime="20231009 13:40:08.301"/>
+</kw>
+<msg timestamp="20231009 13:40:08.301" level="FAIL">Keyword 'File Should Exist' failed after retrying 1 time. The last error was: File '/Users/pinpinn/dashboard-automation/20231009_64dde97f_Summary.zip' does not exist.</msg>
+<status status="FAIL" starttime="20231009 13:40:08.300" endtime="20231009 13:40:08.301"/>
+</kw>
+<status status="PASS" starttime="20231009 13:40:08.299" endtime="20231009 13:40:08.301"/>
+</kw>
+<status status="PASS" starttime="20231009 13:40:08.297" endtime="20231009 13:40:08.301"/>
+</kw>
+<kw name="Click Download Send Link History Button" library="CaseDetailPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${sendlinkHistoryBtn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 13:40:08.302" endtime="20231009 13:40:08.319"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${sendlinkHistoryBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 13:40:08.320" level="INFO">Clicking element '//div[contains(text(),'Send link history.csv')]'.</msg>
+<status status="PASS" starttime="20231009 13:40:08.320" endtime="20231009 13:40:08.342"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 13:40:13.342" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231009 13:40:08.342" endtime="20231009 13:40:13.343"/>
+</kw>
+<status status="PASS" starttime="20231009 13:40:08.301" endtime="20231009 13:40:13.343"/>
+</kw>
+<kw name="Check The Send Link Log Is Exist" library="CaseDetailPage">
+<kw name="List Files In Directory" library="OperatingSystem">
+<var>${SendLinkLogFiles}</var>
+<arg>${EXECDIR}/assets/</arg>
+<arg>pattern=*_Send_Link_Log.csv</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<msg timestamp="20231009 13:40:13.345" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/pinpinn/dashboard-automation/assets"&gt;/Users/pinpinn/dashboard-automation/assets&lt;/a&gt;'.</msg>
+<msg timestamp="20231009 13:40:13.345" level="INFO">1 file:
+20231009_Send_Link_Log.csv</msg>
+<msg timestamp="20231009 13:40:13.345" level="INFO">${SendLinkLogFiles} = ['20231009_Send_Link_Log.csv']</msg>
+<status status="PASS" starttime="20231009 13:40:13.344" endtime="20231009 13:40:13.345"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${SendLinkLogFile}</var>
+<arg>${SendLinkLogFiles}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231009 13:40:13.346" level="INFO">${SendLinkLogFile} = 20231009_Send_Link_Log.csv</msg>
+<status status="PASS" starttime="20231009 13:40:13.346" endtime="20231009 13:40:13.346"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Wait Until Keyword Succeeds</arg>
+<arg>1x</arg>
+<arg>5s</arg>
+<arg>File Should Exist</arg>
+<arg>${SendLinkLogFile}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>1x</arg>
+<arg>5s</arg>
+<arg>File Should Exist</arg>
+<arg>${SendLinkLogFile}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="File Should Exist" library="OperatingSystem">
+<arg>${SendLinkLogFile}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<msg timestamp="20231009 13:40:13.348" level="FAIL">File '/Users/pinpinn/dashboard-automation/20231009_Send_Link_Log.csv' does not exist.</msg>
+<status status="FAIL" starttime="20231009 13:40:13.347" endtime="20231009 13:40:13.348"/>
+</kw>
+<msg timestamp="20231009 13:40:13.348" level="FAIL">Keyword 'File Should Exist' failed after retrying 1 time. The last error was: File '/Users/pinpinn/dashboard-automation/20231009_Send_Link_Log.csv' does not exist.</msg>
+<status status="FAIL" starttime="20231009 13:40:13.347" endtime="20231009 13:40:13.348"/>
+</kw>
+<status status="PASS" starttime="20231009 13:40:13.346" endtime="20231009 13:40:13.348"/>
+</kw>
+<status status="PASS" starttime="20231009 13:40:13.343" endtime="20231009 13:40:13.348"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:55.048" endtime="20231009 13:40:13.348"/>
+</kw>
+<status status="PASS" starttime="20231009 13:39:19.678" endtime="20231009 13:40:13.349"/>
 </test>
-<status status="PASS" starttime="20231007 22:15:01.581" endtime="20231007 22:15:09.974"/>
+<status status="PASS" starttime="20231009 13:39:19.516" endtime="20231009 13:40:13.350"/>
 </suite>
 <statistics>
 <total>
@@ -1103,7 +2091,7 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20231007 22:15:01.684" level="ERROR">Error in file '/Users/pinpinn/dashboard-automation/Page/CreateCasePage.robot' on line 6: Importing library 'RPA.CSV' failed: ModuleNotFoundError: No module named 'RPA'
+<msg timestamp="20231009 13:39:19.615" level="ERROR">Error in file '/Users/pinpinn/dashboard-automation/Page/CreateCasePage.robot' on line 6: Importing library 'RPA.CSV' failed: ModuleNotFoundError: No module named 'RPA'
 Traceback (most recent call last):
   None
 PYTHONPATH:
