@@ -2,12 +2,6 @@
 Library    RequestsLibrary
 Library    Collections
 Library    OperatingSystem
-
-*** Variables ***
-${base_url}       https://portal-v2-qa.mac-non-prod.appmanteam.com/apps/case-keeper/cases
-${username}       client_admin_1@mac-portal-v2.com
-${password}       !QAZ2wsx
-
 *** Test Cases ***
 Post Create Case
     ${data}    Create Dictionary    username=niki    password=1234    grant_type=password    client_id=mac-case-keeper
@@ -29,7 +23,8 @@ Post Create Case
 
     ${responseBodyCases}=    Set Variable    ${responseCases.text}
     ${responseDictCases}=    Evaluate    json.loads($responseBodyCases) 
-    ${caseId}=    Get From Dictionary    ${responseDictCases}    id
+    ${caseId}=    Get From Dictionary     ${responseDictCases["proprietors"][0]}    verificationRef
+    Log To Console    ${caseId}   
 
 
     ${verificationUrl}=    Set Variable    https://portal-v2-qa.mac-non-prod.appmanteam.com/apps/identity-verification/${caseId}
