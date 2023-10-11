@@ -24,10 +24,10 @@
             "expiryDuration": "P5D",
             "notifyDuration": "P3D",
             "proprietorType": "insured",
-            "citizenId": "1-3505-00054-938",
-            "firstName": "ศราวุธ",
+            "citizenId": "1-1004-00984-897",
+            "firstName": "จิดาภา",
             "middleName": null,
-            "lastName": "จันใด",
+            "lastName": "โอบกิจกาจพล",
             "title": {
                 "key": "005",
                 "code": "005",
@@ -46,7 +46,7 @@
                 "value": "005",
                 "label": "Mr."
             },
-            "dateOfBirth": "1989-01-08",
+            "dateOfBirth": "1999-04-02",
             "notifyType": "sms",
             "phoneNumber": "0836825465",
             "meta": {
@@ -68,9 +68,9 @@
                     "value": "005",
                     "label": "Mr."
                 },
-                "insuredFirstName": "ศราวุธ",
+                "insuredFirstName": "จิดาภา",
                 "insuredMiddleName": null,
-                "insuredLastName": "จันใด"
+                "insuredLastName": "โอบกิจกาจพล"
             },
             "verifications": [
                 {
