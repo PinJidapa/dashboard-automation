@@ -6,7 +6,8 @@ Resource    ../Resourses/TestData/${env}/config.robot
 
 *** Keywords *** 
 Post Create Case
-    ${data}    Create Dictionary    username=pin-v2   password=!QAZ2wsx    grant_type=password    client_id=mac-case-keeper
+# username=pin-v2   password=!QAZ2wsx
+    ${data}    Create Dictionary    username=niki   password=1234    grant_type=password    client_id=mac-case-keeper
     ${response} =    POST    ${authUrl}    data=${data}
     # Log To Console    Response Body: ${response.text}
     ${response_body}=    Set Variable    ${response.text}
@@ -17,7 +18,7 @@ Post Create Case
     ${headers} =   Create Dictionary 
     Set To Dictionary    ${headers}    Content-Type    application/json
     Set To Dictionary    ${headers}    Authorization    Bearer ${access_token} 
-    ${file_path}    Get File   ../dashboard-automation/data/payload.json
+    ${file_path}    Get File   ${EXECDIR}/data/payload.json
     ${json_data} =    Evaluate   json.loads('''${file_path}''')
     ${responseCases} =    POST    ${createCaseUrl}    json=${json_data}
     ...    headers=${headers}
@@ -33,25 +34,23 @@ Post Create Case
 
 Patch Consent
     ${headers} =    Create Dictionary
-    Set To Dictionary    ${headers}    Authorization     Bearer NzdhN2VkZmItYjY5Mi00MWIzLThkNWYtZGY1ZjY3ODJhNTQ0
+    Set To Dictionary    ${headers}    Authorization     Bearer ${portalPublicKey}
     ${file_path}    Get File    ../dashboard-automation/data/patchConsentBody.json
     ${json_data} =    Evaluate   json.loads('''${file_path}''')
     Log To Console    verificationId:${verificationId}
-    ${patchConsent} =    PATCH    https://portal-qa.mac-non-prod.appmanteam.com/api/v2/kyc/verifications/${verificationId}
+    ${patchConsent} =    PATCH    ${kycUrl}${verificationId}
     ...    json=${json_data}
     ...    headers=${headers}
     # Log To Console    xxx:${patchConsent.text}
 
 Post Front ID Card
     ${headers} =    Create Dictionary
-    Set To Dictionary    ${headers}    Authorization     Bearer NzdhN2VkZmItYjY5Mi00MWIzLThkNWYtZGY1ZjY3ODJhNTQ0
-    #Get File For Streaming Upload 
-    ${file1}=    Get File For Streaming Upload    ../dashboard-automation/data/pinIdCard.png
-    ${files}=    Create Dictionary    file    ${file1}
+    Set To Dictionary    ${headers}    Authorization     Bearer ${portalPublicKey}
+    ${file1}=    Get File For Streaming Upload   ${EXECDIR}/data/pinIdCard.png
+    ${files}=    Create Dictionary    file=${file1}
     
     Log To Console    data:${files}
-    ${postFrontIdCard}=    POST     https://portal-qa.mac-non-prod.appmanteam.com/api/v2/kyc/verifications/${verificationId}/frontIdCards  
-    ...    files=${files} 
+    ${postFrontIdCard}=    POST   ${kycUrl}${verificationId}/frontIdCards
+    ...    files=${files}
     ...    headers=${headers}
-    Log To Console    ${postFrontIdCard.txt}
-    #http://localhost:3000
+    Log To Console    ${postFrontIdCard}

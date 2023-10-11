@@ -7,9 +7,13 @@ Resource    ../Keywords/CreateCaseKeyword.robot
 Resource    ../Keywords/CaseDetailKeyword.robot
 Resource    ../Keywords/CaseListKeyword.robot
 Resource    ../Page/ClientPage.robot
+Library     ScreenCapLibrary  
 
 *** Test Cases ***
 Test 01
+    # Start Video Recording
+    # Stop Video Recording
+    # Capture Page Screenshot
     # Open Browser And Sign In With Username And Password    
     # ...    ${clientAdminUsername1}    
     # ...    ${clientAdminPassword1}
@@ -45,3 +49,4 @@ Test 01
     Post Create Case
     Patch Consent
     Post Front ID Card
+    
