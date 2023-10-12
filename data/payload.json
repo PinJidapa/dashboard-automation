@@ -1,16 +1,16 @@
 {
     "caseType": {
-        "key": "thaiIdCard",
-        "code": "003",
+        "key": "dipChip",
+        "code": "001",
         "translations": {
             "en": {
-                "label": "Thai ID card"
+                "label": "dipChip"
             },
             "th": {
-                "label": "บัตรประชาชน"
+                "label": "ดิบชิพ"
             },
             "id": {
-                "label": "Thai ID card"
+                "label": "dipChip"
             }
         }
     },
@@ -48,7 +48,7 @@
             },
             "dateOfBirth": "1999-04-02",
             "notifyType": "sms",
-            "phoneNumber": "0836825465",
+            "phoneNumber": "0619926554",
             "meta": {
                 "insuredTitle": {
                     "key": "005",

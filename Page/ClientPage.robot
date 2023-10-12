@@ -2,12 +2,18 @@
 Library    RequestsLibrary
 Library    Collections
 Library    OperatingSystem
+Library    String
+Library    ../Scripts/api.py
 Resource    ../Resourses/TestData/${env}/config.robot
+Library    DateTime
+
+*** Variables ***
+${random_chars}    Evaluate    ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(10))
 
 *** Keywords *** 
 Post Create Case
 # username=pin-v2   password=!QAZ2wsx
-    ${data}    Create Dictionary    username=niki   password=1234    grant_type=password    client_id=mac-case-keeper
+    ${data}    Create Dictionary    username=pin-v2   password=!QAZ2wsx    grant_type=password    client_id=mac-case-keeper
     ${response} =    POST    ${authUrl}    data=${data}
     # Log To Console    Response Body: ${response.text}
     ${response_body}=    Set Variable    ${response.text}
@@ -34,7 +40,7 @@ Post Create Case
 
 Patch Consent
     ${headers} =    Create Dictionary
-    Set To Dictionary    ${headers}    Authorization     Bearer ${portalPublicKey}
+    Set To Dictionary    ${headers}    Authorization     Bearer ${portalPrivateKey}
     ${file_path}    Get File    ../dashboard-automation/data/patchConsentBody.json
     ${json_data} =    Evaluate   json.loads('''${file_path}''')
     Log To Console    verificationId:${verificationId}
@@ -45,12 +51,15 @@ Patch Consent
 
 Post Front ID Card
     ${headers} =    Create Dictionary
-    Set To Dictionary    ${headers}    Authorization     Bearer ${portalPublicKey}
-    ${file1}=    Get File For Streaming Upload   ${EXECDIR}/data/pinIdCard.png
-    ${files}=    Create Dictionary    file=${file1}
-    
-    Log To Console    data:${files}
-    ${postFrontIdCard}=    POST   ${kycUrl}${verificationId}/frontIdCards
-    ...    files=${files}
+    Set To Dictionary    ${headers}    Authorization     Bearer ${portalPrivateKey}
+    ${response} =    Upload File    ${kycUrl}${verificationId}/frontIdCards    ${EXECDIR}/data/pinIdCard.png    image/png    ${headers}
+    Log To Console    ${response}
+
+Patch Front ID Card
+    ${headers} =    Create Dictionary
+    Set To Dictionary    ${headers}    Authorization     Bearer ${portalPrivateKey}
+    ${file_path}    Get File    ../dashboard-automation/data/patchFrontIdCard.json
+    ${json_data} =    Evaluate   json.loads('''${file_path}''')
+    ${response} =    PATCH    ${kycUrl}${verificationId}/frontIdCards
+    ...    json=${json_data}
     ...    headers=${headers}
-    Log To Console    ${postFrontIdCard}
