@@ -58,8 +58,23 @@ Post Front ID Card
 Patch Front ID Card
     ${headers} =    Create Dictionary
     Set To Dictionary    ${headers}    Authorization     Bearer ${portalPrivateKey}
-    ${file_path}    Get File    ../dashboard-automation/data/patchFrontIdCard.json
+    ${file_path}    Get File    ../dashboard-automation/data/patchIdCard.json
     ${json_data} =    Evaluate   json.loads('''${file_path}''')
     ${response} =    PATCH    ${kycUrl}${verificationId}/frontIdCards
+    ...    json=${json_data}
+    ...    headers=${headers}
+
+Post Back ID Card
+    ${headers} =    Create Dictionary
+    Set To Dictionary    ${headers}    Authorization     Bearer ${portalPrivateKey}
+    ${response} =    Upload File    ${kycUrl}${verificationId}/backIdCards    ${EXECDIR}/data/pinBackIdCard.png    image/png    ${headers}
+    Log To Console    ${response}
+
+Patch Back ID Card And Comfirm Dopa
+    ${headers} =    Create Dictionary
+    Set To Dictionary    ${headers}    Authorization     Bearer ${portalPrivateKey}
+    ${file_path}    Get File    ../dashboard-automation/data/patchIdCard.json
+    ${json_data} =    Evaluate   json.loads('''${file_path}''')
+    ${response} =    PATCH    ${kycUrl}${verificationId}/backIdCards
     ...    json=${json_data}
     ...    headers=${headers}

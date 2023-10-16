@@ -82,7 +82,8 @@
                         "isEditable": true,
                         "dependenciesRequired": false,
                         "threshHold": 0.8,
-                        "attempts": 3
+                        "attempts": 3,
+                        "validations": ["comparison"]
                     },
                     "backIdCardConfig": {
                         "required": true,
@@ -97,7 +98,7 @@
                         "dependenciesRequired": false,
                         "attempts": 3
                     },
-                    "idFaceRecognitionConfig": {
+                    "faceRecognitionConfig": {
                         "required": true,
                         "isEditable": true,
                         "dependenciesRequired": false,

@@ -48,6 +48,8 @@ Test 01
     # ...    Dip Chip
     Post Create Case
     Patch Consent
-   Post Front ID Card
-   Patch Front ID Card
+    Post Front ID Card
+    Patch Front ID Card
+    Post Back ID Card
+    Patch Back ID Card And Comfirm Dopa
     
