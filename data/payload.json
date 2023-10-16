@@ -1,0 +1,116 @@
+{
+    "caseType": {
+        "key": "dipChip",
+        "code": "001",
+        "translations": {
+            "en": {
+                "label": "dipChip"
+            },
+            "th": {
+                "label": "ดิบชิพ"
+            },
+            "id": {
+                "label": "dipChip"
+            }
+        }
+    },
+    "policies": [
+        {
+            "policyNumber": null
+        }
+    ],
+    "proprietors": [
+        {
+            "expiryDuration": "P5D",
+            "notifyDuration": "P3D",
+            "proprietorType": "insured",
+            "citizenId": "1-1004-00984-897",
+            "firstName": "จิดาภา",
+            "middleName": null,
+            "lastName": "โอบกิจกาจพล",
+            "title": {
+                "key": "005",
+                "code": "005",
+                "sex": "M",
+                "translations": {
+                    "en": {
+                        "label": "Mr."
+                    },
+                    "th": {
+                        "label": "นาย"
+                    },
+                    "id": {
+                        "label": "Tuan"
+                    }
+                },
+                "value": "005",
+                "label": "Mr."
+            },
+            "dateOfBirth": "1999-04-02",
+            "notifyType": "sms",
+            "phoneNumber": "0619926554",
+            "meta": {
+                "insuredTitle": {
+                    "key": "005",
+                    "code": "005",
+                    "sex": "M",
+                    "translations": {
+                        "en": {
+                            "label": "Mr."
+                        },
+                        "th": {
+                            "label": "นาย"
+                        },
+                        "id": {
+                            "label": "Tuan"
+                        }
+                    },
+                    "value": "005",
+                    "label": "Mr."
+                },
+                "insuredFirstName": "จิดาภา",
+                "insuredMiddleName": null,
+                "insuredLastName": "โอบกิจกาจพล"
+            },
+            "verifications": [
+                {
+                    "smsNotifyContent": "เรียนคุณ ${firstName} ${lastName} กรุณายืนยันตัวตนด้วยบัตรประชาชนผ่านลิงก์ ${application.verificationBasePath}/${id}",
+                    "emailNotifyContent": "เรียนคุณ ${firstName} ${lastName} กรุณายืนยันตัวตนด้วยบัตรประชาชนผ่านลิงก์ ${application.verificationBasePath}/${id}",
+                    "emailNotifySubject": "แจ้งการยืนยันตัวตน",
+                    "frontIdCardConfig": {
+                        "required": true,
+                        "isEditable": true,
+                        "dependenciesRequired": false,
+                        "threshHold": 0.8,
+                        "attempts": 3,
+                        "validations": ["comparison"]
+                    },
+                    "backIdCardConfig": {
+                        "required": true,
+                        "isEditable": true,
+                        "dependenciesRequired": false,
+                        "threshHold": 1,
+                        "attempts": 3
+                    },
+                    "dopaConfig": {
+                        "required": true,
+                        "isEditable": true,
+                        "dependenciesRequired": false,
+                        "attempts": 3
+                    },
+                    "faceRecognitionConfig": {
+                        "required": true,
+                        "isEditable": true,
+                        "dependenciesRequired": false,
+                        "attempts": 3,
+                        "livenessCount": 1,
+                        "threshHold": 0.9,
+                        "minFaceTecMatchLevel": 4
+                    }
+                }
+            ]
+        }
+    ],
+    "remark": null,
+    "attachMeetingRoom": false
+}
